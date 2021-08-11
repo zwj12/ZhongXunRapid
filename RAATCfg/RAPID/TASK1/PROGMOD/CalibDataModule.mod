@@ -19,7 +19,7 @@ MODULE CalibDataModule
     TASK PERS tooldata toolWeldGunOld:=[TRUE,[[-60.8716,1.37706,439.061],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
     TASK PERS tooldata toolLaserOld:=[TRUE,[[40.75,0,624.2],[1,0,0,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
 
-    TASK PERS wobjdata wobjCurrent:=[FALSE,TRUE,"",[[0,0,24],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
+    TASK PERS wobjdata wobjCurrent:=[FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
 
     ! postions for tool definition of weld gun
     TASK PERS jointtarget jtSpotGun1:=[[-92.625,-3.13813,35.8002,-0.0244821,57.3403,-274.552],[-0.00674289,9E+09,9E+09,9E+09,9E+09,9E+09]];

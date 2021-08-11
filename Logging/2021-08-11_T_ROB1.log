@@ -128,3 +128,96 @@
 2021-08-11 20:52:07:WARNING:root:Found:[-75,0,0]
 2021-08-11 20:52:15:WARNING:root:Scan:[-75,0,0]
 2021-08-11 20:52:16:WARNING:root:Found:[-75,0,0]
+2021-08-11 21:10:16:WARNING:root:Modules are saved
+2021-08-11 21:10:16:WARNING:root:Job Weld: 1/1 - 1002
+2021-08-11 21:10:16:WARNING:root:Pos: [0,0,0]
+2021-08-11 21:10:16:WARNING:root:Gantry: [0,0,560]
+2021-08-11 21:10:16:WARNING:root:Start to run Template_1002...
+2021-08-11 21:11:31:WARNING:root:Modules are saved
+2021-08-11 21:11:31:WARNING:root:Job Weld: 1/1 - 1002
+2021-08-11 21:11:31:WARNING:root:Pos: [0,0,0]
+2021-08-11 21:11:31:WARNING:root:Gantry: [0,0,560]
+2021-08-11 21:11:31:WARNING:root:Start to run Template_1002...
+2021-08-11 21:11:31:WARNING:root:Search oframe
+2021-08-11 21:12:17:WARNING:root:poseFrame.trans:=[0,0,0]
+2021-08-11 21:12:17:WARNING:root:poseFrame.rot:=[90,0,0]
+2021-08-11 21:12:17:WARNING:root:oframe.trans:=[0,0,0]
+2021-08-11 21:12:17:WARNING:root:oframe.rot:=[0,0,0]
+2021-08-11 21:12:20:WARNING:root:Scan:[-75,0,0]
+2021-08-11 21:12:35:WARNING:root:Found:[-75,0,0]
+2021-08-11 21:12:35:WARNING:root:Scan:[-75,0,0]
+2021-08-11 21:12:38:WARNING:root:Found:[-75,0,0]
+2021-08-11 21:22:49:WARNING:root:Modules are saved
+2021-08-11 21:22:49:WARNING:root:Job Weld: 1/1 - 1002
+2021-08-11 21:22:49:WARNING:root:Pos: [0,0,0]
+2021-08-11 21:22:49:WARNING:root:Gantry: [0,0,0]
+2021-08-11 21:22:49:WARNING:root:Start to run Template_1002...
+2021-08-11 21:22:49:WARNING:root:Search oframe
+2021-08-11 21:22:49:WARNING:root:Scan: pY1=[0,75,0]
+2021-08-11 21:23:06:WARNING:root:Found: [0,75,0]
+2021-08-11 21:23:06:WARNING:root:Scan: pY2=[0,200,0]
+2021-08-11 21:23:44:WARNING:root:Modules are saved
+2021-08-11 21:23:44:WARNING:root:Job Weld: 1/1 - 1002
+2021-08-11 21:23:44:WARNING:root:Pos: [0,0,0]
+2021-08-11 21:23:44:WARNING:root:Gantry: [0,0,0]
+2021-08-11 21:23:44:WARNING:root:Start to run Template_1002...
+2021-08-11 21:23:44:WARNING:root:Search oframe
+2021-08-11 21:23:44:WARNING:root:Scan: pY1=[0,75,0]
+2021-08-11 21:28:28:WARNING:root:Modules are saved
+2021-08-11 21:28:28:WARNING:root:Job Weld: 1/1 - 1002
+2021-08-11 21:28:28:WARNING:root:Pos: [0,0,0]
+2021-08-11 21:28:28:WARNING:root:Gantry: [0,0,0]
+2021-08-11 21:28:28:WARNING:root:Start to run Template_1002...
+2021-08-11 21:28:28:WARNING:root:Search oframe
+2021-08-11 21:28:28:WARNING:root:Scan: pY1=[0,75,0]
+2021-08-11 21:28:52:WARNING:root:Found: [0,75,0]
+2021-08-11 21:28:52:WARNING:root:Scan: pY2=[0,200,0]
+2021-08-11 21:28:55:WARNING:root:Found: [0,200,0]
+2021-08-11 21:30:00:WARNING:root:Modules are saved
+2021-08-11 21:30:00:WARNING:root:Job Weld: 1/1 - 1002
+2021-08-11 21:30:00:WARNING:root:Pos: [0,0,0]
+2021-08-11 21:30:00:WARNING:root:Gantry: [0,0,0]
+2021-08-11 21:30:00:WARNING:root:Start to run Template_1002...
+2021-08-11 21:30:00:WARNING:root:Search oframe
+2021-08-11 21:30:00:WARNING:root:Scan: pY1=[0,75,0]
+2021-08-11 21:30:12:WARNING:root:Found: pY1_Found=[0,75,0]
+2021-08-11 21:30:12:WARNING:root:Scan: pY2=[0,200,0]
+2021-08-11 21:30:15:WARNING:root:Found: pY2_Found=[0,200,0]
+2021-08-11 21:30:20:WARNING:root:Scan: pX1=[-75,0,0]
+2021-08-11 21:30:30:WARNING:root:Found: pX1_Found=[-75,0,0]
+2021-08-11 21:30:35:WARNING:root:Scan: pZ1=[0,0,250]
+2021-08-11 21:30:44:WARNING:root:Found: pZ1_Found=[0,0,250]
+2021-08-11 21:30:45:WARNING:root:Scan: pZ2=[0,0,50]
+2021-08-11 21:31:04:WARNING:root:Found: pZ2_Found=[0,0,50]
+2021-08-11 21:31:05:WARNING:root:poseFrame.trans:=[0,0,0]
+2021-08-11 21:31:05:WARNING:root:poseFrame.rot:=[90,0,0]
+2021-08-11 21:31:05:WARNING:root:oframe.trans:=[0,0,0]
+2021-08-11 21:31:05:WARNING:root:oframe.rot:=[0,0,0]
+2021-08-11 21:31:08:WARNING:root:Scan: pSearchSeam1_1=[-75,0,0]
+2021-08-11 21:31:18:WARNING:root:Found: pSeamFound1_1=[-75,0,0]
+2021-08-11 21:31:18:WARNING:root:Scan: pSearchSeam1_2=[-75,0,0]
+2021-08-11 21:31:19:WARNING:root:Found: pSeamFound1_2=[-75,0,0]
+2021-08-11 21:32:50:WARNING:root:Modules are saved
+2021-08-11 21:32:50:WARNING:root:Job Weld: 1/1 - 1002
+2021-08-11 21:32:50:WARNING:root:Pos: [0,0,0]
+2021-08-11 21:32:50:WARNING:root:Gantry: [0,0,0]
+2021-08-11 21:32:50:WARNING:root:Start to run Template_1002...
+2021-08-11 21:32:50:WARNING:root:Search oframe
+2021-08-11 21:32:50:WARNING:root:Scan: pY1=[0,75,0]
+2021-08-11 21:33:02:WARNING:root:Found: pY1_Found=[0,75,0]
+2021-08-11 21:33:02:WARNING:root:Scan: pY2=[0,200,0]
+2021-08-11 21:33:06:WARNING:root:Found: pY2_Found=[0,200,0]
+2021-08-11 21:33:11:WARNING:root:Scan: pX1=[-75,0,0]
+2021-08-11 21:33:21:WARNING:root:Found: pX1_Found=[-75,0,0]
+2021-08-11 21:33:25:WARNING:root:Scan: pZ1=[0,0,50]
+2021-08-11 21:33:35:WARNING:root:Found: pZ1_Found=[0,0,50]
+2021-08-11 21:33:37:WARNING:root:Scan: pZ2=[0,0,250]
+2021-08-11 21:33:45:WARNING:root:Found: pZ2_Found=[0,0,250]
+2021-08-11 21:33:45:WARNING:root:poseFrame.trans:=[0,0,0]
+2021-08-11 21:33:45:WARNING:root:poseFrame.rot:=[90,0,0]
+2021-08-11 21:33:45:WARNING:root:oframe.trans:=[0,0,0]
+2021-08-11 21:33:45:WARNING:root:oframe.rot:=[0,0,0]
+2021-08-11 21:33:49:WARNING:root:Scan: pSearchSeam1_1=[-75,0,0]
+2021-08-11 21:33:58:WARNING:root:Found: pSeamFound1_1=[-75,0,0]
+2021-08-11 21:33:58:WARNING:root:Scan: pSearchSeam1_2=[-75,0,0]
+2021-08-11 21:34:00:WARNING:root:Found: pSeamFound1_2=[-75,0,0]

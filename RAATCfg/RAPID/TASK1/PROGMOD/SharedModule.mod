@@ -15,7 +15,7 @@ MODULE SharedModule(NOSTEPIN)
 
     PERS bool boolDebugMode:=FALSE;
     PERS bool boolEnableOffset:=FALSE;
-    PERS bool boolEnableGantryOffset:=FALSE;
+    PERS bool boolEnableGantryOffset:=TRUE;
     PERS bool boolEnableSearch:=TRUE;
     PERS bool boolDebugSearch:=TRUE;
 
@@ -71,18 +71,18 @@ MODULE SharedModule(NOSTEPIN)
     ENDPROC
 
     PROC ScanSeamByLaser(INOUT robtarget ScanFound,robtarget ScanPoint,ScanData JointData,speeddata Speed,PERS tooldata Tool\PERS wobjdata WObj)
-        Logging "Scan:"+ValToStr(ScanPoint.trans);
+        Logging "Scan: "+ArgName(ScanPoint)+"="+ValToStr(ScanPoint.trans);
         MoveJ ScanPoint,speedAproach,fine,Tool\WObj?WObj;
         WaitTime numWaitTimeForLaser/2;
         IF RobOS() THEN
             SeamFind JointData.joint_no\FoundPoint:=ScanFound,ScanPoint,speedAproach,js1,SenSch1,Tool\WObj?WObj;
         ELSE
             IF boolDebugSearch THEN
-                  TPReadFK reg1, "Press Continue for simulating laser sensor", stEmpty, stEmpty, stEmpty, stEmpty, "Continueo";
+                UIMsgBox\Header:="Simulation Laser Sensor","Use scan point for found point"\MsgLine3:="Press OK to continue"\Buttons:=btnOK \Icon:=iconWarning;
             ENDIF
             ScanFound:=ScanPoint;
         ENDIF
-        Logging "Found:"+ValToStr(ScanFound.trans);
+        Logging "Found: "+ArgName(ScanFound)+"="+ValToStr(ScanFound.trans);
     ENDPROC
 
     FUNC extjoint GetExtOffset(pos posOrigin)
