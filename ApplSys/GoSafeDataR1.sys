@@ -1,0 +1,77 @@
+%%%
+   VERSION: 1
+   LANGUAGE: ENGLISH
+%%%
+
+MODULE GoSafeData(SYSMODULE,NOSTEPIN)
+  !---------------------------------------------------------------------------!
+  !
+  ! (c) ABB
+  !
+  !---------------------------------------------------------------------------!
+  !
+  ! Module:       GoSafeData.sys
+  !
+  ! Written by:   Stefan Öhrn
+  !
+  ! Description:  data/init for home joint rob1, one position.
+  !
+  ! Procedures:
+  !
+  ! Functions:
+  !
+  ! Created:      2004-10-04
+  !
+  ! Version:
+  !  BUILD REV  = 155
+  !  BUILD DATE = 2007/06/29 10:56:18
+  !
+  ! History:      1.0.0
+  !                 First release
+  !               1.1
+  !                 2005-04-27 SÖ
+  !                 Added menus for GAP
+  !               2005-09-21
+  !                Fix if RESTART is executed after POWER_ON
+  !               2005-11-14 SÖ
+  !                Changed InitHomeJoint to match new parameters in HomeJointAdd
+  !               2006-12-21 SÖ
+  !                Added menus and procs for service and park positions. Menus for
+  !                 park/service position commented out.
+  !               2007-01-12 SÖ
+  !                Fix: Wrong text in menus, word robot twice.
+  !               2007-04-17 SÖ
+  !                 Added language support for menus.
+  !               2007-06-29 SÖ
+  !                 Removed menus and proc to separate module.
+  !
+  !---------------------------------------------------------------------------!
+  !
+  CONST identno id_safe1 := 1;
+  !
+  VAR syncident sync_safe_1;
+  VAR syncident sync_safe_2;
+  VAR syncident sync_safe_3;
+  !
+  TASK PERS home_joint_data ROB1_1_HomeData:=[[[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],FALSE,
+                                              [[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],FALSE,
+                                              [[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],FALSE];
+  LOCAL VAR bool homeJointInit:=FALSE;
+  !
+  PROC InitHomeJoint()
+    VAR jointtarget jRange:=[[2,2,2,2,2,2],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    VAR num nZoneSphRadius:=100;
+    VAR num nHomeCompNo;
+    VAR bool bStatus;
+
+    IF (homeJointInit) RETURN;
+    bSafeMutex:=FALSE;
+    HomeJointAdd 1,ROB1_1_HomeData,"soAtSafeR1_1"\SafeRange:=jRange\ParkSignal:="soAtParkR1_1"\ParkRange:=jRange\ServiceSignal:="soAtServiceR1_1"\ServRange:=jRange\HomeCompNo:=nHomeCompNo\Status:=bStatus;
+    homeJointInit:=TRUE;
+  ENDPROC
+
+  PROC HomeJointPwrOn()
+    ! reset flag if RESTART is executed after power on
+    homeJointInit:=FALSE;
+  ENDPROC
+ENDMODULE

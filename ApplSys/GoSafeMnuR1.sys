@@ -1,0 +1,129 @@
+%%%
+   VERSION: 1
+   LANGUAGE: ENGLISH
+%%%
+
+MODULE GoSafeMnu(SYSMODULE,NOSTEPIN)
+  !---------------------------------------------------------------------------!
+  !
+  ! (c) ABB
+  !
+  !---------------------------------------------------------------------------!
+  !
+  ! Module:       GoSafeMnu.sys
+  !
+  ! Written by:   Stefan Öhrn
+  !
+  ! Description:  Menus for home joint, one position.
+  !
+  ! Procedures:
+  !
+  ! Functions:
+  !
+  ! Created:      2007-06-29
+  !
+  ! Version:
+  !  BUILD REV  = 155
+  !  BUILD DATE = 2007/06/29 10:56:18
+  !
+  ! History:      2007-06-29 SÖ
+  !                 First release
+  !
+  !---------------------------------------------------------------------------!
+  !
+  CONST ee_event peGoSafeData:=[EE_START,"GoSafeMnu:ChangeMenuLang","",255,255];
+  !
+  !service menu(s) safe homejoint
+  TASK PERS menudata mdRobMoveSync:=["Move robot to sync position","GapIRB140Icon.gif","MoveRobSyncPos",255,"",255,TRUE,2,0,FALSE,0];
+  TASK PERS menudata mdRobSafe1:=["Move robot to safe position 1","GapIRB140Icon.gif","CheckSafePos1",255,"",255,TRUE,2,0,FALSE,0];
+  !
+  !TASK PERS menudata mdRobService1:=["Move robot to service position 1","GapIRB140Icon.gif","CheckServicePos1",255,"",255,TRUE,2,0,FALSE,0];
+  !
+  !TASK PERS menudata mdRobPark1:=["Move robot to park position 1","GapIRB140Icon.gif","CheckParkPos1",255,"",255,TRUE,2,0,FALSE,0];
+  !setup menu(s) safe homejoint
+  TASK PERS menudata mdRobSetSafe1:=["Set/Change robot safe position 1","GapIRB140Icon.gif","SetSafePos1",255,"",255,TRUE,1,0,FALSE,0];
+  !
+  !TASK PERS menudata mdRobSetServ1:=["Set/Change robot service position 1","GapIRB140Icon.gif","SetServicePos1",255,"",255,TRUE,1,0,FALSE,0];
+  !
+  !TASK PERS menudata mdRobSetPark1:=["Set/Change robot park position 1","GapIRB140Icon.gif","SetParkPos1",255,"",255,TRUE,1,0,FALSE,0];
+  !
+
+  LOCAL PROC ChangeMenuLang(\switch dummy)
+    VAR num text_res_no;
+    text_res_no:=TextTabGet("CellText");
+    mdRobMoveSync.description:=TextGet(text_res_no,35);
+    mdRobSafe1.description:=TextGet(text_res_no,36);
+    !mdRobService1.description:=TextGet(text_res_no,41);
+    !mdRobPark1.description:=TextGet(text_res_no,46);
+
+    mdRobSetSafe1.description:=TextGet(text_res_no,51);
+    !mdRobSetServ1.description:=TextGet(text_res_no,56);
+    !mdRobSetPark1.description:=TextGet(text_res_no,61);
+  ENDPROC
+
+  PROC CheckSafePos1()
+    VAR num nAtPos;
+
+    nAtPos:=RobAtHomepos();
+    IF (nAtPos<>1 AND nAtPos>0) THEN
+      CheckSafePos nAtPos;
+    ENDIF
+    CheckSafePos 1;
+  ENDPROC
+
+  PROC CheckServicePos1()
+    VAR num nAtPos;
+
+    nAtPos:=RobAtHomepos();
+    IF (nAtPos<>1 AND nAtPos>0) THEN
+      CheckServicePos nAtPos;
+    ENDIF
+    CheckServicePos 1;
+  ENDPROC
+
+  PROC CheckParkPos1()
+    VAR num nAtPos;
+
+    nAtPos:=RobAtHomepos();
+    IF (nAtPos<>1 AND nAtPos>0) THEN
+      CheckParkPos nAtPos;
+    ENDIF
+    CheckParkPos 1;
+  ENDPROC
+
+  PROC SetSafePos1()
+    VAR bool bValid;
+    VAR bool bRet;
+
+    bRet:=AtSafePos(1\Valid:=bValid);
+    IF (bValid) THEN
+      SetSafePos 1\Cancel;
+    ELSE
+      SetSafePos 1;
+    ENDIF
+  ENDPROC
+
+  PROC SetServicePos1()
+    VAR bool bValid;
+    VAR bool bRet;
+
+    bRet:=AtServPos(1\Valid:=bValid);
+    IF (bValid) THEN
+      SetServicePos 1\Cancel;
+    ELSE
+      SetServicePos 1;
+    ENDIF
+  ENDPROC
+
+  PROC SetParkPos1()
+    VAR bool bValid;
+    VAR bool bRet;
+
+    bRet:=AtParkPos(1\Valid:=bValid);
+    IF (bValid) THEN
+      SetParkPos 1\Cancel;
+    ELSE
+      SetParkPos 1;
+    ENDIF
+  ENDPROC
+ENDMODULE

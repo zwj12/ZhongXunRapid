@@ -1,0 +1,34 @@
+---------------------
+140-107895
+Calibration performed 2021-06-02 11:54:48by calibration pendulum
+Resolver offsets before calibration:
+Axis_1 cal_offset 4.5957
+Axis_2 cal_offset 0.3299
+Axis_3 cal_offset 0.0094
+Axis_4 cal_offset 3.5916
+Axis_5 cal_offset 6.0784
+Axis_6 cal_offset 0.8401
+Resolver offsets after calibration:
+Axis_1 cal_offset 3.6533
+Axis_2 cal_offset 6.1214
+Axis_3 cal_offset 0.2326
+Axis_4 cal_offset 3.5148
+Axis_5 cal_offset 0.1451
+Axis_6 cal_offset 0.8601
+---------------------
+140-107895
+Calibration performed 2021-06-02 12:02:24by calibration pendulum
+Resolver offsets before calibration:
+Axis_1 cal_offset 3.6533
+Axis_2 cal_offset 6.1214
+Axis_3 cal_offset 0.2326
+Axis_4 cal_offset 3.5148
+Axis_5 cal_offset 0.1451
+Axis_6 cal_offset 0.8601
+Resolver offsets after calibration:
+Axis_1 cal_offset 3.6543
+Axis_2 cal_offset 6.1259
+Axis_3 cal_offset 0.2372
+Axis_4 cal_offset 3.5141
+Axis_5 cal_offset 0.1425
+Axis_6 cal_offset 0.8423

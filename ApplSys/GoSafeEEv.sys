@@ -1,0 +1,195 @@
+%%%
+   VERSION: 1
+   LANGUAGE: ENGLISH
+%%%
+
+MODULE GoSafeEEv(SYSMODULE,NOSTEPIN)
+  !---------------------------------------------------------------------------!
+  !
+  ! (c) ABB
+  !
+  !---------------------------------------------------------------------------!
+  !
+  ! Module:       GoSafeEEv.sys
+  !
+  ! Written by:   Stefan Öhrn
+  !
+  ! Description:  Handles GAP event for robots safe pos during production.
+  !
+  ! Procedures:
+  !
+  ! Functions:
+  !
+  ! Created:
+  !
+  ! Version:
+  !  BUILD REV  = 216
+  !  BUILD DATE = 2009/01/28 15:47:53
+  !
+  ! History:      1.0.0
+  !                 First release
+  !               2006-12-22 SÖ
+  !                Added event to EE_START, moving to safe with switch PromptMove.
+  !               2007-01-02 SÖ
+  !                Added event hooks for use of park pos instead of safe pos,
+  !                data commented out. Remove comment for use.
+  !               2007-10-03 SÖ
+  !                Changed order of ee_event peMoveSafePostPa to be sure it
+  !                 executes after deact of stations.
+  !               2007-12-06 SÖ
+  !                 Changed order of proc calls, call StnIndGetIndex before RobAtHomepos
+  !                   due to new param to proc RobAtHomepos.
+  !               2008-03-20 SÖ
+  !                 Fixed proc MoveParkProd, did not work with multiple B/C/D/K/R.
+  !               2009-01-28 SÖ
+  !                 Added event peMoveParkPrePro(EE_PRE_PROD) to use when park position
+  !                  is used and robot is on track.
+  !               2011-06-29 SÖ
+  !                 Changed sort order on event peMoveParkStart and peMoveSafePostPr.
+  !                 Added event for EE_ABORT to move to safe.
+  !
+  !---------------------------------------------------------------------------!
+  !
+  ! move robot to safe/park when pmgr start, select by move comment.
+  CONST ee_event peMoveSafeStart:=[EE_START,"GoSafeEEv:MoveSafeStart","",1,255];
+  !CONST ee_event peMoveParkStart:=[EE_START,"GoSafeEEv:MoveParkStart","",1,255];
+  ! move robot to safe when production start
+  ! move robot to park before move to safe, select by move comment.
+  !CONST ee_event peMoveParkPrePro:=[EE_PRE_PROD,"GoSafeEEv:MoveParkPreProd","",1,255];
+  CONST ee_event peMoveSafePrePro:=[EE_PRE_PROD,"GoSafeEEv:MoveSafeProd","",2,255];
+  ! move robot to safe just when part finished
+  CONST ee_event peMoveSafePostPa:=[EE_POST_PART,"GoSafeEEv:MoveSafeProd","",125,255];
+  ! move robot to safe/park when production ends, select by move comment.
+  CONST ee_event peMoveSafePostPr:=[EE_POST_PROD,"GoSafeEEv:MoveSafeProd","",254,255];
+  !CONST ee_event peMoveParkPostPr:=[EE_POST_PROD,"GoSafeEEv:MoveParkProd","",255,255];
+  CONST ee_event peMoveAbort:=[EE_ABORT,"GoSafeEEv:MoveAbort","",255,255];
+  !
+  LOCAL PROC MoveAbort()
+    MoveSafeProd;
+    !MoveParkProd;
+  ENDPROC
+
+  LOCAL PROC MoveSafeStart()
+    VAR num nAtPos;
+    VAR num nToPos;
+    VAR num nAtStn;
+
+    nAtStn:=AtStation();
+    IF (NOT IsPMgrStnValid(nAtStn)) nAtStn:=GetFirstPMgrStn();
+    IF (nAtStn>0) THEN
+      nToPos:=StnIndGetIndex(nAtStn);
+      IF (nToPos<>0) THEN
+        nAtPos:=RobAtHomepos(\PrefHomePos:=nToPos);
+        IF (nAtPos<>nToPos) THEN
+          CheckSafePos nAtPos\PromptMove;
+        ENDIF
+        CheckSafePos nToPos\PromptMove;
+      ELSE
+        ! not valid position
+        Stop;
+      ENDIF
+    ELSE
+      ! not valid station
+    ENDIF
+  ENDPROC
+
+  LOCAL PROC MoveParkStart()
+    VAR num nAtPos;
+    VAR num nToPos;
+    VAR num nAtStn;
+
+    nAtStn:=AtStation();
+    IF (NOT IsPMgrStnValid(nAtStn)) nAtStn:=GetFirstPMgrStn();
+    IF (nAtStn>0) THEN
+      nToPos:=StnIndGetIndex(nAtStn);
+      IF (nToPos<>0) THEN
+        nAtPos:=RobAtHomepos(\PrefHomePos:=nToPos);
+        IF (nAtPos<>nToPos) THEN
+          CheckParkPos nAtPos\PromptMove;
+        ENDIF
+        CheckParkPos nToPos\PromptMove;
+      ELSE
+        ! not valid position
+        Stop;
+      ENDIF
+    ELSE
+      ! not valid station
+      Stop;
+    ENDIF
+  ENDPROC
+
+  LOCAL PROC MoveSafeProd()
+    VAR num nAtPos;
+    VAR num nToPos;
+    VAR num nToStn;
+
+    nToStn:=NextStation();
+    IF (NOT IsPMgrStnValid(nToStn)) nToStn:=0;
+    IF (nToStn>0) then
+      nToPos:=StnIndGetIndex(nToStn);
+      IF (nToPos<>0) THEN
+        nAtPos:=RobAtHomepos(\PrefHomePos:=nToPos);
+        IF (nAtPos<>nToPos) THEN
+          IF (OpMode()<>OP_AUTO) TPWrite "Moving to safe for position "+ValToStr(nAtPos);
+          CheckSafePos nAtPos;
+        ENDIF
+        IF (OpMode()<>OP_AUTO) TPWrite "Moving to safe for position "+ValToStr(nToPos);
+        CheckSafePos nToPos;
+      ELSE
+        ! not valid position
+        Stop;
+      ENDIF
+    ELSE
+      ! not valid station
+      Stop;
+    ENDIF
+  ENDPROC
+
+  LOCAL PROC MoveParkPreProd()
+    VAR num nAtPos;
+    VAR num nToPos;
+    VAR num nToStn;
+
+    nToStn:=NextStation();
+    IF (NOT IsPMgrStnValid(nToStn)) nToStn:=0;
+    IF (nToStn>0) then
+      nToPos:=StnIndGetIndex(nToStn);
+      IF (nToPos<>0) THEN
+        nAtPos:=RobAtHomepos(\PrefHomePos:=nToPos);
+        IF (nAtPos<>nToPos) THEN
+          IF (OpMode()<>OP_AUTO) TPWrite "Moving to park for position "+ValToStr(nAtPos);
+          CheckParkPos nAtPos;
+        ENDIF
+        IF (OpMode()<>OP_AUTO) TPWrite "Moving to park for position "+ValToStr(nToPos);
+        CheckParkPos nToPos;
+      ELSE
+        ! not valid position
+        Stop;
+      ENDIF
+    ELSE
+      ! not valid station
+      Stop;
+    ENDIF
+  ENDPROC
+
+  LOCAL PROC MoveParkProd()
+    VAR num nAtStn;
+    VAR num nAtPos;
+
+    nAtStn:=AtStation();
+    IF (NOT IsPMgrStnValid(nAtStn)) nAtStn:=0;      
+    IF (nAtStn>0) THEN
+      nAtPos:=StnIndGetIndex(nAtStn);
+      IF (nAtPos<>0) THEN
+        IF (OpMode()<>OP_AUTO) TPWrite "Moving to park for position "+ValToStr(nAtPos);
+        CheckParkPos nAtPos;
+      ELSE
+        ! not valid position
+        Stop;
+      ENDIF
+    ELSE
+      ! not valid station
+      Stop;
+    ENDIF
+  ENDPROC
+ENDMODULE

@@ -1,0 +1,130 @@
+2021-08-11 12:56:02:WARNING:root:Select Quadrant2
+2021-08-11 12:56:07:WARNING:root:Use Gantry Offset: [-500,500,-1200]
+2021-08-11 12:56:07:WARNING:root:BaseFramePosZ=1680
+2021-08-11 12:56:07:WARNING:root:Move Gantry to [-500,500,456]
+2021-08-11 13:47:15:WARNING:root:Select Quadrant3
+2021-08-11 13:47:17:WARNING:root:Use Gantry Offset: [-500,-500,-1200]
+2021-08-11 13:47:17:WARNING:root:BaseFramePosZ=1680
+2021-08-11 13:47:17:WARNING:root:Move Gantry to [-500,-500,456]
+2021-08-11 14:12:36:WARNING:root:Select Quadrant3
+2021-08-11 14:12:52:WARNING:root:New Gantry Offset Z: -1600
+2021-08-11 14:12:54:WARNING:root:Use Gantry Offset: [-500,-500,-1600]
+2021-08-11 14:12:54:WARNING:root:BaseFramePosZ=1680
+2021-08-11 14:12:54:WARNING:root:Move Gantry to [-500,-500,56]
+2021-08-11 14:15:18:WARNING:root:Select Quadrant3
+2021-08-11 14:15:27:WARNING:root:New Gantry Offset Z: -1600
+2021-08-11 14:15:33:WARNING:root:New Gantry Offset Y: 0
+2021-08-11 14:15:34:WARNING:root:Use Gantry Offset: [-500,0,-1600]
+2021-08-11 14:15:34:WARNING:root:BaseFramePosZ=1680
+2021-08-11 14:15:34:WARNING:root:Move Gantry to [-500,0,56]
+2021-08-11 14:19:57:WARNING:root:Select Quadrant3
+2021-08-11 14:20:08:WARNING:root:New Gantry Offset Z: -1600
+2021-08-11 14:20:12:WARNING:root:New Gantry Offset Y: 0
+2021-08-11 14:20:19:WARNING:root:New Gantry Offset X: -800
+2021-08-11 14:20:20:WARNING:root:Use Gantry Offset: [-800,0,-1600]
+2021-08-11 14:20:20:WARNING:root:BaseFramePosZ=1680
+2021-08-11 14:20:20:WARNING:root:Move Gantry to [-800,0,56]
+2021-08-11 14:21:49:WARNING:root:Select Quadrant3
+2021-08-11 14:21:56:WARNING:root:New Gantry Offset Z: -1600
+2021-08-11 14:22:00:WARNING:root:New Gantry Offset Y: 0
+2021-08-11 14:22:02:WARNING:root:Use Gantry Offset: [-500,0,-1600]
+2021-08-11 14:22:02:WARNING:root:BaseFramePosZ=1680
+2021-08-11 14:22:02:WARNING:root:Move Gantry to [-500,0,56]
+2021-08-11 14:24:17:WARNING:root:Select Quadrant3
+2021-08-11 14:24:23:WARNING:root:New Gantry Offset Z: -1600
+2021-08-11 14:24:24:WARNING:root:Use Gantry Offset: [-500,-500,-1600]
+2021-08-11 14:24:24:WARNING:root:BaseFramePosZ=1680
+2021-08-11 14:24:24:WARNING:root:Move Gantry to [-500,-500,56]
+2021-08-11 14:31:23:WARNING:root:Select Quadrant2
+2021-08-11 14:31:25:WARNING:root:Use Gantry Offset: [-500,500,-1200]
+2021-08-11 14:31:25:WARNING:root:BaseFramePosZ=1680
+2021-08-11 14:31:25:WARNING:root:Move Gantry to [-500,500,456]
+2021-08-11 14:31:50:WARNING:root:Select Quadrant2
+2021-08-11 14:31:52:WARNING:root:Use Gantry Offset: [-500,500,-1200]
+2021-08-11 14:31:52:WARNING:root:BaseFramePosZ=1680
+2021-08-11 14:31:53:WARNING:root:Move Gantry to [-500,500,456]
+2021-08-11 14:33:39:WARNING:root:Select Quadrant2
+2021-08-11 14:33:41:WARNING:root:Use Gantry Offset: [-500,500,-1200]
+2021-08-11 14:33:41:WARNING:root:BaseFramePosZ=1680
+2021-08-11 14:33:41:WARNING:root:Move Gantry to [-500,500,456]
+2021-08-11 14:33:55:WARNING:root:Select Quadrant4
+2021-08-11 14:33:57:WARNING:root:Use Gantry Offset: [500,-500,-1200]
+2021-08-11 14:33:57:WARNING:root:BaseFramePosZ=1680
+2021-08-11 14:33:57:WARNING:root:Move Gantry to [500,-500,456]
+2021-08-11 14:34:06:WARNING:root:Select Quadrant2
+2021-08-11 14:34:08:WARNING:root:Use Gantry Offset: [-500,500,-1200]
+2021-08-11 14:34:08:WARNING:root:BaseFramePosZ=1680
+2021-08-11 14:34:08:WARNING:root:Move Gantry to [-500,500,456]
+2021-08-11 14:36:18:WARNING:root:Select Quadrant2
+2021-08-11 14:36:20:WARNING:root:Use Gantry Offset: [-500,500,-1200]
+2021-08-11 14:36:20:WARNING:root:BaseFramePosZ=1680
+2021-08-11 14:36:20:WARNING:root:Move Gantry to [-500,500,456]
+2021-08-11 14:39:29:WARNING:root:Select Quadrant2
+2021-08-11 14:39:30:WARNING:root:Use Gantry Offset: [-500,500,-1200]
+2021-08-11 14:39:30:WARNING:root:BaseFramePosZ=1680
+2021-08-11 14:39:30:WARNING:root:Move Gantry to [-500,500,456]
+2021-08-11 15:04:29:WARNING:root:Scan_1D_Laser for oframe
+2021-08-11 15:19:18:WARNING:root:Scan_1D_Laser for oframe
+2021-08-11 15:22:47:WARNING:root:Scan_1D_Laser for oframe
+2021-08-11 15:47:15:WARNING:root:Scan_1D_Laser for oframe
+2021-08-11 15:57:37:WARNING:root:Scan_1D_Laser for oframe
+2021-08-11 16:04:24:WARNING:root:poseFrame.trans:=[0,0,0]
+2021-08-11 16:04:33:WARNING:root:poseFrame.rot:=[90,0,0]
+2021-08-11 16:04:44:WARNING:root:oframe.trans:=[0,0,0]
+2021-08-11 16:04:50:WARNING:root:oframe.rot:=[0,0,0]
+2021-08-11 16:08:20:WARNING:root:Scan_1D_Laser for oframe
+2021-08-11 16:11:28:WARNING:root:Scan_1D_Laser for oframe
+2021-08-11 16:24:33:WARNING:root:BaseFramePosZ=1680
+2021-08-11 16:24:33:WARNING:root:BaseFramePosZ=1680
+2021-08-11 16:24:33:WARNING:root:BaseFramePosZ=1680
+2021-08-11 16:24:33:WARNING:root:BaseFramePosZ=1680
+2021-08-11 16:26:15:WARNING:root:BaseFramePosZ=1680
+2021-08-11 16:26:15:WARNING:root:BaseFramePosZ=1680
+2021-08-11 16:26:15:WARNING:root:BaseFramePosZ=1680
+2021-08-11 16:26:15:WARNING:root:BaseFramePosZ=1680
+2021-08-11 16:26:35:WARNING:root:BaseFramePosZ=1680
+2021-08-11 16:26:35:WARNING:root:BaseFramePosZ=1680
+2021-08-11 16:26:35:WARNING:root:BaseFramePosZ=1680
+2021-08-11 16:26:35:WARNING:root:BaseFramePosZ=1680
+2021-08-11 16:28:31:WARNING:root:Scan_1D_Laser for oframe
+2021-08-11 16:29:57:WARNING:root:Scan_1D_Laser for oframe
+2021-08-11 16:42:50:WARNING:root:Scan_1D_Laser for oframe
+2021-08-11 16:43:27:WARNING:root:Scan_1D_Laser for oframe
+2021-08-11 16:45:18:WARNING:root:Scan_1D_Laser for oframe
+2021-08-11 16:46:53:WARNING:root:Scan_1D_Laser for oframe
+2021-08-11 16:47:07:WARNING:root:poseFrame.trans:=[0,0,0]
+2021-08-11 16:47:07:WARNING:root:poseFrame.rot:=[90,0,0]
+2021-08-11 16:47:07:WARNING:root:oframe.trans:=[0,0,0]
+2021-08-11 16:47:07:WARNING:root:oframe.rot:=[0,0,0]
+2021-08-11 16:47:53:WARNING:root:Scan_1D_Laser for oframe
+2021-08-11 16:48:16:WARNING:root:poseFrame.trans:=[0,0,0]
+2021-08-11 16:48:16:WARNING:root:poseFrame.rot:=[90,0,0]
+2021-08-11 16:48:16:WARNING:root:oframe.trans:=[0,0,0]
+2021-08-11 16:48:16:WARNING:root:oframe.rot:=[0,0,0]
+2021-08-11 16:50:50:WARNING:root:Scan_1D_Laser for oframe
+2021-08-11 16:57:50:WARNING:root:Scan_1D_Laser for oframe
+2021-08-11 16:58:22:WARNING:root:poseFrame.trans:=[0,0,0]
+2021-08-11 16:58:22:WARNING:root:poseFrame.rot:=[90,0,0]
+2021-08-11 16:58:22:WARNING:root:oframe.trans:=[0,0,0]
+2021-08-11 16:58:22:WARNING:root:oframe.rot:=[0,0,0]
+2021-08-11 18:53:14:WARNING:root:Select Quadrant2
+2021-08-11 18:53:17:WARNING:root:Use Gantry Offset: [-800,500,-1200]
+2021-08-11 18:53:17:WARNING:root:BaseFramePosZ=1680
+2021-08-11 18:53:17:WARNING:root:Move Gantry to [-800,500,456]
+2021-08-11 19:18:38:WARNING:root:Select Quadrant2
+2021-08-11 19:18:40:WARNING:root:Use Gantry Offset: [-800,500,-1200]
+2021-08-11 19:18:40:WARNING:root:BaseFramePosZ=1680
+2021-08-11 19:18:40:WARNING:root:Move Gantry to [-800,500,456]
+2021-08-11 19:20:49:WARNING:root:Select Quadrant2
+2021-08-11 19:20:57:WARNING:root:New Gantry Offset Z: -1400
+2021-08-11 19:20:58:WARNING:root:Use Gantry Offset: [-800,500,-1400]
+2021-08-11 19:20:58:WARNING:root:BaseFramePosZ=1680
+2021-08-11 19:20:58:WARNING:root:Move Gantry to [-800,500,256]
+2021-08-11 19:26:20:WARNING:root:Select Quadrant2
+2021-08-11 19:26:22:WARNING:root:Use Gantry Offset: [-800,500,-1200]
+2021-08-11 19:26:22:WARNING:root:BaseFramePosZ=1680
+2021-08-11 19:26:22:WARNING:root:Move Gantry to [-800,500,456]
+2021-08-11 20:52:02:WARNING:root:Scan:[-75,0,0]
+2021-08-11 20:52:07:WARNING:root:Found:[-75,0,0]
+2021-08-11 20:52:15:WARNING:root:Scan:[-75,0,0]
+2021-08-11 20:52:16:WARNING:root:Found:[-75,0,0]

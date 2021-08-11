@@ -1,0 +1,8 @@
+2021-08-10; 18:20:32; Error: Cannot acquire measure in ASFM. Err= 989
+2021-08-10; 18:20:32; Error: ASFMu_GetPoint. Status= -6
+2021-08-10; 18:20:33; Error: Cannot acquire measure in ASFM. Err= 989
+2021-08-10; 18:20:33; Error: ASFMu_GetPoint. Status= -6
+2021-08-10; 18:20:34; Error: Cannot acquire measure in ASFM. Err= 989
+2021-08-10; 18:20:34; Error: ASFMu_GetPoint. Status= -6
+2021-08-10; 18:20:34; Error: Cannot acquire measure in ASFM. Err= 989
+2021-08-10; 18:20:34; Error: ASFMu_GetPoint. Status= -6
