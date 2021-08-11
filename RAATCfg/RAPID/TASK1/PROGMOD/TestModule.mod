@@ -7,6 +7,8 @@ MODULE TestModule
     !Author:      Michael
     !*****************************************************
 
+    !2021-8-11, Michael, Add GetBaseFramePosZ, DepartGantry, modify MoveGanrtyQuadrantByWobjCur
+
     TASK PERS jointtarget jointPlaneXZ:=[[90,-45,45,0,-90,90],[-1997.56,0,-600,9E+09,9E+09,9E+09]];
     PERS robtarget pWobjX1:=[[-1843.85,70.55,208.53],[0.231263,-0.189593,-0.879297,0.370687],[0,0,0,4],[-1810.13,354.262,201.219,9E+09,9E+09,9E+09]];
     PERS robtarget pWobjX2:=[[-1518.46,70.55,208.53],[0.231263,-0.189594,-0.879297,0.370687],[0,0,0,4],[-1484.74,354.262,201.219,9E+09,9E+09,9E+09]];
@@ -16,8 +18,32 @@ MODULE TestModule
     PERS robtarget pWobjY1_Found:=[[-2172.42,347.84,67.22],[0.401347,0.686043,-0.584941,-0.161585],[0,0,-2,4],[-1744.2,354.262,201.219,9E+09,9E+09,9E+09]];
     PERS pose poseFrame:=[[-2165.56,-61.7432,58.4197],[0.999899,0.010774,-0.00407261,0.00832256]];
 
+    PROC DepartGantry(\switch Quadrant1|switch Quadrant2|switch Quadrant3|switch Quadrant4)
+        VAR num numGantryOffsetDirectionX;
+        VAR num numGantryOffsetDirectionY;
+        IF Present(Quadrant1) THEN
+            numGantryOffsetDirectionX:=1;
+            numGantryOffsetDirectionY:=1;
+        ELSEIF Present(Quadrant2) THEN
+            numGantryOffsetDirectionX:=-1;
+            numGantryOffsetDirectionY:=1;
+        ELSEIF Present(Quadrant3) THEN
+            numGantryOffsetDirectionX:=-1;
+            numGantryOffsetDirectionY:=-1;
+        ELSEIF Present(Quadrant4) THEN
+            numGantryOffsetDirectionX:=1;
+            numGantryOffsetDirectionY:=-1;
+        ELSE
+            RETURN ;
+        ENDIF
+        jointCurrent:=CJointT();
+        jointCurrent.extax.eax_a:=jointCurrent.extax.eax_a+extjointGantryDepart.eax_a*numGantryOffsetDirectionX;
+        jointCurrent.extax.eax_b:=jointCurrent.extax.eax_b+extjointGantryDepart.eax_b*numGantryOffsetDirectionY;
+        jointCurrent.extax.eax_c:=jointCurrent.extax.eax_c+extjointGantryDepart.eax_c;
+        MoveAbsJ jointCurrent,speedAir,fine,toolWeldGun\WObj:=wobjCurrent;
+    ENDPROC
+
     PROC MoveGanrtyQuadrantByWobjCur()
-        VAR num numBaseFramePosZ;
         VAR num numQuadrant;
         VAR num numGantryOffsetDirectionX;
         VAR num numGantryOffsetDirectionY;
@@ -46,16 +72,22 @@ MODULE TestModule
         IF extjointGantryOffsetCur.eax_a=9E+9 THEN
             RETURN ;
         ENDIF
-        ReadCfgData "/MOC/ROBOT/GantryXYZ","base_frame_pos_z",numBaseFramePosZ;
-        Logging "BaseFramePosZ="+ValToStr(numBaseFramePosZ*1000);
         jointCurrent:=CJointT();
         jointCurrent.extax.eax_a:=wobjCurrent.uframe.trans.x+extjointGantryOffsetCur.eax_a;
         jointCurrent.extax.eax_b:=wobjCurrent.uframe.trans.y+extjointGantryOffsetCur.eax_b;
-        jointCurrent.extax.eax_c:=numBaseFramePosZ*1000-wobjCurrent.uframe.trans.z+extjointGantryOffsetCur.eax_c;
+        jointCurrent.extax.eax_c:=GetBaseFramePosZ()-wobjCurrent.uframe.trans.z+extjointGantryOffsetCur.eax_c;
         Logging "Move Gantry to ["+ValToStr(jointCurrent.extax.eax_a)+","+ValToStr(jointCurrent.extax.eax_b)+","+ValToStr(jointCurrent.extax.eax_c)+"]";
         MoveAbsJ jointCurrent,speedAir,fine,toolWeldGun\WObj:=wobjCurrent;
 
     ENDPROC
+
+    FUNC num GetBaseFramePosZ()
+        VAR num numBaseFramePosZ;
+        ReadCfgData "/MOC/ROBOT/GantryXYZ","base_frame_pos_z",numBaseFramePosZ;
+        numBaseFramePosZ:=numBaseFramePosZ*1000;
+        Logging "BaseFramePosZ="+ValToStr(numBaseFramePosZ);
+        RETURN numBaseFramePosZ;
+    ENDFUNC
 
     FUNC num GetQuadrant()
         VAR listitem listQuarterData{4}:=[["","Quadrant1"],["","Quadrant2"],["","Quadrant3"],["","Quadrant4"]];
@@ -118,23 +150,38 @@ MODULE TestModule
         MoveAbsJ jointPlaneXZ,speedAir,fine,toolWeldGun\WObj:=wobjCurrent;
     ENDPROC
 
-    PROC SearchWobjOrigin()
-        VAR num numScanJob:=2;
+    PROC SearchWobjOrigin_Quadrant1()
         IF NOT ASFMu_Initialize(Laser_IP_Add,2,TRUE,TRUE,TRUE,toolWeldGun,wobj0) THEN
             TPWrite "The socket between laser and robot error Can't connect to vision controller";
             stop;
         ENDIF
-
-        Logging "Scan_1D_Laser for Wobj Origin";
         MoveJ pWobjX1,speedAproach,fine,toolWeldGun\WObj:=wobj0;
-        SeamFind numScanJob\FoundPoint:=pWobjX1_Found,pWobjX1,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
+        SeamFind numScanJob2\FoundPoint:=pWobjX1_Found,pWobjX1,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
         MoveJ pWobjX2,speedAproach,fine,toolWeldGun\WObj:=wobj0;
-        SeamFind numScanJob\FoundPoint:=pWobjX2_Found,pWobjX2,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
+        SeamFind numScanJob2\FoundPoint:=pWobjX2_Found,pWobjX2,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
         MoveJ pWobjY1,speedAproach,fine,toolWeldGun\WObj:=wobj0;
-        SeamFind numScanJob\FoundPoint:=pWobjY1_Found,pWobjY1,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
+        SeamFind numScanJob2\FoundPoint:=pWobjY1_Found,pWobjY1,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
         poseFrame:=DefFrame(pWobjX1_Found,pWobjX2_Found,pWobjY1_Found\Origin:=3);
         Logging "poseFrame.trans:="+ValToStr(poseFrame.trans);
         Logging "poseFrame.rot:="+GetEulerAngleString(poseFrame.rot);
         wobjCurrent.uframe:=poseFrame;
     ENDPROC
+
+    PROC SearchWobjOrigin_Quadrant2()
+        IF NOT ASFMu_Initialize(Laser_IP_Add,2,TRUE,TRUE,TRUE,toolWeldGun,wobj0) THEN
+            TPWrite "The socket between laser and robot error Can't connect to vision controller";
+            stop;
+        ENDIF
+        MoveJ pWobjX1,speedAproach,fine,toolWeldGun\WObj:=wobj0;
+        SeamFind numScanJob2\FoundPoint:=pWobjX1_Found,pWobjX1,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
+        MoveJ pWobjX2,speedAproach,fine,toolWeldGun\WObj:=wobj0;
+        SeamFind numScanJob2\FoundPoint:=pWobjX2_Found,pWobjX2,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
+        MoveJ pWobjY1,speedAproach,fine,toolWeldGun\WObj:=wobj0;
+        SeamFind numScanJob2\FoundPoint:=pWobjY1_Found,pWobjY1,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
+        poseFrame:=DefFrame(pWobjX1_Found,pWobjX2_Found,pWobjY1_Found\Origin:=3);
+        Logging "poseFrame.trans:="+ValToStr(poseFrame.trans);
+        Logging "poseFrame.rot:="+GetEulerAngleString(poseFrame.rot);
+        wobjCurrent.uframe:=poseFrame;
+    ENDPROC
+    
 ENDMODULE

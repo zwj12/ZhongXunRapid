@@ -1,16 +1,28 @@
-MODULE SharedModule
+MODULE SharedModule(NOSTEPIN)
     !*****************************************************
     !Module Name:   SharedModule
     !Version:       1.0
     !Description:   
     !Date:          2021-1-6
     !Author:        Michael
-    !*****************************************************
+    !*****************************************************w
+
+    !2021-8-11, Michael, Add numScanJob1, ScanSeamByLaser, ScanData
+
+    RECORD ScanData
+        num joint_no;
+    ENDRECORD
 
     PERS bool boolDebugMode:=FALSE;
     PERS bool boolEnableOffset:=FALSE;
     PERS bool boolEnableGantryOffset:=FALSE;
-    PERS bool boolEnableSearch:=FALSE;
+    PERS bool boolEnableSearch:=TRUE;
+    PERS bool boolDebugSearch:=TRUE;
+
+    CONST num numScanJob1:=1;
+    CONST num numScanJob2:=2;
+    CONST ScanData scanJoint1:=[1];
+    CONST ScanData scanJoint2:=[2];
 
     !numJobMode: 0 - Keep last, 1 - by TPU, 2 - by yml, 3 - by PLC
     PERS num numJobMode:=1;
@@ -56,6 +68,21 @@ MODULE SharedModule
         ELSE
             ScanFound:=ScanPoint;
         ENDIF
+    ENDPROC
+
+    PROC ScanSeamByLaser(INOUT robtarget ScanFound,robtarget ScanPoint,ScanData JointData,speeddata Speed,PERS tooldata Tool\PERS wobjdata WObj)
+        Logging "Scan:"+ValToStr(ScanPoint.trans);
+        MoveJ ScanPoint,speedAproach,fine,Tool\WObj?WObj;
+        WaitTime numWaitTimeForLaser/2;
+        IF RobOS() THEN
+            SeamFind JointData.joint_no\FoundPoint:=ScanFound,ScanPoint,speedAproach,js1,SenSch1,Tool\WObj?WObj;
+        ELSE
+            IF boolDebugSearch THEN
+                  TPReadFK reg1, "Press Continue for simulating laser sensor", stEmpty, stEmpty, stEmpty, stEmpty, "Continueo";
+            ENDIF
+            ScanFound:=ScanPoint;
+        ENDIF
+        Logging "Found:"+ValToStr(ScanFound.trans);
     ENDPROC
 
     FUNC extjoint GetExtOffset(pos posOrigin)
