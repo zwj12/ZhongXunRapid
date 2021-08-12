@@ -62,12 +62,22 @@ MODULE TestModule
         CASE 4:
             numGantryOffsetDirectionX:=1;
             numGantryOffsetDirectionY:=-1;
+        CASE 5:
+            numGantryOffsetDirectionX:=1;
+            numGantryOffsetDirectionY:=1;
+        CASE 6:
+            numGantryOffsetDirectionX:=-1;
+            numGantryOffsetDirectionY:=1;
         DEFAULT:
             RETURN ;
         ENDTEST
         extjointGantryOffsetCur.eax_a:=extjointGantryOffset.eax_a*numGantryOffsetDirectionX;
         extjointGantryOffsetCur.eax_b:=extjointGantryOffset.eax_b*numGantryOffsetDirectionY;
-        extjointGantryOffsetCur.eax_c:=extjointGantryOffset.eax_c;
+        IF numQuadrant=5 OR numQuadrant=6 THEN
+            extjointGantryOffsetCur.eax_c:=extjointGantryOffset.eax_c-300;
+        ELSE
+            extjointGantryOffsetCur.eax_c:=extjointGantryOffset.eax_c;
+        ENDIF
         extjointGantryOffsetCur:=GetQuadrantGantryOffset(extjointGantryOffsetCur);
         IF extjointGantryOffsetCur.eax_a=9E+9 THEN
             RETURN ;
@@ -90,7 +100,7 @@ MODULE TestModule
     ENDFUNC
 
     FUNC num GetQuadrant()
-        VAR listitem listQuarterData{4}:=[["","Quadrant1"],["","Quadrant2"],["","Quadrant3"],["","Quadrant4"]];
+        VAR listitem listQuarterData{6}:=[["","Quadrant1"],["","Quadrant2"],["","Quadrant3"],["","Quadrant4"],["","Quadrant14"],["","Quadrant23"]];
         VAR num list_item;
         VAR btnres button_answer;
         list_item:=UIListView(\Result:=button_answer\Header:="Select Quadrant",listQuarterData\Buttons:=btnOKCancel\Icon:=iconInfo\DefaultIndex:=1);
@@ -156,11 +166,11 @@ MODULE TestModule
             stop;
         ENDIF
         MoveJ pWobjX1,speedAproach,fine,toolWeldGun\WObj:=wobj0;
-        SeamFind numScanJob2\FoundPoint:=pWobjX1_Found,pWobjX1,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
+        SeamFind scanJoint2.joint_no\FoundPoint:=pWobjX1_Found,pWobjX1,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
         MoveJ pWobjX2,speedAproach,fine,toolWeldGun\WObj:=wobj0;
-        SeamFind numScanJob2\FoundPoint:=pWobjX2_Found,pWobjX2,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
+        SeamFind scanJoint2.joint_no\FoundPoint:=pWobjX2_Found,pWobjX2,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
         MoveJ pWobjY1,speedAproach,fine,toolWeldGun\WObj:=wobj0;
-        SeamFind numScanJob2\FoundPoint:=pWobjY1_Found,pWobjY1,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
+        SeamFind scanJoint2.joint_no\FoundPoint:=pWobjY1_Found,pWobjY1,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
         poseFrame:=DefFrame(pWobjX1_Found,pWobjX2_Found,pWobjY1_Found\Origin:=3);
         Logging "poseFrame.trans:="+ValToStr(poseFrame.trans);
         Logging "poseFrame.rot:="+GetEulerAngleString(poseFrame.rot);
@@ -173,15 +183,15 @@ MODULE TestModule
             stop;
         ENDIF
         MoveJ pWobjX1,speedAproach,fine,toolWeldGun\WObj:=wobj0;
-        SeamFind numScanJob2\FoundPoint:=pWobjX1_Found,pWobjX1,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
+        SeamFind scanJoint2.joint_no\FoundPoint:=pWobjX1_Found,pWobjX1,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
         MoveJ pWobjX2,speedAproach,fine,toolWeldGun\WObj:=wobj0;
-        SeamFind numScanJob2\FoundPoint:=pWobjX2_Found,pWobjX2,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
+        SeamFind scanJoint2.joint_no\FoundPoint:=pWobjX2_Found,pWobjX2,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
         MoveJ pWobjY1,speedAproach,fine,toolWeldGun\WObj:=wobj0;
-        SeamFind numScanJob2\FoundPoint:=pWobjY1_Found,pWobjY1,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
+        SeamFind scanJoint2.joint_no\FoundPoint:=pWobjY1_Found,pWobjY1,speedAproach,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
         poseFrame:=DefFrame(pWobjX1_Found,pWobjX2_Found,pWobjY1_Found\Origin:=3);
         Logging "poseFrame.trans:="+ValToStr(poseFrame.trans);
         Logging "poseFrame.rot:="+GetEulerAngleString(poseFrame.rot);
         wobjCurrent.uframe:=poseFrame;
     ENDPROC
-    
+
 ENDMODULE

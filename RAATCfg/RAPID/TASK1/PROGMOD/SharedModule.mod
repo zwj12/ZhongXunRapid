@@ -19,9 +19,9 @@ MODULE SharedModule(NOSTEPIN)
     PERS bool boolEnableSearch:=TRUE;
     PERS bool boolDebugSearch:=TRUE;
 
-    CONST num numScanJob1:=1;
-    CONST num numScanJob2:=2;
+    !Butt
     CONST ScanData scanJoint1:=[1];
+    !Fillet
     CONST ScanData scanJoint2:=[2];
 
     !numJobMode: 0 - Keep last, 1 - by TPU, 2 - by yml, 3 - by PLC
@@ -33,7 +33,8 @@ MODULE SharedModule(NOSTEPIN)
     PERS num numModelOffsetQuantity:=2;
 
     PERS num numWaitTimeForLaser:=0.5;
-
+    PERS num numAproachRelToolZ:=-50;
+    
     FUNC pos GetEulerAngle(orient orientIn)
         VAR pos eulerAngle;
         eulerAngle.z:=EulerZYX(\Z,orientIn);
