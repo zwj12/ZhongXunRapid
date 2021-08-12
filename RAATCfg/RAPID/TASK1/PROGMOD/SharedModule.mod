@@ -8,16 +8,18 @@ MODULE SharedModule(NOSTEPIN)
     !*****************************************************w
 
     !2021-8-11, Michael, Add numScanJob1, ScanSeamByLaser, ScanData
+    !2021-8-12, Michael, Add GetDropFeet
 
     RECORD ScanData
         num joint_no;
     ENDRECORD
 
     PERS bool boolDebugMode:=FALSE;
-    PERS bool boolEnableOffset:=FALSE;
     PERS bool boolEnableGantryOffset:=TRUE;
     PERS bool boolEnableSearch:=TRUE;
     PERS bool boolDebugSearch:=TRUE;
+
+    PERS bool boolEnableOffset:=FALSE;
 
     !Butt
     CONST ScanData scanJoint1:=[1];
@@ -34,7 +36,7 @@ MODULE SharedModule(NOSTEPIN)
 
     PERS num numWaitTimeForLaser:=0.5;
     PERS num numAproachRelToolZ:=-50;
-    
+
     FUNC pos GetEulerAngle(orient orientIn)
         VAR pos eulerAngle;
         eulerAngle.z:=EulerZYX(\Z,orientIn);
@@ -79,7 +81,7 @@ MODULE SharedModule(NOSTEPIN)
             SeamFind JointData.joint_no\FoundPoint:=ScanFound,ScanPoint,speedAproach,js1,SenSch1,Tool\WObj?WObj;
         ELSE
             IF boolDebugSearch THEN
-                UIMsgBox\Header:="Simulation Laser Sensor","Use scan point for found point"\MsgLine3:="Press OK to continue"\Buttons:=btnOK \Icon:=iconWarning;
+                UIMsgBox\Header:="Simulation Laser Sensor","Use scan point for found point"\MsgLine3:="Press OK to continue"\Buttons:=btnOK\Icon:=iconWarning;
             ENDIF
             ScanFound:=ScanPoint;
         ENDIF
@@ -112,5 +114,31 @@ MODULE SharedModule(NOSTEPIN)
     PROC LoadModelDatabyYML()
         Logging "LoadModelDatabyYML";
     ENDPROC
+
+    FUNC pos GetDropFeet(pos pos0,pos pos1,pos pos2\switch KeepX|switch KeepY|switch KeepZ)
+        VAR pos posDropFeet;
+        VAR num numK;
+        VAR num numKnumerator;
+        VAR num numKdenominator;
+        numKnumerator:=(pos1.x-pos0.x)*(pos2.x-pos1.x)+(pos1.y-pos0.y)*(pos2.y-pos1.y)+(pos1.z-pos0.z)*(pos2.z-pos1.z);
+        numKdenominator:=pow(pos2.x-pos1.x,2)+pow(pos2.y-pos1.y,2)+pow(pos2.z-pos1.z,2);
+        numK:=numKnumerator/numKdenominator;
+        Logging\DEBUG,"numKnumerator="+ValToStr(numKnumerator);
+        Logging\DEBUG,"numKdenominator="+ValToStr(numKdenominator);
+        Logging\DEBUG,"numK="+ValToStr(numK);
+        posDropFeet.x:=numK*(pos2.x-pos1.x)+pos1.x;
+        posDropFeet.y:=numK*(pos2.y-pos1.y)+pos1.y;
+        posDropFeet.z:=numK*(pos2.z-pos1.z)+pos1.z;
+        Logging\DEBUG,"posDropFeet="+ValToStr(posDropFeet);
+        IF Present(KeepX) THEN
+            posDropFeet.x:=pos0.x;
+        ELSEIF Present(KeepY) THEN
+            posDropFeet.y:=pos0.y;
+        ELSEIF Present(KeepZ) THEN
+            posDropFeet.z:=pos0.z;
+        ENDIF
+        Logging\DEBUG,"Adjust DropFeet="+ValToStr(posDropFeet);
+        RETURN posDropFeet;
+    ENDFUNC
 
 ENDMODULE
