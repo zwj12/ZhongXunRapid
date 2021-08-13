@@ -148,51 +148,51 @@ MODULE Template_1001_Module
         PDispOff;
     ENDPROC
 
-    LOCAL PROC Seam_1()
+    PROC Seam_1()
         MoveJ [[200,200,100],[0.376869611,0.909843726,-0.066452281,-0.160429997],[-1,-1,-1,1],[-1665.21,438.067,420.998,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart [[132.960608357,0,7],[0.376869611,0.909843726,-0.066452281,-0.160429997],[-1,-1,-1,1],[-1665.21,438.067,420.998,9E+09,9E+09,9E+09]],speedAproach,seamShared,weld_1\Weave:=weave_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=track_1\SeamName:="WeldSeam";
         ArcLEnd [[0,0,7],[0.376869611,0.909843726,-0.066452281,-0.160429997],[-1,-1,-1,1],[-1665.21,438.067,420.998,9E+09,9E+09,9E+09]],speedAproach,seamShared,weld_1\Weave:=weave_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=track_1;
         MoveL [[200,200,100],[0.376869611,0.909843726,-0.066452281,-0.160429997],[-1,-1,-1,1],[-1665.21,438.067,420.998,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
     ENDPROC
 
-    LOCAL PROC Seam_2()
+    PROC Seam_2()
         MoveJ [[200,200,100],[0.482962913,0.103553391,-0.786566092,0.370590477],[0,0,-1,1],[-1665.21,438.067,420.998,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart [[0,0,7],[0.482962913,0.103553391,-0.786566092,0.370590477],[0,0,-1,1],[-1665.21,438.067,420.998,9E+09,9E+09,9E+09]],speedAproach,seamShared,weld_1\Weave:=weave_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=track_1\SeamName:="WeldSeam";
-        ArcL [[0,0,100],[0.629409523,0.079459311,-0.603553391,0.482962913],[1,0,-1,1],[-1665.21,438.067,420.998,9E+09,9E+09,9E+09]],speedAproach,seamShared,weld_1\Weave:=weave_1,z10,toolWeldGun\WObj:=wobjCurrent\Track:=track_1;
+        ArcL [[0,0,100],[0.629409523,0.079459311,-0.603553391,0.482962913],[1,0,-1,1],[-1665.21,438.067,420.998,9E+09,9E+09,9E+09]], speedAproach, seamShared, weld_1\Weave:=weave_1, z10, toolWeldGun\WObj:=wobjCurrent\Track:=track_1;
         ArcLEnd [[0,0,385],[0.629409523,0.079459311,-0.603553391,0.482962913],[1,0,-1,1],[-1665.21,438.067,420.998,9E+09,9E+09,9E+09]],speedAproach,seamShared,weld_1\Weave:=weave_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=track_1;
         MoveL [[200,200,300],[0.629409523,0.079459311,-0.603553391,0.482962913],[1,0,-1,1],[-1665.21,438.067,420.998,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
     ENDPROC
 
-    LOCAL PROC Seam_3()
+    PROC Seam_3()
         MoveJ [[200,-200,100],[0.379409486,-0.915975629,-0.049950212,0.120590488],[0,-1,3,5],[-1665.21,-562,420.998,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart [[132.960608,-11,7],[0.379409486,-0.915975629,-0.049950212,0.120590488],[0,-1,3,5],[-1665.21,-562,420.998,9E+09,9E+09,9E+09]],speedAproach,seamShared,weld_1\Weave:=weave_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=track_1\SeamName:="WeldSeam";
         ArcLEnd [[0,-11,7],[0.379409486,-0.915975629,-0.049950212,0.120590488],[0,-1,3,5],[-1665.21,-562,420.998,9E+09,9E+09,9E+09]],speedAproach,seamShared,weld_1\Weave:=weave_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=track_1;
         MoveL [[200,-200,100],[0.379409486,-0.915975629,-0.049950212,0.120590488],[0,-1,3,5],[-1665.21,-562,420.998,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
     ENDPROC
 
-    LOCAL PROC Seam_4()
+    PROC Seam_4()
         MoveJ [[200.00,-200.00,100.00],[0.483384,-0.164796,-0.813503,-0.278199],[-1,1,0,7],[-1665.21,-562,420.998,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart [[10,-31,7],[0.482962909,-0.103553453,-0.786566092,-0.370590465],[-1,1,0,7],[-1665.21,-562,420.998,9E+09,9E+09,9E+09]],speedAproach,seamShared,weld_1\Weave:=weave_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=track_1\SeamName:="WeldSeam";
-        ArcL [[10,-31,100],[0.629409523,-0.079459311,-0.603553391,-0.482962913],[-1,1,0,7],[-1665.21,-562,420.998,9E+09,9E+09,9E+09]],speedAproach,seamShared,weld_1\Weave:=weave_1,z10,toolWeldGun\WObj:=wobjCurrent\Track:=track_1;
+        ArcL [[10,-31,100],[0.629409523,-0.079459311,-0.603553391,-0.482962913],[-1,1,0,7],[-1665.21,-562,420.998,9E+09,9E+09,9E+09]], speedAproach, seamShared, weld_1\Weave:=weave_1, z10, toolWeldGun\WObj:=wobjCurrent\Track:=track_1;
         ArcLEnd [[10,-31,350],[0.629409523,-0.079459311,-0.603553391,-0.482962913],[-1,1,0,7],[-1665.21,-562,420.998,9E+09,9E+09,9E+09]],speedAproach,seamShared,weld_1\Weave:=weave_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=track_1;
         MoveJ [[200,-200,300],[0.507251,-0.318065,-0.7464,-0.290549],[-1,1,0,7],[-1665.21,-562,200,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
     ENDPROC
 
-    LOCAL PROC Seam_5()
+    PROC Seam_5()
         MoveJ [[196.855339594,-24,29.355339594],[0.268283046,0.414729656,-0.818233257,-0.294139178],[1,-1,-1,1],[-1665.21,-562,420.998,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart [[161.500000535,-24,-5.999999465],[0.268283046,0.414729656,-0.818233257,-0.294139178],[0,-1,0,1],[-1665.21,-562,420.998,9E+09,9E+09,9E+09]],speedAproach,seamShared,weld_1\Weave:=weave_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=track_1\SeamName:="WeldSeam";
         ArcLEnd [[161.500000535,-155.5,-5.999999465],[0.268283046,0.414729656,-0.818233257,-0.294139178],[0,-1,0,1],[-1665.21,-562,420.998,9E+09,9E+09,9E+09]],speedAproach,seamShared,weld_1\Weave:=weave_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=track_1;
         MoveL [[196.855339594,-155.5,29.355339594],[0.268283046,0.414729656,-0.818233257,-0.294139178],[0,-1,0,1],[-1665.21,-562,420.998,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
     ENDPROC
 
-    LOCAL PROC Seam_6()
+    PROC Seam_6()
         MoveJ [[35.355339059,144.5,451.355339059],[0.27059805,0.653281482,-0.653281482,-0.27059805],[-2,0,1,1],[-1665.21,-562,120.998,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart [[0,144.5,416],[0.27059805,0.653281482,-0.653281482,-0.27059805],[-1,-1,0,1],[-1665.21,-562,120.998,9E+09,9E+09,9E+09]],speedAproach,seamShared,weld_1\Weave:=weave_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=track_1\SeamName:="WeldSeam";
         ArcLEnd [[0,-155.5,416],[0.27059805,0.653281482,-0.653281482,-0.27059805],[-1,-1,0,1],[-1665.21,-562,120.998,9E+09,9E+09,9E+09]],speedAproach,seamShared,weld_1\Weave:=weave_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=track_1;
         MoveJ [[35.355339059,-155.5,451.355339059],[0.27059805,0.653281482,-0.653281482,-0.27059805],[-1,-1,0,1],[-1665.21,-562,120.998,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
     ENDPROC
 
-    LOCAL PROC Seam_7()
+    PROC Seam_7()
         MoveJ [[207.855339996,13,29.355339059],[0.304380715,-0.304380715,-0.865366241,0.256604812],[0,-1,0,1],[-1665.21,438.067,420.998,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart [[172.500000937,13,-6],[0.304380715,-0.304380715,-0.865366241,0.256604812],[1,0,0,1],[-1665.21,438.067,420.998,9E+09,9E+09,9E+09]],speedAproach,seamShared,weld_1\Weave:=weave_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=track_1\SeamName:="WeldSeam";
         ArcLEnd [[172.500000937,144.5,-6],[0.304380715,-0.304380715,-0.865366241,0.256604812],[1,0,0,1],[-1665.21,438.067,420.998,9E+09,9E+09,9E+09]],speedAproach,seamShared,weld_1\Weave:=weave_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=track_1;

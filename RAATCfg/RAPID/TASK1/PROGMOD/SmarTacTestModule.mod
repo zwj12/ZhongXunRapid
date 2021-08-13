@@ -42,21 +42,21 @@ MODULE SmarTacTestModule
 
     LOCAL PERS speeddata speedSmarTacAir:=[100,100,100,100];
 
-    LOCAL PERS wobjdata obREF:=[FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
-    LOCAL PERS wobjdata obNEW:=[FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[96.5379,273.628,-0.429338],[0.993908,-4.89308E-5,-0.000171491,-0.110214]]];
+    PERS wobjdata obREF:=[FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
+    PERS wobjdata obNEW:=[FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[-7.29398,-15.2142,-3.66034],[0.999905,-3.29978E-05,0.0025619,-0.0135815]]];
 
-    LOCAL PERS robtarget pOFrame1:=[[1288.24,-347.04,505.51],[2.88902E-05,0.0205337,-0.999789,5.08716E-06],[-1,-1,0,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pOFrame2:=[[1289.75,-241.85,505.52],[2.50088E-05,0.0205319,-0.999789,-4.79308E-07],[-1,-1,0,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pOFrame3:=[[1217.80,-364.71,505.59],[1.20833E-06,0.0205405,-0.999789,2.38206E-05],[-1,-1,0,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pOFrame1:=[[-716.84,-325.31,819.68],[0.0749715,-0.95293,-0.0878745,-0.280326],[0,1,0,0],[-254.968,-142.43,-522.562,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pOFrame2:=[[-730.51,157.64,825.27],[0.074973,-0.952929,-0.0878766,-0.280326],[1,1,-1,0],[-254.968,-142.43,-522.562,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pOFrame3:=[[-565.10,-345.73,827.66],[0.224828,-0.767801,-0.596668,-0.0626261],[0,1,-1,0],[-254.969,-142.431,-522.562,9E+09,9E+09,9E+09]];
 
-    LOCAL PERS robtarget pOFrameHome:=[[1217.76,-424.02,620.34],[2.74717E-05,0.0205586,-0.999789,2.58104E-05],[-1,-1,0,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pOFrameWeld1:=[[1267.23,-312.57,515.22],[5.22405E-06,0.0205324,-0.999789,-1.07349E-05],[-1,-1,0,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pOFrameWeld2:=[[1259.70,-260.73,515.12],[6.21222E-06,0.0204967,-0.99979,-3.48183E-05],[-1,-1,0,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pOFrameWeld3:=[[1223.87,-256.75,514.97],[1.94725E-05,0.0205266,-0.999789,-1.84478E-06],[-1,-1,0,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pOFrameHome:=[[-747.04,-448.60,1006.25],[0.0621477,-0.965723,-0.238513,-0.0814092],[0,1,0,0],[-254.968,-142.432,-522.563,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pOFrameWeld1:=[[-723.17,-329.60,819.95],[0.112885,-0.927118,-0.251199,-0.254183],[0,1,-1,0],[-254.968,-142.432,-522.563,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pOFrameWeld2:=[[-730.44,-91.85,823.39],[0.112888,-0.927117,-0.2512,-0.254182],[1,1,-1,0],[-254.968,-142.432,-522.563,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pOFrameWeld3:=[[-737.74,167.47,825.81],[0.112889,-0.927117,-0.251201,-0.254182],[1,1,-1,0],[-254.968,-142.432,-522.563,9E+09,9E+09,9E+09]];
 
-    LOCAL PERS pose poseOFrame1:=[[-10.944,-0.0508118,0.0443115],[1,0,0,0]];
-    LOCAL PERS pose poseOFrame2:=[[12.767,-0.00788879,0.0386658],[1,0,0,0]];
-    LOCAL PERS pose poseOFrame3:=[[0.00793457,12.6088,0.00961304],[1,0,0,0]];
+    LOCAL PERS pose poseOFrame1:=[[-11.6508,0.00537109,-0.00561523],[1,0,0,0]];
+    LOCAL PERS pose poseOFrame2:=[[1.50043,-0.0179443,-0.00366211],[1,0,0,0]];
+    LOCAL PERS pose poseOFrame3:=[[-0.0142822,0.264923,-0.12439],[1,0,0,0]];
 
     LOCAL PERS robtarget pOFrameSearched1:=[[1277.3,-347.091,505.554],[2.88902E-5,0.0205337,-0.999789,5.08716E-6],[-1,-1,0,1],[9E+9,9E+9,9E+9,9E+9,9E+9,9E+9]];
     LOCAL PERS robtarget pOFrameSearched2:=[[1302.52,-241.858,505.559],[2.50088E-5,0.0205319,-0.999789,-4.79308E-7],[-1,-1,0,1],[9E+9,9E+9,9E+9,9E+9,9E+9,9E+9]];
@@ -113,6 +113,7 @@ MODULE SmarTacTestModule
         MoveL pOFrameHome,v200,fine,toolWeldGun\WObj:=obREF;
         MoveL pOFrame1,v200,fine,toolWeldGun\WObj:=obREF;
         MoveL pOFrame2,v200,fine,toolWeldGun\WObj:=obREF;
+        MoveL pOFrameHome,v200,fine,toolWeldGun\WObj:=obREF;
         MoveL pOFrame3,v200,fine,toolWeldGun\WObj:=obREF;
         MoveL pOFrameHome,v200,fine,toolWeldGun\WObj:=obREF;
     ENDPROC
@@ -120,11 +121,11 @@ MODULE SmarTacTestModule
     PROC SearchWobjOFrame()
         PDispOff;
         MoveL pOFrameHome,v200,fine,toolWeldGun\WObj:=obREF;
-        Search_1D poseOFrame1,offs(pOFrame1,50,0,0),pOFrame1,v200,toolWeldGun\WObj:=obREF;
+        Search_1D poseOFrame1,offs(pOFrame1,-20,0,0),pOFrame1,v200,toolWeldGun\WObj:=obREF;
         MoveL pOFrameHome,v200,fine,toolWeldGun\WObj:=obREF;
-        Search_1D poseOFrame2,offs(pOFrame2,50,0,0),pOFrame2,v200,toolWeldGun\WObj:=obREF;
+        Search_1D poseOFrame2,offs(pOFrame2,-20,0,0),pOFrame2,v200,toolWeldGun\WObj:=obREF;
         MoveL pOFrameHome,v200,fine,toolWeldGun\WObj:=obREF;
-        Search_1D poseOFrame3,offs(pOFrame3,0,-50,0),pOFrame3,v200,toolWeldGun\WObj:=obREF;
+        Search_1D poseOFrame3,offs(pOFrame3,0,-30,15),pOFrame3,v200,toolWeldGun\WObj:=obREF;
         MoveL pOFrameHome,v200,fine,toolWeldGun\WObj:=obREF;
         obNEW:=OFrameChange(obREF,pOFrame1,pOFrame2,pOFrame3,poseOFrame1,poseOFrame2,poseOFrame3);
     ENDPROC

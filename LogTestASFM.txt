@@ -1,0 +1,12 @@
+2021-08-12; 22:54:12- Test ASFM routine started      
+2021-08-12; 22:54:14-Mode 0 test completed      
+PointData X=-182.34 Y=-11.96 Z=11.74      
+2021-08-12; 22:58:31- Test ASFM routine started      
+2021-08-12; 22:58:33-Mode 0 test completed      
+PointData X=-182.32 Y=-12.01 Z=11.71      
+2021-08-12; 23:03:11- Test ASFM routine started      
+2021-08-12; 23:03:13-Mode 0 test completed      
+PointData X=-175.11 Y=-11.84 Z=12.79      
+2021-08-12; 23:07:03- Test ASFM routine started      
+2021-08-12; 23:07:05-Mode 0 test completed      
+PointData X=-175.08 Y=-11.84 Z=12.73      

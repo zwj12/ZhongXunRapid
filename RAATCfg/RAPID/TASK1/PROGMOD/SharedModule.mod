@@ -25,6 +25,8 @@ MODULE SharedModule(NOSTEPIN)
     CONST ScanData scanJoint1:=[1];
     !Fillet
     CONST ScanData scanJoint2:=[2];
+    !Lap
+    CONST ScanData scanJoint3:=[3];
 
     !numJobMode: 0 - Keep last, 1 - by TPU, 2 - by yml, 3 - by PLC
     PERS num numJobMode:=1;
@@ -34,7 +36,7 @@ MODULE SharedModule(NOSTEPIN)
     PERS pos posModelOffset:=[0,1009,0];
     PERS num numModelOffsetQuantity:=2;
 
-    PERS num numWaitTimeForLaser:=0.5;
+    PERS num numWaitTimeForLaser:=0;
     PERS num numAproachRelToolZ:=-50;
 
     FUNC pos GetEulerAngle(orient orientIn)

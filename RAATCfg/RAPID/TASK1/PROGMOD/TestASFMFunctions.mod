@@ -1,4 +1,4 @@
-MODULE TestASFMFunctions
+MODULE TestASFMFunctions(NOSTEPIN)
 !**************************************************************
 ! Test program for the ASFM software module from Servo-Robot 
 !(Ethernet TCP/IP based on RCL APP protocol)
@@ -52,10 +52,10 @@ MODULE TestASFMFunctions
     PERS tooldata TestTool:=[TRUE,[[-5.06169,1.24367,355.949],[0.378591,0.897664,-0.223253,-0.0320518]],[2,[50,50,100],[1,0,0,0],0,0,0]];
     PERS tooldata ASFM_OpticalTool:=[TRUE,[[42.217,-13.3743,372.175],[0.403921,0.890535,-0.0691935,0.197501]],[2,[50,50,100],[1,0,0,0],0,0,0]];
     
-    PERS wobjdata acaltargetV2:=[FALSE,TRUE,"",[[-52.4387,-878.166,-1099.87],[0.693123,-0.0066676,0.00384977,-0.720778]],[[0,0,0],[1,0,0,0]]];
+    PERS wobjdata acaltargetV2:=[FALSE,TRUE,"",[[-16.5812,-319.353,417.854],[0.713239,0.00069864,0.000101632,-0.700921]],[[0,0,0],[1,0,0,0]]];
     PERS tooldata Ref_Pin:=[TRUE,[[-5.06169,1.24367,355.949],[0.378591,0.897664,-0.223253,-0.0320518]],[2,[50,50,100],[1,0,0,0],0,0,0]];    
     
-    PERS corrdata Point1:=[0,3,-2172.42,347.84,67.22,0,0,0,50.65,0,0];
+    PERS corrdata Point1:=[0,3,-16.33,-292.3,741.76,0,0,0,0,1.04,0];
     PERS corrdata Point2:=[0,3,-0.03,-1.36,-0.94,0,0,0,0,0,0];
     PERS corrdata Point2_basic:=[0,1,0,0,0,0,0,0,0,0,0];
     PERS corrdata Point3:=[0,3,0.25,4.14,0.08,0,0,0,0,1.06,0];
@@ -66,10 +66,11 @@ MODULE TestASFMFunctions
     PERS SenorSchdule SenSch1:=[3,3,0,0];
     PERS JointSize js1:=[3,3,0];
     
-    PERS robtarget pFound1:=[[-2004.57,-49.23,790.39],[0.134981,-0.694087,-0.694124,-0.134962],[-1,-1,2,1],[-1997.56,0.00301543,-400,9E+09,9E+09,9E+09]];
-    PERS robtarget pSF1:=[[-1996.00,-139.54,1093.72],[0.134981,-0.694087,-0.694124,-0.134962],[-1,-1,2,1],[-1997.56,0.00301543,-599.991,9E+09,9E+09,9E+09]];
+    PERS robtarget pFound1:=[[-16.33,-292.3,741.76],[0.116613,-0.70252,-0.691898,-0.118931],[0,0,1,1],[-465.219,39.3053,-598.661,9E+09,9E+09,9E+09]];
+    PERS robtarget pSF1:=[[17.89,-374.28,852.61],[0.116612,-0.702524,-0.691894,-0.118932],[0,0,1,1],[-465.219,39.3053,-598.661,9E+09,9E+09,9E+09]];
     PERS robtarget pFound2:=[[-673.22,-1054.19,-911.39],[0.115425,-0.677295,-0.714325,-0.132997],[0,2,-1,0],[-677.364,-341.094,-334.05,9E+09,9E+09,9E+09]];
     PERS robtarget pSF2:=[[-669.71,-1142.91,-766.23],[0.115425,-0.677295,-0.714325,-0.132997],[0,2,-1,0],[-677.364,-341.094,-334.05,9E+09,9E+09,9E+09]];
+    VAR robtarget M0P11:=[[-95.31,-14.83,-23.27],[0.0671282,-0.0617656,-0.882732,0.460938],[-1,-1,2,1],[-1316.54,559.172,400.964,9E+09,9E+09,9E+09]];
     
     PROC SeamFind(
         num ntask,
@@ -86,7 +87,7 @@ MODULE TestASFMFunctions
         var num nRetry:=0;
         
         pPoint1:=SFPoint;
-        FoundPoint:=SFPoint;
+!        FoundPoint:=SFPoint;
        
         !!Open communication socket (IMPORTANT: take care to input the proper tool and wObj!)
 !        IF NOT ASFMu_Initialize(Laser_IP_Add,2,TRUE,TRUE,TRUE,Tool,Wobj) THEN
@@ -94,7 +95,7 @@ MODULE TestASFMFunctions
 !            stop;
 !         ENDIF  
         
-        MoveL SFPoint, vSpeed, fine, Tool\WObj:=Wobj;
+!        MoveL SFPoint, vSpeed, fine, Tool\WObj:=Wobj;
         waittime 0.5;
      Lable1:          
         Point1:=ASFMu_GetPoint(ntask,10);     
@@ -126,16 +127,17 @@ MODULE TestASFMFunctions
     
     PROC TestSF()
        
-        IF NOT ASFMu_Initialize(Laser_IP_Add,2,TRUE,TRUE,TRUE,toolWeldGun,wobj0) THEN
+        IF NOT ASFMu_Initialize(Laser_IP_Add,2,TRUE,TRUE,TRUE,toolWeldGunNew,wobjcurrent) THEN
             TPWrite "The socket between laser and robot error Can't connect to vision controller"; 
             stop;
          ENDIF  
-        
-        SeamFind 0\FoundPoint:=pFound1, pSF1, V100, js1, SenSch1, toolWeldGun\Wobj:=wobj0;
+        MoveL pSF1, v100, fine, toolWeldGunNew\WObj:=wobjCurrent;
+        SeamFind 3\FoundPoint:=pFound1, pSF1, V100, js1, SenSch1, toolWeldGunNew\Wobj:=wobjCurrent;
         !SeamFind 1,\Foundpoint:=pFound2,pSF2,V100,js1,SenSch1,toolWeldGun\Wobj:=wobj0;
         stop;
-        MoveJ offs(pFound1,0,0,20),v100,fine,toolWeldGun\WObj:=wobj0;
-        MoveL pFound1,v20,fine,toolWeldGun\WObj:=wobj0;
+        MoveJ offs(pFound1,0,0,20),v100,fine,toolWeldGunNew\WObj:=wobjCurrent;
+        MoveL pFound1,v20,fine,toolWeldGunNew\WObj:=wobjCurrent;
+        stop;
         MoveL pFound2,v20,fine,toolWeldGun\WObj:=wobj0;
         MoveL offs(pFound2,0,0,20),v100,fine,toolWeldGun\WObj:=wobj0;
         
@@ -150,7 +152,7 @@ MODULE TestASFMFunctions
     
     ! Close communication channel
     PROC Laser_Clear()
-        IF NOT ACALu_Clear() THEN 
+        IF NOT ASFMu_Clear() THEN 
             Stop; 
         ENDIF 
     ENDPROC
@@ -288,9 +290,19 @@ MODULE TestASFMFunctions
     
     PROC Mode0()
         !---- Test Mode 0 - GetPoint
-        MoveL M0P1, v200, fine, TestTool\WObj:=TestBase;
+        Close LogTestASFM;
+        Open "HOME:", \File:="LogTestASFM.txt", LogTestASFM, \Append;
+        Write LogTestASFM, CDate() + "; " + CTime() + "- Test ASFM routine started", \NoNewLine;
+        Write LogTestASFM, "      ";
+        
+        IF NOT ASFMu_Initialize(Laser_IP_Add,2,TRUE,TRUE,TRUE,toolWeldGunNew,wobjcurrent) THEN
+            TPWrite "The socket between laser and robot error Can't connect to vision controller"; 
+            stop;
+         ENDIF 
+        !MoveL M0P1, v200, fine, toolWeldGun\WObj:=wobjcurrent;
+        !MoveL M0P11, v200, fine, toolWeldGun\WObj:=wobjCurrent;
         WaitTime 1;
-        MData:=ASFMu_GetPoint(420,5);
+        MData:=ASFMu_GetPoint(2,5);
         IF MData.Status < 0 THEN
             TPWrite "Get point error in ASFM module.";
             Stop;

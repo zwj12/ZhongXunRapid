@@ -11,12 +11,12 @@ MODULE TestAutoCal
     !!****************************************************************************
     
     !!Tool below is a copy of the tool Ref_Pin defined in MainModule
-    PERS tooldata ACAL_My_Tool:=[TRUE,[[-60.8716,1.37706,439.061],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
-    PERS wobjdata ACAL_My_Cal_Target:=[FALSE,TRUE,"",[[-52.4387,-878.166,-1099.87],[0.693123,-0.0066676,0.00384977,-0.720778]],[[0,0,0],[1,0,0,0]]];
+    PERS tooldata ACAL_My_Tool:=[TRUE,[[-56.9127,5.0035,540.198],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
+    PERS wobjdata ACAL_My_Cal_Target:=[FALSE,TRUE,"",[[-16.5812,-319.353,417.854],[0.713239,0.00069864,0.000101632,-0.700921]],[[0,0,0],[1,0,0,0]]];
     !!Tool below is used to test calibration result (TCP at OPTICAL origin of laser-camera)
-    PERS tooldata ACAL_OpticalTool:=[TRUE,[[29.3714,-7.68021,743.148],[0.00915883,0.00855497,0.999921,0.00051494]],[2,[50,50,100],[1,0,0,0],0,0,0]];
+    PERS tooldata ACAL_OpticalTool:=[TRUE,[[28.0974,-30.3824,705.484],[0.0151826,0.00985186,0.999836,-0.000201917]],[2,[50,50,100],[1,0,0,0],0,0,0]];
     
-    PERS caldata ACAL_TestCalOut:=[[0.781,-0.218,-0.2],27.319,-7.778,855.129,179.932,1.049,179.019,3];    !Output of the calibration function                            
+    PERS caldata ACAL_TestCalOut:=[[-0.119,0.13,1.009],23.544,-30.277,855.415,-179.994,1.74001,178.871,3];    !Output of the calibration function                            
     !!Next variable stores the WObj used to test the base optimization function
     PERS wobjdata ACAL_OptimizedBase:=[FALSE,TRUE,"",[[968.915,-342.455,475.393],[0.99982,0.00148294,-0.000331306,-0.0188947]],[[0,0,0],[1,0,0,0]]];
     
@@ -79,7 +79,7 @@ MODULE TestAutoCal
         ENDIF
         
         !!CLEAR position above calibration target - TEACH TO HAVE PROPER TOOL CLEARANCE TO GO TO THE CALIBRATION START POSITION (Next MoveL below)
-        MoveL [[96.36,43.77,123.75],[0.205518,-0.00692058,-0.978625,0.00288698],[-1,1,0,0],[-65.1953,-397.298,-280.749,9E+09,9E+09,9E+09]], v100, fine, ACAL_My_Tool\WObj:=ACAL_My_Cal_Target;
+        MoveL [[88.31,69.24,27.23],[0.212121,-0.0120763,-0.97715,0.00608278],[-1,0,2,1],[-212.934,4.44893,-180.125,9E+09,9E+09,9E+09]], v100, fine, ACAL_My_Tool\WObj:=ACAL_My_Cal_Target;
         
         !!Open communication socket (IMPORTANT: take care to input the proper tool and wObj!)
         IF NOT ACALu_Initialize("192.168.1.3",ACAL_My_Tool,ACAL_My_Cal_Target) THEN
@@ -88,7 +88,7 @@ MODULE TestAutoCal
         ENDIF
         
         !!Calibration START position - TEACH THIS POINT ACCORDING TO THE AUTO-CAL 2.0 USER MANUAL
-        MoveL [[96.36,43.77,123.75],[0.205518,-0.00692058,-0.978625,0.00288698],[-1,1,0,0],[-65.1953,-397.299,-280.749,9E+09,9E+09,9E+09]], v100, fine, ACAL_My_Tool\WObj:=ACAL_My_Cal_Target;
+        MoveL [[88.30,69.24,27.23],[0.212123,-0.0120762,-0.97715,0.00608212],[-1,0,2,1],[-212.934,4.44893,-180.125,9E+09,9E+09,9E+09]], v100, fine, ACAL_My_Tool\WObj:=ACAL_My_Cal_Target;
         
         WaitTime 1;
         
@@ -131,12 +131,13 @@ MODULE TestAutoCal
             
             !!OpticalTool will be 112 mm up from the bottom of the field of view of the laser-camera which was calibrated
             !!(offset can be adjusted to bring the profile to a proper position for the current laser-camera)
-            ACAL_OpticalToolOffset:=[[0,0,112],[1,0,0,0]];
+            ACAL_OpticalToolOffset:=[[0,0,150],[1,0,0,0]];
             
             ACAL_OpticalTool.tframe:=PoseMult(ACAL_OpticalTool.tframe,ACAL_OpticalToolOffset);
             
             !!OpticalTool TCP is sent to the calibration target origin (small 1.2 mm hole)
-            MoveL [[0,0,0],[1,0,0,0],[-1,2,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]], v50, fine, ACAL_OpticalTool\WObj:=ACAL_My_Cal_Target;
+            Stop;
+            MoveL [[0,0,0],[0.997532,-0.0102858,-0.0531091,-0.0447508],[-1,-1,2,1],[-212.934,4.45035,-180.125,9E+09,9E+09,9E+09]], v50, fine, ACAL_OpticalTool\WObj:=ACAL_My_Cal_Target;
             
         ENDIF
         
