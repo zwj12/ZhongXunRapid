@@ -37,31 +37,6 @@ MODULE TestModule
     LOCAL PERS robtarget pQ2_Z1_Found:=[[0,0,50],[0.562422,0.303603,0.732963,-0.232963],[-1,-2,-1,1],[-800,500,456,9E+9,9E+9,9E+9]];
     LOCAL PERS robtarget pQ2_Z2_Found:=[[-495.92,-28.34,304.38],[0.232963,0.732963,-0.303603,0.562422],[-2,-1,1,1],[-800,500,456,9E+09,9E+09,9E+09]];
 
-    PROC DepartGantry(\switch Quadrant1|switch Quadrant2|switch Quadrant3|switch Quadrant4)
-        VAR num numGantryOffsetDirectionX;
-        VAR num numGantryOffsetDirectionY;
-        IF Present(Quadrant1) THEN
-            numGantryOffsetDirectionX:=1;
-            numGantryOffsetDirectionY:=1;
-        ELSEIF Present(Quadrant2) THEN
-            numGantryOffsetDirectionX:=-1;
-            numGantryOffsetDirectionY:=1;
-        ELSEIF Present(Quadrant3) THEN
-            numGantryOffsetDirectionX:=-1;
-            numGantryOffsetDirectionY:=-1;
-        ELSEIF Present(Quadrant4) THEN
-            numGantryOffsetDirectionX:=1;
-            numGantryOffsetDirectionY:=-1;
-        ELSE
-            RETURN ;
-        ENDIF
-        jointCurrent:=CJointT();
-        jointCurrent.extax.eax_a:=jointCurrent.extax.eax_a+extjointGantryDepart.eax_a*numGantryOffsetDirectionX;
-        jointCurrent.extax.eax_b:=jointCurrent.extax.eax_b+extjointGantryDepart.eax_b*numGantryOffsetDirectionY;
-        jointCurrent.extax.eax_c:=jointCurrent.extax.eax_c+extjointGantryDepart.eax_c;
-        MoveAbsJ jointCurrent,speedAir,fine,toolWeldGun\WObj:=wobjCurrent;
-    ENDPROC
-
     PROC MoveGanrtyQuadrantByWobjCur()
         VAR num numQuadrant;
         VAR num numGantryOffsetDirectionX;
@@ -110,68 +85,30 @@ MODULE TestModule
 
     ENDPROC
 
-    FUNC num GetBaseFramePosZ()
-        VAR num numBaseFramePosZ;
-        ReadCfgData "/MOC/ROBOT/GantryXYZ","base_frame_pos_z",numBaseFramePosZ;
-        numBaseFramePosZ:=numBaseFramePosZ*1000;
-        Logging "BaseFramePosZ="+ValToStr(numBaseFramePosZ);
-        RETURN numBaseFramePosZ;
-    ENDFUNC
-
-    FUNC num GetQuadrant()
-        VAR listitem listQuarterData{6}:=[["","Quadrant1"],["","Quadrant2"],["","Quadrant3"],["","Quadrant4"],["","Quadrant14"],["","Quadrant23"]];
-        VAR num list_item;
-        VAR btnres button_answer;
-        list_item:=UIListView(\Result:=button_answer\Header:="Select Quadrant",listQuarterData\Buttons:=btnOKCancel\Icon:=iconInfo\DefaultIndex:=1);
-        IF button_answer=resOK THEN
-            Logging "Select "+listQuarterData{list_item}.text;
-            RETURN list_item;
+    PROC DepartGantry(\switch Quadrant1|switch Quadrant2|switch Quadrant3|switch Quadrant4)
+        VAR num numGantryOffsetDirectionX;
+        VAR num numGantryOffsetDirectionY;
+        IF Present(Quadrant1) THEN
+            numGantryOffsetDirectionX:=1;
+            numGantryOffsetDirectionY:=1;
+        ELSEIF Present(Quadrant2) THEN
+            numGantryOffsetDirectionX:=-1;
+            numGantryOffsetDirectionY:=1;
+        ELSEIF Present(Quadrant3) THEN
+            numGantryOffsetDirectionX:=-1;
+            numGantryOffsetDirectionY:=-1;
+        ELSEIF Present(Quadrant4) THEN
+            numGantryOffsetDirectionX:=1;
+            numGantryOffsetDirectionY:=-1;
         ELSE
-            RETURN -1;
+            RETURN ;
         ENDIF
-    ENDFUNC
-
-    FUNC extjoint GetQuadrantGantryOffset(extjoint extjointGantryOffsetCur)
-        VAR string sHeader:="Check Quadrant Gantry Offset";
-        VAR string stMsgArray{5};
-        VAR string stButtons{5}:=["X","Y","Z","OK","Cancel"];
-        VAR num nAnswer;
-        VAR bool boolFlag:=TRUE;
-        VAR num numInput;
-        WHILE boolFlag DO
-            jointCurrent:=CJointT();
-            stMsgArray{1}:="The current gantry position is ["+ValToStr(jointCurrent.extax.eax_a)+","+ValToStr(jointCurrent.extax.eax_b)+","+ValToStr(jointCurrent.extax.eax_c)+"]";
-            stMsgArray{2}:="The origin or wobjCurrent is "+ValToStr(wobjCurrent.uframe.trans);
-            stMsgArray{3}:="The current gantry offset is ["+ValToStr(extjointGantryOffsetCur.eax_a)+","+ValToStr(extjointGantryOffsetCur.eax_b)+","+ValToStr(extjointGantryOffsetCur.eax_c)+"]";
-            jointCurrent.extax.eax_a:=wobjCurrent.uframe.trans.x+extjointGantryOffsetCur.eax_a;
-            jointCurrent.extax.eax_b:=wobjCurrent.uframe.trans.y+extjointGantryOffsetCur.eax_b;
-            jointCurrent.extax.eax_c:=wobjCurrent.uframe.trans.z+extjointGantryOffsetCur.eax_c;
-            stMsgArray{4}:="The gantry destination is ["+ValToStr(jointCurrent.extax.eax_a)+","+ValToStr(jointCurrent.extax.eax_b)+","+ValToStr(jointCurrent.extax.eax_c)+"]";
-            stMsgArray{5}:="You can modify gantry offset by button X Y Z";
-            nAnswer:=UIMessageBox(\Header:=sHeader\MsgArray:=stMsgArray\BtnArray:=stButtons\Icon:=iconWarning);
-            IF (nAnswer=1) THEN
-                numInput:=UINumEntry(\Header:="Gantry Offset X"\Message:="Please input the new offset X of gantry"\Icon:=iconInfo\InitValue:=extjointGantryOffsetCur.eax_a);
-                extjointGantryOffsetCur.eax_a:=Round(numInput);
-                Logging "New Gantry Offset X: "+ValToStr(extjointGantryOffsetCur.eax_a);
-            ELSEIF (nAnswer=2) THEN
-                numInput:=UINumEntry(\Header:="Gantry Offset Y"\Message:="Please input the new offset Y of gantry"\Icon:=iconInfo\InitValue:=extjointGantryOffsetCur.eax_b);
-                extjointGantryOffsetCur.eax_b:=Round(numInput);
-                Logging "New Gantry Offset Y: "+ValToStr(extjointGantryOffsetCur.eax_b);
-            ELSEIF (nAnswer=3) THEN
-                numInput:=UINumEntry(\Header:="Gantry Offset Z"\Message:="Please input the new offset Z of gantry"\Icon:=iconInfo\InitValue:=extjointGantryOffsetCur.eax_c);
-                extjointGantryOffsetCur.eax_c:=Round(numInput);
-                Logging "New Gantry Offset Z: "+ValToStr(extjointGantryOffsetCur.eax_c);
-            ELSEIF (nAnswer=4) THEN
-                Logging "Use Gantry Offset: ["+ValToStr(extjointGantryOffsetCur.eax_a)+","+ValToStr(extjointGantryOffsetCur.eax_b)+","+ValToStr(extjointGantryOffsetCur.eax_c)+"]";
-                boolFlag:=FALSE;
-            ELSEIF (nAnswer=5) THEN
-                Logging "Canceled";
-                extjointGantryOffsetCur:=[9E+9,9E+9,9E+9,9E+9,9E+9,9E+9];
-                boolFlag:=FALSE;
-            ENDIF
-        ENDWHILE
-        RETURN extjointGantryOffsetCur;
-    ENDFUNC
+        jointCurrent:=CJointT();
+        jointCurrent.extax.eax_a:=jointCurrent.extax.eax_a+extjointGantryDepart.eax_a*numGantryOffsetDirectionX;
+        jointCurrent.extax.eax_b:=jointCurrent.extax.eax_b+extjointGantryDepart.eax_b*numGantryOffsetDirectionY;
+        jointCurrent.extax.eax_c:=jointCurrent.extax.eax_c+extjointGantryDepart.eax_c;
+        MoveAbsJ jointCurrent,speedAir,fine,toolWeldGun\WObj:=wobjCurrent;
+    ENDPROC
 
     PROC MoveGanrtyToPlaneXZ()
         jointCurrent:=CJointT();

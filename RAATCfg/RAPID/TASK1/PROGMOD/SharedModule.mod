@@ -9,6 +9,7 @@ MODULE SharedModule(NOSTEPIN)
 
     !2021-8-11, Michael, Add numScanJob1, ScanSeamByLaser, ScanData
     !2021-8-12, Michael, Add GetDropFeet
+    !2021-8-13, Michael, Add ReloadGantryOffset
 
     RECORD ScanData
         num joint_no;
@@ -38,30 +39,6 @@ MODULE SharedModule(NOSTEPIN)
 
     PERS num numWaitTimeForLaser:=0;
     PERS num numAproachRelToolZ:=-50;
-
-    FUNC pos GetEulerAngle(orient orientIn)
-        VAR pos eulerAngle;
-        eulerAngle.z:=EulerZYX(\Z,orientIn);
-        eulerAngle.y:=EulerZYX(\Y,orientIn);
-        eulerAngle.z:=EulerZYX(\X,orientIn);
-        RETURN eulerAngle;
-    ENDFUNC
-
-    FUNC string GetEulerAngleString(orient orientIn)
-        VAR pos eulerAngle;
-        VAR string strEulerAngle;
-        eulerAngle.x:=RoundOff(EulerZYX(\Z,orientIn));
-        eulerAngle.y:=RoundOff(EulerZYX(\Y,orientIn));
-        eulerAngle.z:=RoundOff(EulerZYX(\X,orientIn));
-        RETURN ValToStr(eulerAngle);
-    ENDFUNC
-
-    FUNC num RoundOff(num numRoundOff)
-        IF Abs(numRoundOff)<0.000001 THEN
-            numRoundOff:=0;
-        ENDIF
-        RETURN numRoundOff;
-    ENDFUNC
 
     PROC Scan_1D_Laser(INOUT robtarget ScanFound,robtarget ScanPoint,num JointNo)
         Logging "Scan:"+ValToStr(ScanPoint.trans);
@@ -117,30 +94,48 @@ MODULE SharedModule(NOSTEPIN)
         Logging "LoadModelDatabyYML";
     ENDPROC
 
-    FUNC pos GetDropFeet(pos pos0,pos pos1,pos pos2\switch KeepX|switch KeepY|switch KeepZ)
+    FUNC pos GetDropFeet(pos pos0,pos pos1,pos pos2\switch KeepX|switch KeepY|switch KeepZ\switch OnlyOffset)
         VAR pos posDropFeet;
+        VAR pos posDropFeetAdvised;
+        VAR pos posOffset;
         VAR num numK;
         VAR num numKnumerator;
         VAR num numKdenominator;
+        Logging\DEBUG,"pos0="+ValToStr(RoundPos(pos0))+", pos1="+ValToStr(RoundPos(pos1))+", pos2="+ValToStr(RoundPos(pos2));
         numKnumerator:=(pos1.x-pos0.x)*(pos2.x-pos1.x)+(pos1.y-pos0.y)*(pos2.y-pos1.y)+(pos1.z-pos0.z)*(pos2.z-pos1.z);
         numKdenominator:=pow(pos2.x-pos1.x,2)+pow(pos2.y-pos1.y,2)+pow(pos2.z-pos1.z,2);
-        numK:=numKnumerator/numKdenominator;
-        Logging\DEBUG,"numKnumerator="+ValToStr(numKnumerator);
-        Logging\DEBUG,"numKdenominator="+ValToStr(numKdenominator);
-        Logging\DEBUG,"numK="+ValToStr(numK);
+        numK:=0-numKnumerator/numKdenominator;
+        !Logging\DEBUG,"numKnumerator="+ValToStr(numKnumerator);
+        !Logging\DEBUG,"numKdenominator="+ValToStr(numKdenominator);
+        !Logging\DEBUG,"numK="+ValToStr(numK);
         posDropFeet.x:=numK*(pos2.x-pos1.x)+pos1.x;
         posDropFeet.y:=numK*(pos2.y-pos1.y)+pos1.y;
         posDropFeet.z:=numK*(pos2.z-pos1.z)+pos1.z;
-        Logging\DEBUG,"posDropFeet="+ValToStr(posDropFeet);
+        posDropFeetAdvised:=posDropFeet;
         IF Present(KeepX) THEN
-            posDropFeet.x:=pos0.x;
+            posDropFeetAdvised.x:=pos0.x;
         ELSEIF Present(KeepY) THEN
-            posDropFeet.y:=pos0.y;
+            posDropFeetAdvised.y:=pos0.y;
         ELSEIF Present(KeepZ) THEN
-            posDropFeet.z:=pos0.z;
+            posDropFeetAdvised.z:=pos0.z;
         ENDIF
-        Logging\DEBUG,"Adjust DropFeet="+ValToStr(posDropFeet);
-        RETURN posDropFeet;
+        posOffset:=posDropFeetAdvised-pos0;
+        Logging\DEBUG,"DropFeet="+ValToStr(RoundPos(posDropFeet))+", Advised="+ValToStr(RoundPos(posDropFeetAdvised))+", Offset="+ValToStr(RoundPos(posOffset));
+        IF Present(OnlyOffset) THEN
+            RETURN posOffset;
+        ELSE
+            RETURN posDropFeet;
+        ENDIF
     ENDFUNC
+
+    PROC ReloadGantryOffset()
+        EOffsSet extGantryOffsetCurrent;
+        IF RobOS() THEN
+            IF NOT ASFMu_Initialize(Laser_IP_Add,2,TRUE,TRUE,TRUE,toolLaser,wobjCurrent) THEN
+                TPWrite "The socket between laser and robot error Can't connect to vision controller";
+                stop;
+            ENDIF
+        ENDIF
+    ENDPROC
 
 ENDMODULE

@@ -2,3 +2,209 @@
 2021-08-13 09:18:15:WARNING:root:Job Weld: 1/1 - 1002
 2021-08-13 09:18:15:WARNING:root:Pos: [-513,-36,67]
 2021-08-13 09:18:15:WARNING:root:Gantry: [-513,-36,-67]
+2021-08-13 09:22:26:DEBUG:root:numKnumerator=1496.36
+2021-08-13 09:22:26:DEBUG:root:numKdenominator=5557.62
+2021-08-13 09:22:26:DEBUG:root:numK=-0.269245
+2021-08-13 09:22:26:DEBUG:root:posDropFeet=[-132.734,20.9527,-17.4462]
+2021-08-13 09:22:26:DEBUG:root:Adjust DropFeet=[-132.75,20.9527,-17.4462]
+2021-08-13 09:22:28:DEBUG:root:numKnumerator=-3444.23
+2021-08-13 09:22:28:DEBUG:root:numKdenominator=5557.62
+2021-08-13 09:22:28:DEBUG:root:numK=0.619731
+2021-08-13 09:22:28:DEBUG:root:posDropFeet=[-66.4876,22.7928,-17.1617]
+2021-08-13 09:22:28:DEBUG:root:Adjust DropFeet=[-66.51,22.7928,-17.1617]
+2021-08-13 10:55:03:WARNING:root:Modules are saved
+2021-08-13 10:55:03:WARNING:root:Job Weld: 1/1 - 1002
+2021-08-13 10:55:03:WARNING:root:Pos: [-513,-36,67]
+2021-08-13 10:55:03:WARNING:root:Gantry: [-513,-36,-67]
+2021-08-13 10:55:03:WARNING:root:Start to run Template_1002...
+2021-08-13 10:55:03:WARNING:root:Search oframe
+2021-08-13 10:55:07:WARNING:root:Scan: pQ2_Y1=[0,75,0]
+2021-08-13 10:56:20:WARNING:root:Modules are saved
+2021-08-13 10:56:20:WARNING:root:Job Weld: 1/1 - 1002
+2021-08-13 10:56:20:WARNING:root:Pos: [0,0,0]
+2021-08-13 10:56:20:WARNING:root:Gantry: [0,0,0]
+2021-08-13 10:56:27:WARNING:root:Start to run Template_1002...
+2021-08-13 10:56:27:WARNING:root:Search oframe
+2021-08-13 10:56:32:WARNING:root:Scan: pQ2_Y1=[0,75,0]
+2021-08-13 10:56:44:WARNING:root:Found: pQ2_Y1_Found=[0,75,0]
+2021-08-13 10:56:44:WARNING:root:Scan: pQ2_Y2=[0,200,0]
+2021-08-13 10:56:47:WARNING:root:Found: pQ2_Y2_Found=[0,200,0]
+2021-08-13 10:56:52:WARNING:root:Scan: pQ2_Z2=[0,0,250]
+2021-08-13 10:57:02:WARNING:root:Found: pQ2_Z2_Found=[0,0,250]
+2021-08-13 10:57:02:WARNING:root:poseFrame.trans:=[0,0,0]
+2021-08-13 10:57:02:WARNING:root:poseFrame.rot:=[90,0,90]
+2021-08-13 10:57:02:WARNING:root:oframe.trans:=[0,0,0]
+2021-08-13 10:57:02:WARNING:root:oframe.rot:=[0,0,0]
+2021-08-13 10:57:07:WARNING:root:Scan: pSearchSeam1_1=[-100,0,0]
+2021-08-13 10:57:15:WARNING:root:Found: pSeamFound1_1=[-100,0,0]
+2021-08-13 10:57:15:WARNING:root:Scan: pSearchSeam1_2=[-25,0,0]
+2021-08-13 10:57:17:WARNING:root:Found: pSeamFound1_2=[-25,0,0]
+2021-08-13 10:57:17:DEBUG:root:numKnumerator=2456.25
+2021-08-13 10:57:17:DEBUG:root:numKdenominator=5625
+2021-08-13 10:57:17:DEBUG:root:numK=-0.436667
+2021-08-13 10:57:17:DEBUG:root:posDropFeet=[-132.75,0,0]
+2021-08-13 10:57:17:DEBUG:root:Adjust DropFeet=[-132.75,0,0]
+2021-08-13 10:57:17:DEBUG:root:numKnumerator=-2511.75
+2021-08-13 10:57:17:DEBUG:root:numKdenominator=5625
+2021-08-13 10:57:17:DEBUG:root:numK=0.446533
+2021-08-13 10:57:17:DEBUG:root:posDropFeet=[-66.51,0,0]
+2021-08-13 10:57:17:DEBUG:root:Adjust DropFeet=[-66.51,0,0]
+2021-08-13 10:59:05:WARNING:root:Modules are saved
+2021-08-13 10:59:05:WARNING:root:Job Weld: 1/1 - 1002
+2021-08-13 10:59:05:WARNING:root:Pos: [0,0,0]
+2021-08-13 10:59:05:WARNING:root:Gantry: [0,0,0]
+2021-08-13 10:59:13:WARNING:root:Start to run Template_1002...
+2021-08-13 10:59:13:WARNING:root:Search oframe
+2021-08-13 10:59:18:WARNING:root:Scan: pQ2_Y1=[0,75,0]
+2021-08-13 10:59:33:WARNING:root:Found: pQ2_Y1_Found=[0,75,0]
+2021-08-13 10:59:33:WARNING:root:Scan: pQ2_Y2=[0,200,0]
+2021-08-13 10:59:36:WARNING:root:Found: pQ2_Y2_Found=[0,200,0]
+2021-08-13 10:59:42:WARNING:root:Scan: pQ2_Z2=[0,0,250]
+2021-08-13 11:00:01:WARNING:root:Found: pQ2_Z2_Found=[0,0,250]
+2021-08-13 11:00:01:WARNING:root:poseFrame.trans:=[0,0,0]
+2021-08-13 11:00:01:WARNING:root:poseFrame.rot:=[90,0,90]
+2021-08-13 11:00:01:WARNING:root:oframe.trans:=[0,0,0]
+2021-08-13 11:00:01:WARNING:root:oframe.rot:=[0,0,0]
+2021-08-13 11:00:06:WARNING:root:Scan: pSearchSeam1_1=[-100,0,0]
+2021-08-13 11:00:14:WARNING:root:Found: pSeamFound1_1=[-100,0,0]
+2021-08-13 11:00:14:WARNING:root:Scan: pSearchSeam1_2=[-25,0,0]
+2021-08-13 11:00:16:WARNING:root:Found: pSeamFound1_2=[-25,0,0]
+2021-08-13 11:00:16:DEBUG:root:numKnumerator=2456.25
+2021-08-13 11:00:16:DEBUG:root:numKdenominator=5625
+2021-08-13 11:00:16:DEBUG:root:numK=-0.436667
+2021-08-13 11:00:16:DEBUG:root:posDropFeet=[-132.75,0,0]
+2021-08-13 11:00:16:DEBUG:root:Adjust DropFeet=[-132.75,0,0]
+2021-08-13 11:00:16:DEBUG:root:numKnumerator=-2511.75
+2021-08-13 11:00:16:DEBUG:root:numKdenominator=5625
+2021-08-13 11:00:16:DEBUG:root:numK=0.446533
+2021-08-13 11:00:16:DEBUG:root:posDropFeet=[-66.51,0,0]
+2021-08-13 11:00:16:DEBUG:root:Adjust DropFeet=[-66.51,0,0]
+2021-08-13 11:02:18:DEBUG:root:numKnumerator=2400
+2021-08-13 11:02:18:DEBUG:root:numKdenominator=5625
+2021-08-13 11:02:18:DEBUG:root:numK=-0.426667
+2021-08-13 11:02:18:DEBUG:root:posDropFeet=[-132,0,0]
+2021-08-13 11:02:18:DEBUG:root:Adjust DropFeet=[-132,0,0]
+2021-08-13 11:02:18:DEBUG:root:numKnumerator=-7500
+2021-08-13 11:02:18:DEBUG:root:numKdenominator=5625
+2021-08-13 11:02:18:DEBUG:root:numK=1.33333
+2021-08-13 11:02:18:DEBUG:root:posDropFeet=[0,0,0]
+2021-08-13 11:02:18:DEBUG:root:Adjust DropFeet=[0,0,0]
+2021-08-13 11:24:27:WARNING:root:Scan: pSearchSeam1_1=[-100,0,0]
+2021-08-13 11:24:37:WARNING:root:Found: pSeamFound1_1=[-100,0,0]
+2021-08-13 11:24:37:WARNING:root:Scan: pSearchSeam1_2=[-25,0,0]
+2021-08-13 11:24:39:WARNING:root:Found: pSeamFound1_2=[-25,0,0]
+2021-08-13 11:24:39:DEBUG:root:numKnumerator=2400
+2021-08-13 11:24:39:DEBUG:root:numKdenominator=5625
+2021-08-13 11:24:39:DEBUG:root:numK=-0.426667
+2021-08-13 11:24:39:DEBUG:root:posDropFeet=[-132,0,0]
+2021-08-13 11:24:39:DEBUG:root:Adjust DropFeet=[-132,0,0]
+2021-08-13 11:24:39:DEBUG:root:numKnumerator=-7500
+2021-08-13 11:24:39:DEBUG:root:numKdenominator=5625
+2021-08-13 11:24:39:DEBUG:root:numK=1.33333
+2021-08-13 11:24:39:DEBUG:root:posDropFeet=[0,0,0]
+2021-08-13 11:24:39:DEBUG:root:Adjust DropFeet=[0,0,0]
+2021-08-13 11:37:40:WARNING:root:Scan: pSearchSeam1_1=[-100,0,0]
+2021-08-13 11:37:53:WARNING:root:Found: pSeamFound1_1=[-100,0,0]
+2021-08-13 11:37:53:WARNING:root:Scan: pSearchSeam1_2=[-25,0,0]
+2021-08-13 11:37:55:WARNING:root:Found: pSeamFound1_2=[-25,0,0]
+2021-08-13 11:37:55:DEBUG:root:pos0=[-132,0,0], pos1=[-100,0,0], pos2=[-25,0,0]
+2021-08-13 11:37:55:DEBUG:root:DropFeet=[-132,0,0], Advised=[-132,0,0], Offset=[0,0,0]
+2021-08-13 11:37:55:DEBUG:root:pos0=[0,0,0], pos1=[-100,0,0], pos2=[-25,0,0]
+2021-08-13 11:37:55:DEBUG:root:DropFeet=[0,0,0], Advised=[0,0,0], Offset=[0,0,0]
+2021-08-13 11:49:44:WARNING:root:Modules are saved
+2021-08-13 11:49:44:WARNING:root:Job Weld: 1/1 - 1002
+2021-08-13 11:49:44:WARNING:root:Pos: [0,0,0]
+2021-08-13 11:49:44:WARNING:root:Gantry: [0,0,0]
+2021-08-13 11:49:54:WARNING:root:Start to run Template_1002...
+2021-08-13 11:49:54:WARNING:root:Search oframe
+2021-08-13 11:49:59:WARNING:root:Scan: pQ2_Y1=[0,75,0]
+2021-08-13 11:50:10:WARNING:root:Found: pQ2_Y1_Found=[0,75,0]
+2021-08-13 11:50:10:WARNING:root:Scan: pQ2_Y2=[0,200,0]
+2021-08-13 11:50:13:WARNING:root:Found: pQ2_Y2_Found=[0,200,0]
+2021-08-13 11:50:18:WARNING:root:Scan: pQ2_Z2=[0,0,250]
+2021-08-13 11:50:28:WARNING:root:Found: pQ2_Z2_Found=[0,0,250]
+2021-08-13 11:50:28:WARNING:root:poseFrame.trans:=[0,0,0]
+2021-08-13 11:50:28:WARNING:root:poseFrame.rot:=[90,0,90]
+2021-08-13 11:50:28:WARNING:root:oframe.trans:=[0,0,0]
+2021-08-13 11:50:28:WARNING:root:oframe.rot:=[0,0,0]
+2021-08-13 11:50:33:WARNING:root:Scan: pSearchSeam1_1=[-100,0,0]
+2021-08-13 11:50:51:WARNING:root:Found: pSeamFound1_1=[-100,0,0]
+2021-08-13 11:50:51:WARNING:root:Scan: pSearchSeam1_2=[-25,0,0]
+2021-08-13 11:50:53:WARNING:root:Found: pSeamFound1_2=[-25,0,0]
+2021-08-13 11:50:53:DEBUG:root:pos0=[-132,0,0], pos1=[-100,0,0], pos2=[-25,0,0]
+2021-08-13 11:50:53:DEBUG:root:DropFeet=[-132,0,0], Advised=[-132,0,0], Offset=[0,0,0]
+2021-08-13 11:50:53:DEBUG:root:pos0=[0,0,0], pos1=[-100,0,0], pos2=[-25,0,0]
+2021-08-13 11:50:53:DEBUG:root:DropFeet=[0,0,0], Advised=[0,0,0], Offset=[0,0,0]
+2021-08-13 11:51:39:WARNING:root:Scan: pSearchSeam2_1=[0,0,50]
+2021-08-13 11:51:52:WARNING:root:Found: pSeamFound2_1=[0,0,50]
+2021-08-13 11:51:52:WARNING:root:Scan: pSearchSeam2_2=[0,0,250]
+2021-08-13 11:51:59:WARNING:root:Found: pSeamFound2_2=[0,0,250]
+2021-08-13 11:51:59:DEBUG:root:pos0=[0,0,0], pos1=[0,0,50], pos2=[0,0,250]
+2021-08-13 11:51:59:DEBUG:root:DropFeet=[0,0,0], Advised=[0,0,0], Offset=[0,0,0]
+2021-08-13 11:51:59:DEBUG:root:pos0=[0,0,100], pos1=[0,0,50], pos2=[0,0,250]
+2021-08-13 11:51:59:DEBUG:root:DropFeet=[0,0,100], Advised=[0,0,100], Offset=[0,0,0]
+2021-08-13 11:51:59:DEBUG:root:pos0=[0,0,385], pos1=[0,0,50], pos2=[0,0,250]
+2021-08-13 11:51:59:DEBUG:root:DropFeet=[0,0,385], Advised=[0,0,385], Offset=[0,0,0]
+2021-08-13 11:53:28:WARNING:root:Scan: pSearchSeam3_1=[-100,-11,0]
+2021-08-13 11:53:39:WARNING:root:Found: pSeamFound3_1=[-100,-11,0]
+2021-08-13 11:53:39:WARNING:root:Scan: pSearchSeam3_2=[-25,-11,0]
+2021-08-13 11:53:42:WARNING:root:Found: pSeamFound3_2=[-25,-11,0]
+2021-08-13 11:53:42:DEBUG:root:pos0=[-132,-11,0], pos1=[-100,-11,0], pos2=[-25,-11,0]
+2021-08-13 11:53:42:DEBUG:root:DropFeet=[-132,-11,0], Advised=[-132,-11,0], Offset=[0,0,0]
+2021-08-13 11:53:42:DEBUG:root:pos0=[0,-11,0], pos1=[-100,-11,0], pos2=[-25,-11,0]
+2021-08-13 11:53:42:DEBUG:root:DropFeet=[0,-11,0], Advised=[0,-11,0], Offset=[0,0,0]
+2021-08-13 11:54:25:WARNING:root:Scan: pSearchSeam4_1=[0,-11,50]
+2021-08-13 11:54:34:WARNING:root:Found: pSeamFound4_1=[0,-11,50]
+2021-08-13 11:54:34:WARNING:root:Scan: pSearchSeam4_2=[0,-11,250]
+2021-08-13 11:54:42:WARNING:root:Found: pSeamFound4_2=[0,-11,250]
+2021-08-13 11:54:42:DEBUG:root:pos0=[0,-11,0], pos1=[0,-11,50], pos2=[0,-11,250]
+2021-08-13 11:54:42:DEBUG:root:DropFeet=[0,-11,0], Advised=[0,-11,0], Offset=[0,0,0]
+2021-08-13 11:54:42:DEBUG:root:pos0=[0,-11,100], pos1=[0,-11,50], pos2=[0,-11,250]
+2021-08-13 11:54:42:DEBUG:root:DropFeet=[0,-11,100], Advised=[0,-11,100], Offset=[0,0,0]
+2021-08-13 11:54:42:DEBUG:root:pos0=[0,-11,385], pos1=[0,-11,50], pos2=[0,-11,250]
+2021-08-13 11:54:42:DEBUG:root:DropFeet=[0,-11,385], Advised=[0,-11,385], Offset=[0,0,0]
+2021-08-13 11:56:01:WARNING:root:Scan: pSearchSeam5_1=[-143.5,-25,0]
+2021-08-13 11:56:15:WARNING:root:Found: pSeamFound5_1=[-143.5,-25,0]
+2021-08-13 11:56:15:WARNING:root:Scan: pSearchSeam5_2=[-143.5,-125,0]
+2021-08-13 11:56:17:WARNING:root:Found: pSeamFound5_2=[-143.5,-125,0]
+2021-08-13 11:56:17:DEBUG:root:pos0=[-143.5,-155.5,0], pos1=[-143.5,-25,0], pos2=[-143.5,-125,0]
+2021-08-13 11:56:17:DEBUG:root:DropFeet=[-143.5,-155.5,0], Advised=[-143.5,-155.5,0], Offset=[0,0,0]
+2021-08-13 11:56:17:DEBUG:root:pos0=[-143.5,-11,0], pos1=[-143.5,-25,0], pos2=[-143.5,-125,0]
+2021-08-13 11:56:17:DEBUG:root:DropFeet=[-143.5,-11,0], Advised=[-143.5,-11,0], Offset=[0,0,0]
+2021-08-13 11:57:01:WARNING:root:Scan: pSearchSeam6_1=[0,-125,416]
+2021-08-13 11:57:13:WARNING:root:Found: pSeamFound6_1=[0,-125,416]
+2021-08-13 11:57:13:WARNING:root:Scan: pSearchSeam6_2=[0,125,416]
+2021-08-13 11:57:15:WARNING:root:Found: pSeamFound6_2=[0,125,416]
+2021-08-13 11:57:15:DEBUG:root:pos0=[0,-144.5,416], pos1=[0,-125,416], pos2=[0,125,416]
+2021-08-13 11:57:15:DEBUG:root:DropFeet=[0,-144.5,416], Advised=[0,-144.5,416], Offset=[0,0,0]
+2021-08-13 11:57:15:DEBUG:root:pos0=[0,144.5,416], pos1=[0,-125,416], pos2=[0,125,416]
+2021-08-13 11:57:15:DEBUG:root:DropFeet=[0,144.5,416], Advised=[0,144.5,416], Offset=[0,0,0]
+2021-08-13 11:58:11:WARNING:root:Scan: pSearchSeam7_1=[-143.5,25,0]
+2021-08-13 11:58:24:WARNING:root:Found: pSeamFound7_1=[-143.5,25,0]
+2021-08-13 11:58:24:WARNING:root:Scan: pSearchSeam7_2=[-143.5,125,0]
+2021-08-13 11:58:26:WARNING:root:Found: pSeamFound7_2=[-143.5,125,0]
+2021-08-13 11:58:26:DEBUG:root:pos0=[-172.5,13,-6], pos1=[-143.5,25,0], pos2=[-143.5,125,0]
+2021-08-13 11:58:26:DEBUG:root:DropFeet=[-143.5,13,0], Advised=[-143.5,13,0], Offset=[29,0,6]
+2021-08-13 11:58:26:DEBUG:root:pos0=[-172.5,155,-6], pos1=[-143.5,25,0], pos2=[-143.5,125,0]
+2021-08-13 11:58:26:DEBUG:root:DropFeet=[-143.5,155,0], Advised=[-143.5,155,0], Offset=[29,0,6]
+2021-08-13 11:59:03:WARNING:root:Template_1002 is done
+2021-08-13 12:02:01:DEBUG:root:pos0=[-172.5,13,0], pos1=[-143.5,25,0], pos2=[-143.5,125,0]
+2021-08-13 12:02:01:DEBUG:root:DropFeet=[-143.5,13,0], Advised=[-143.5,13,0], Offset=[29,0,0]
+2021-08-13 12:02:02:DEBUG:root:pos0=[-172.5,155,0], pos1=[-143.5,25,0], pos2=[-143.5,125,0]
+2021-08-13 12:02:02:DEBUG:root:DropFeet=[-143.5,155,0], Advised=[-143.5,155,0], Offset=[29,0,0]
+2021-08-13 12:44:12:DEBUG:root:pos0=[-143.5,25,0], pos1=[-143.5,25,0], pos2=[-143.5,125,0]
+2021-08-13 12:44:12:DEBUG:root:DropFeet=[-143.5,25,0], Advised=[-143.5,25,0], Offset=[0,0,0]
+2021-08-13 12:44:12:DEBUG:root:pos0=[-143.5,125,0], pos1=[-143.5,25,0], pos2=[-143.5,125,0]
+2021-08-13 12:44:12:DEBUG:root:DropFeet=[-143.5,125,0], Advised=[-143.5,125,0], Offset=[0,0,0]
+2021-08-13 13:01:48:WARNING:root:Modules are saved
+2021-08-13 13:01:48:WARNING:root:Job Weld: 1/1 - 1002
+2021-08-13 13:01:48:WARNING:root:Pos: [0,0,0]
+2021-08-13 13:01:48:WARNING:root:Gantry: [0,0,0]
+2021-08-13 13:01:52:WARNING:root:Start to run Template_1002...
+2021-08-13 13:01:52:WARNING:root:Search oframe
+2021-08-13 13:14:45:WARNING:root:Modules are saved
+2021-08-13 13:14:45:WARNING:root:Job Weld: 1/1 - 1002
+2021-08-13 13:14:45:WARNING:root:Pos: [0,0,0]
+2021-08-13 13:14:45:WARNING:root:Gantry: [0,0,0]
+2021-08-13 13:14:46:WARNING:root:Start to run Template_1002...
+2021-08-13 13:14:46:WARNING:root:Search oframe
