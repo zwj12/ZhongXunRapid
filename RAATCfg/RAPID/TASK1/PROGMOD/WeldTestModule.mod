@@ -1,26 +1,18 @@
 MODULE WeldTestModule
-    !*****************************************************
-    !Module Name: SmarTacTestModule
-    !Version:     1.0
-    !Description: 
-    !Date:        2020-8-17
-    !Author:      Michael
-    !*****************************************************
-
-    TASK PERS robtarget pWeldReady:=[[470.01,-1177.83,488.06],[0.0856884,-0.719013,-0.681861,-0.103645],[0,-1,0,0],[0.0636362,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    TASK PERS robtarget pWeld1:=[[470.01,-1177.83,488.06],[0.0856888,-0.719013,-0.681862,-0.103645],[0,-1,0,0],[0.0636362,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    TASK PERS robtarget pWeld2:=[[463.93,-1182.78,481.69],[0.0856893,-0.719013,-0.681861,-0.103644],[0,-1,0,0],[0.0625076,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    TASK PERS robtarget pWeldReady:=[[-467.92,52.53,916.72],[0.387568,0.148202,-0.90641,0.0790414],[-2,0,2,1],[-829.935,-140.814,-485.851,9E+09,9E+09,9E+09]];
+    TASK PERS robtarget pWeld1:=[[-521.93,160.88,873.37],[0.387567,0.148202,-0.906411,0.0790441],[-2,0,2,1],[-829.935,-140.814,-485.851,9E+09,9E+09,9E+09]];
+    TASK PERS robtarget pWeld2:=[[-516.45,52.52,873.37],[0.387566,0.1482,-0.906411,0.079047],[-2,0,2,1],[-829.935,-140.814,-485.851,9E+09,9E+09,9E+09]];
 
     TASK PERS seamdata seamWeld:=[0,0.5,[0,0,0,0,0,0,0,0,0],0,0,0,0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0.5];
     TASK PERS welddata weldWeld:=[8,0,[17,0,0,0,0,230,0,0,0],[0,0,0,0,0,0,0,0,0]];
 
-    TASK PERS robtarget pWeldWeaveReady:=[[506.33,1243.17,-666.96],[0.657951,-0.267537,-0.648249,-0.274405],[0,-1,-3,1],[670.006,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    TASK PERS robtarget pWeldWeave1:=[[506.33,1243.17,-666.96],[0.65795,-0.267538,-0.648249,-0.274405],[0,-1,-3,1],[670.006,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    TASK PERS robtarget pWeldWeave2:=[[506.33,1243.17,-666.96],[0.65795,-0.267538,-0.648249,-0.274405],[0,-1,-3,1],[670.006,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    TASK PERS robtarget pWeldWeaveReady:=[[-514.35,142.35,865.74],[0.223327,0.694043,-0.667613,-0.150741],[-2,0,1,1],[-829.935,-140.815,-430.34,9E+09,9E+09,9E+09]];
+    TASK PERS robtarget pWeldWeave1:=[[-591.23,151.22,813.95],[0.223326,0.694043,-0.667613,-0.150742],[-2,0,1,1],[-829.935,-140.814,-430.341,9E+09,9E+09,9E+09]];
+    TASK PERS robtarget pWeldWeave2:=[[-577.51,-41.54,813.25],[0.223325,0.694043,-0.667613,-0.15074],[-2,0,1,1],[-829.935,-140.814,-430.341,9E+09,9E+09,9E+09]];
 
-    TASK PERS seamdata seamWeave:=[0.5,0.5,[0,0,0,0,0,0,0,0,0],0,0,0,0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0.5];
-    TASK PERS welddata weldWeave:=[3,0,[4,0,-5,0,0,230,0,0,0],[0,0,0,0,0,0,0,0,0]];
-    TASK PERS weavedata weaveWeave:=[1,0,1.5,6,0,0,0,0,0,0,0,0,0,0,0];
+    TASK PERS seamdata seamWeave:=[0,0.5,[0,0,0,0,0,0,0,0,0],0,0,0,0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0.5];
+    TASK PERS welddata weldWeave:=[2,0,[21,0,-5,0,0,230,0,0,0],[0,0,0,0,0,0,0,0,0]];
+    TASK PERS weavedata weaveWeave:=[1,0,2,2.2,0,0.5,0,0.5,0,0,0,0,0,0,0];
 
     TASK PERS robtarget pWGReady:=[[2571.80,-1031.86,873.30],[0.361306,-0.103756,-0.907486,0.187513],[-1,0,-1,0],[2643.67,9E+09,9E+09,9E+09,9E+09,9E+09]];
     TASK PERS robtarget pWG1:=[[2529.79,-942.75,829.34],[0.361338,-0.103715,-0.907476,0.187524],[-2,0,-1,0],[2643.67,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -47,6 +39,11 @@ MODULE WeldTestModule
     LOCAL PERS pose poseSmarTac2y:=[[11.551,0.00830078,0.00735474],[1,0,0,0]];
     LOCAL PERS pose poseSmarTac2z:=[[0.00561523,-0.0124512,-12.0016],[1,0,0,0]];
 
+    TASK PERS robtarget pWeldLaser1:=[[-540.30,219.95,880.85],[0.226872,0.677852,-0.684046,-0.145348],[-2,0,1,1],[-829.935,-140.814,-430.34,9E+09,9E+09,9E+09]];
+    TASK PERS robtarget pWeldLaser2:=[[-531.51,27.86,880.85],[0.226872,0.677853,-0.684045,-0.14535],[-1,0,1,1],[-829.935,-140.814,-430.341,9E+09,9E+09,9E+09]];
+    TASK PERS robtarget pWeldLaserFound1:=[[-591.23,151.22,813.95],[0.387567,0.148201,-0.906411,0.0790435],[-2,0,2,1],[-829.935,-140.814,-485.851,9E+09,9E+09,9E+09]];
+    TASK PERS robtarget pWeldLaserFound2:=[[-577.51,-41.54,813.25],[0.387566,0.1482,-0.906411,0.0790468],[-2,0,2,1],[-829.935,-140.814,-485.851,9E+09,9E+09,9E+09]];
+
     PROC WeldTest()
         MoveJ pWeldReady,v100,z10,toolWeldGun;
         ArcLStart pWeld1,v100,seamWeld,weldWeld,fine,toolWeldGun;
@@ -55,6 +52,31 @@ MODULE WeldTestModule
     ENDPROC
 
     PROC WeldWeaveTest()
+        MoveJ pWeldWeaveReady,v100,z10,toolWeldGun;
+        ArcLStart pWeldWeave1,v100,seamWeave,weldWeave\Weave:=weaveWeave,fine,toolWeldGun;
+        ArcLEnd pWeldWeave2,v100,seamWeave,weldWeave\Weave:=weaveWeave,fine,toolWeldGun;
+        MoveL pWeldWeaveReady,v100,fine,toolWeldGun;
+        RETURN ;
+    ENDPROC
+
+    PROC WeldLaserSearchTest()
+        IF RobOS() THEN
+            IF NOT ASFMu_Initialize(Laser_IP_Add,2,TRUE,TRUE,TRUE,toolWeldGun,wobj0) THEN
+                TPWrite "The socket between laser and robot error Can't connect to vision controller";
+                stop;
+            ENDIF
+        ENDIF
+
+        MoveAbsJ [[-102.582,34.7441,-48.7923,22.0956,-101.14,108.526],[-829.935,-140.814,-430.341,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun;
+
+        ScanSeamByLaser pWeldLaserFound1,pWeldLaser1,scanJoint2,speedAproach,toolWeldGun;
+        ScanSeamByLaser pWeldLaserFound2,pWeldLaser2,scanJoint2,speedAproach,toolWeldGun;
+
+        MoveAbsJ [[-85.1711,28.5511,-39.4478,14.1206,-109.449,92.7941],[-829.935,-140.814,-430.34,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun;
+
+        pWeldWeave1.trans:=pWeldLaserFound1.trans;
+        pWeldWeave2.trans:=pWeldLaserFound2.trans;
+
         MoveJ pWeldWeaveReady,v100,z10,toolWeldGun;
         ArcLStart pWeldWeave1,v100,seamWeave,weldWeave\Weave:=weaveWeave,fine,toolWeldGun;
         ArcLEnd pWeldWeave2,v100,seamWeave,weldWeave\Weave:=weaveWeave,fine,toolWeldGun;
@@ -73,6 +95,21 @@ MODULE WeldTestModule
         Stop;
         ArcRepL\Start\End,Layer_3,v100,seamWG,weldWG,weaveWG,z10,toolWeldGun\WObj:=wobj0\SeamName:="weldTest";
         MoveL pWGReady,v100,z10,toolWeldGun\WObj:=wobj0;
+    ENDPROC
+
+    PROC WeldTest_Q2_2F()
+        MoveJ [[-301.19,34.29,849.89],[0.119305,-0.0528558,0.924955,-0.356975],[-1,-1,1,1],[-1214.34,420.606,-289.138,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobj0;
+        ArcLStart [[-362.80,-10.17,796.27],[0.119308,-0.0528561,0.924955,-0.356973],[-1,-1,2,1],[-1214.34,420.606,-289.138,9E+09,9E+09,9E+09]],speedAproach,seamShared,weldShared_1\Weave:=weaveShared_1,fine,toolWeldGun\Track:=trackShared_1\SeamName:="WeldTest_Q2_2F";
+        ArcLEnd [[-301.19,-10.17,796.27],[0.119306,-0.0528565,0.924956,-0.356971],[-1,-1,2,1],[-1214.34,420.606,-289.138,9E+09,9E+09,9E+09]],speedWeld,seamShared,weldShared_1\Weave:=weaveShared_1,fine,toolWeldGun\Track:=trackShared_1;
+        MoveJ [[-653.03,80.63,849.82],[0.120576,-0.0499496,0.915979,-0.379406],[-1,-1,2,1],[-1488.92,426.811,-289.139,9E+09,9E+09,9E+09]],speedAproach,fine,toolWeldGun\WObj:=wobj0;
+    ENDPROC
+
+    PROC WeldTest_Q2_3F()
+        MoveJ [[-483.83,125.29,899.66],[0.28646,0.615643,-0.253764,0.68886],[-2,-1,1,1],[-1243.95,480.692,-240.237,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobj0;
+        ArcLStart [[-392.14,-32.06,802.45],[0.2341,0.733331,-0.302741,0.561935],[-1,-1,0,1],[-1243.95,480.692,-240.237,9E+09,9E+09,9E+09]],speedAproach,seamShared,weldShared_2\Weave:=weaveShared_2,fine,toolWeldGun\Track:=trackShared_2\SeamName:="WeldTest_Q2_3F";
+        ArcL [[-392.94,-31.26,859.72],[0.28646,0.615643,-0.253762,0.688861],[-1,-2,1,1],[-1243.95,480.692,-240.237,9E+09,9E+09,9E+09]], speedAproach, seamShared, weldShared_2\Weave:=weaveShared_2, z10, toolWeldGun\Track:=trackShared_2;
+        ArcLEnd [[-392.72,-31.48,900.47],[0.28646,0.615642,-0.253762,0.688861],[-1,-1,1,1],[-1243.95,480.692,-240.237,9E+09,9E+09,9E+09]],speedWeld,seamShared,weldShared_2\Weave:=weaveShared_2,fine,toolWeldGun\Track:=trackShared_2;
+        MoveJ [[-483.83,125.28,899.66],[0.286461,0.615643,-0.253765,0.68886],[-2,-1,1,1],[-1243.95,480.692,-240.236,9E+09,9E+09,9E+09]],speedAproach,fine,toolWeldGun\WObj:=wobj0;
     ENDPROC
 
     PROC WGSmarTacTest()

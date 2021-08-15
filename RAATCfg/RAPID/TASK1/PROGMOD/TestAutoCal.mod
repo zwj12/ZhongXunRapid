@@ -11,12 +11,12 @@ MODULE TestAutoCal
     !!****************************************************************************
     
     !!Tool below is a copy of the tool Ref_Pin defined in MainModule
-    PERS tooldata ACAL_My_Tool:=[TRUE,[[-56.9127,5.0035,540.198],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
-    PERS wobjdata ACAL_My_Cal_Target:=[FALSE,TRUE,"",[[-16.5812,-319.353,417.854],[0.713239,0.00069864,0.000101632,-0.700921]],[[0,0,0],[1,0,0,0]]];
+    PERS tooldata ACAL_My_Tool:=[TRUE,[[-57.4353,1.20245,543.127],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
+    PERS wobjdata ACAL_My_Cal_Target:=[FALSE,TRUE,"",[[-513.694,-538.71,812.29],[0.724391,0.000235258,0.00333423,-0.689381]],[[0,0,0],[1,0,0,0]]];
     !!Tool below is used to test calibration result (TCP at OPTICAL origin of laser-camera)
-    PERS tooldata ACAL_OpticalTool:=[TRUE,[[28.0974,-30.3824,705.484],[0.0151826,0.00985186,0.999836,-0.000201917]],[2,[50,50,100],[1,0,0,0],0,0,0]];
+    PERS tooldata ACAL_OpticalTool:=[TRUE,[[22.8319,-5.87382,755.566],[0.0166039,0.0120922,0.999788,-0.0017187]],[2,[50,50,100],[1,0,0,0],0,0,0]];
     
-    PERS caldata ACAL_TestCalOut:=[[-0.119,0.13,1.009],23.544,-30.277,855.415,-179.994,1.74001,178.871,3];    !Output of the calibration function                            
+    PERS caldata ACAL_TestCalOut:=[[-0.095,-0.129,-0.094],19.516,-5.49,855.51,-179.826,1.905,178.617,3];    !Output of the calibration function                            
     !!Next variable stores the WObj used to test the base optimization function
     PERS wobjdata ACAL_OptimizedBase:=[FALSE,TRUE,"",[[968.915,-342.455,475.393],[0.99982,0.00148294,-0.000331306,-0.0188947]],[[0,0,0],[1,0,0,0]]];
     
@@ -79,7 +79,7 @@ MODULE TestAutoCal
         ENDIF
         
         !!CLEAR position above calibration target - TEACH TO HAVE PROPER TOOL CLEARANCE TO GO TO THE CALIBRATION START POSITION (Next MoveL below)
-        MoveL [[88.31,69.24,27.23],[0.212121,-0.0120763,-0.97715,0.00608278],[-1,0,2,1],[-212.934,4.44893,-180.125,9E+09,9E+09,9E+09]], v100, fine, ACAL_My_Tool\WObj:=ACAL_My_Cal_Target;
+        MoveL [[85.52,51.97,25.66],[0.193612,-0.00646003,-0.981037,0.00627111],[-1,-1,1,1],[-465.249,-144.288,-485.852,9E+09,9E+09,9E+09]], v100, fine, ACAL_My_Tool\WObj:=ACAL_My_Cal_Target;
         
         !!Open communication socket (IMPORTANT: take care to input the proper tool and wObj!)
         IF NOT ACALu_Initialize("192.168.1.3",ACAL_My_Tool,ACAL_My_Cal_Target) THEN
@@ -88,7 +88,7 @@ MODULE TestAutoCal
         ENDIF
         
         !!Calibration START position - TEACH THIS POINT ACCORDING TO THE AUTO-CAL 2.0 USER MANUAL
-        MoveL [[88.30,69.24,27.23],[0.212123,-0.0120762,-0.97715,0.00608212],[-1,0,2,1],[-212.934,4.44893,-180.125,9E+09,9E+09,9E+09]], v100, fine, ACAL_My_Tool\WObj:=ACAL_My_Cal_Target;
+        MoveL [[84.40,41.54,25.61],[0.193562,-0.0134211,-0.980966,0.00764427],[-1,-1,1,1],[-465.249,-144.288,-485.852,9E+09,9E+09,9E+09]], v100, fine, ACAL_My_Tool\WObj:=ACAL_My_Cal_Target;
         
         WaitTime 1;
         
@@ -131,13 +131,13 @@ MODULE TestAutoCal
             
             !!OpticalTool will be 112 mm up from the bottom of the field of view of the laser-camera which was calibrated
             !!(offset can be adjusted to bring the profile to a proper position for the current laser-camera)
-            ACAL_OpticalToolOffset:=[[0,0,150],[1,0,0,0]];
+            ACAL_OpticalToolOffset:=[[0,0,100],[1,0,0,0]];
             
             ACAL_OpticalTool.tframe:=PoseMult(ACAL_OpticalTool.tframe,ACAL_OpticalToolOffset);
             
             !!OpticalTool TCP is sent to the calibration target origin (small 1.2 mm hole)
             Stop;
-            MoveL [[0,0,0],[0.997532,-0.0102858,-0.0531091,-0.0447508],[-1,-1,2,1],[-212.934,4.45035,-180.125,9E+09,9E+09,9E+09]], v50, fine, ACAL_OpticalTool\WObj:=ACAL_My_Cal_Target;
+            MoveL [[0,0,0],[0.999887,-0.00723525,-0.0122464,0.00481853],[-1,-1,1,1],[-465.249,-144.288,-600,9E+09,9E+09,9E+09]], v50, fine, ACAL_OpticalTool\WObj:=ACAL_My_Cal_Target;
             
         ENDIF
         
@@ -154,17 +154,17 @@ MODULE TestAutoCal
         VAR robtarget PosC;
         
         !Move close to target (initializes tool and WObj)
-        MoveL [[15.05,46.07,112.33],[0.983993,0.00935109,-0.174398,0.0354223],[-1,-2,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]], v100, z50, ACAL_My_Tool\WObj:=ACAL_My_Cal_Target;
+        MoveL [[-2.09,59.61,41.55],[0.193626,-0.00645953,-0.981034,0.0062766],[-1,-1,2,1],[-465.247,-144.287,-485.852,9E+09,9E+09,9E+09]], v100, z50, ACAL_My_Tool\WObj:=ACAL_My_Cal_Target;
         
         Stop;
         
         !Three approach points taught by operator (in manually defined target user frame)
         !Theoretical values (5 mm above points): A=(0,0,5); B=114,0,5; C=0,108,5)
-        PosA:=[[0.0,0.0,5.0],[0.969925,0.0118483,-0.240617,0.0347518],[-1,-2,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-        PosB:=[[114.0,0.0,5.0],[0.969925,0.0118492,-0.240612,0.0347719],[-1,-2,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-        PosC:=[[0.0,108.0,5.0],[0.969928,0.0118414,-0.240604,0.0347606],[-1,-2,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+        PosA:=[[1.27,2.77,3.99],[0.193626,-0.00645967,-0.981034,0.00627775],[0,-1,1,1],[-465.246,-144.287,-485.852,9E+09,9E+09,9E+09]];
+        PosB:=[[118.26,3.80,4.70],[0.193624,-0.00645936,-0.981034,0.00627635],[0,-1,1,1],[-465.246,-144.286,-485.852,9E+09,9E+09,9E+09]];
+        PosC:=[[0.53,122.05,3.69],[0.193627,-0.00646203,-0.981034,0.0062777],[-1,-1,2,1],[-465.246,-144.287,-485.852,9E+09,9E+09,9E+09]];
         
-        IF NOT ACALu_Initialize("192.168.2.3",ACAL_My_Tool,ACAL_My_Cal_Target) THEN
+        IF NOT ACALu_Initialize("192.168.1.3",ACAL_My_Tool,ACAL_My_Cal_Target) THEN
             Stop;
         ENDIF
             
@@ -174,6 +174,7 @@ MODULE TestAutoCal
             Stop;
         ENDIF
     
+        Stop;
         MoveL [[15.05,46.06,112.33],[0.983993,0.00934793,-0.174397,0.0354175],[-1,-2,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]], v100, fine, ACAL_My_Tool\WObj:=ACAL_My_Cal_Target;
     
         IF NOT ACALu_Clear() THEN

@@ -27,10 +27,13 @@ MODULE MainModule
     CONST ee_event ee_eventPostProc:=[EE_POST_PROC,"PostService","",0,1];
 
     PROC main()
+        EOffsSet extGantryOffsetCurrent;
+        Logging ValToStr(C_PROGDISP.eoffs);
         !SetFileHandlerLogLevel\INFO;
         !SetTPHandlerLogLevel\INFO;
         !ConfJ\Off;
         !ConfL\Off;
+        InhibWeld FALSE\Weld\Weave\Track;
         SaveModule;
         JobWeld;
         ExecEngine;

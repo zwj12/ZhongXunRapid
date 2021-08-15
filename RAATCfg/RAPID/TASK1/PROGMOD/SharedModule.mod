@@ -22,12 +22,26 @@ MODULE SharedModule(NOSTEPIN)
 
     PERS bool boolEnableOffset:=FALSE;
 
-    !Butt
+    !Seam 1
     CONST ScanData scanJoint1:=[1];
-    !Fillet
+    !Seam 2
     CONST ScanData scanJoint2:=[2];
-    !Lap
+    !Seam 3
     CONST ScanData scanJoint3:=[3];
+    !Seam 4
+    CONST ScanData scanJoint4:=[4];
+    !Seam 5
+    CONST ScanData scanJoint5:=[5];
+    !Seam 6
+    CONST ScanData scanJoint6:=[6];
+    !Seam 7
+    CONST ScanData scanJoint7:=[7];
+    !Seam 8
+    CONST ScanData scanJoint8:=[8];
+    !Seam 9
+    CONST ScanData scanJoint9:=[9];
+    !Seam 10
+    CONST ScanData scanJoint10:=[10];
 
     !numJobMode: 0 - Keep last, 1 - by TPU, 2 - by yml, 3 - by PLC
     PERS num numJobMode:=1;
@@ -94,46 +108,36 @@ MODULE SharedModule(NOSTEPIN)
         Logging "LoadModelDatabyYML";
     ENDPROC
 
-    FUNC pos GetDropFeet(pos pos0,pos pos1,pos pos2\switch KeepX|switch KeepY|switch KeepZ\switch OnlyOffset)
-        VAR pos posDropFeet;
-        VAR pos posDropFeetAdvised;
-        VAR pos posOffset;
-        VAR num numK;
-        VAR num numKnumerator;
-        VAR num numKdenominator;
-        Logging\DEBUG,"pos0="+ValToStr(RoundPos(pos0))+", pos1="+ValToStr(RoundPos(pos1))+", pos2="+ValToStr(RoundPos(pos2));
-        numKnumerator:=(pos1.x-pos0.x)*(pos2.x-pos1.x)+(pos1.y-pos0.y)*(pos2.y-pos1.y)+(pos1.z-pos0.z)*(pos2.z-pos1.z);
-        numKdenominator:=pow(pos2.x-pos1.x,2)+pow(pos2.y-pos1.y,2)+pow(pos2.z-pos1.z,2);
-        numK:=0-numKnumerator/numKdenominator;
-        !Logging\DEBUG,"numKnumerator="+ValToStr(numKnumerator);
-        !Logging\DEBUG,"numKdenominator="+ValToStr(numKdenominator);
-        !Logging\DEBUG,"numK="+ValToStr(numK);
-        posDropFeet.x:=numK*(pos2.x-pos1.x)+pos1.x;
-        posDropFeet.y:=numK*(pos2.y-pos1.y)+pos1.y;
-        posDropFeet.z:=numK*(pos2.z-pos1.z)+pos1.z;
-        posDropFeetAdvised:=posDropFeet;
-        IF Present(KeepX) THEN
-            posDropFeetAdvised.x:=pos0.x;
-        ELSEIF Present(KeepY) THEN
-            posDropFeetAdvised.y:=pos0.y;
-        ELSEIF Present(KeepZ) THEN
-            posDropFeetAdvised.z:=pos0.z;
-        ENDIF
-        posOffset:=posDropFeetAdvised-pos0;
-        Logging\DEBUG,"DropFeet="+ValToStr(RoundPos(posDropFeet))+", Advised="+ValToStr(RoundPos(posDropFeetAdvised))+", Offset="+ValToStr(RoundPos(posOffset));
-        IF Present(OnlyOffset) THEN
-            RETURN posOffset;
-        ELSE
-            RETURN posDropFeet;
-        ENDIF
-    ENDFUNC
-
     PROC ReloadGantryOffset()
         EOffsSet extGantryOffsetCurrent;
         IF RobOS() THEN
             IF NOT ASFMu_Initialize(Laser_IP_Add,2,TRUE,TRUE,TRUE,toolLaser,wobjCurrent) THEN
                 TPWrite "The socket between laser and robot error Can't connect to vision controller";
                 stop;
+            ENDIF
+        ENDIF
+    ENDPROC
+
+    PROC InhibWeld(bool boolInhib\switch Weld\switch Weave\switch Track)
+        IF boolInhib THEN
+            IF Present(Weave) THEN
+                SetDO sdoWeldInhib,1;
+            ENDIF
+            IF Present(Weave) THEN
+                SetDO sdoWeldInhib,1;
+            ENDIF
+            IF Present(Track) THEN
+                SetDO sdoTrackInhib,1;
+            ENDIF
+        ELSE
+            IF Present(Weave) THEN
+                SetDO sdoWeldInhib,0;
+            ENDIF
+            IF Present(Weave) THEN
+                SetDO sdoWeldInhib,0;
+            ENDIF
+            IF Present(Track) THEN
+                SetDO sdoTrackInhib,0;
             ENDIF
         ENDIF
     ENDPROC

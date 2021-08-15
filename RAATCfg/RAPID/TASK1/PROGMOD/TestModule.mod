@@ -39,34 +39,16 @@ MODULE TestModule
 
     PROC MoveGanrtyQuadrantByWobjCur()
         VAR num numQuadrant;
-        VAR num numGantryOffsetDirectionX;
-        VAR num numGantryOffsetDirectionY;
         VAR extjoint extjointGantryOffsetCur;
+        VAR pos posGantryOffsetDirection:=[0,0,0];
         numQuadrant:=GetQuadrant();
-        TEST numQuadrant
-        CASE 1:
-            numGantryOffsetDirectionX:=1;
-            numGantryOffsetDirectionY:=1;
-        CASE 2:
-            numGantryOffsetDirectionX:=-1;
-            numGantryOffsetDirectionY:=1;
-        CASE 3:
-            numGantryOffsetDirectionX:=-1;
-            numGantryOffsetDirectionY:=-1;
-        CASE 4:
-            numGantryOffsetDirectionX:=1;
-            numGantryOffsetDirectionY:=-1;
-        CASE 5:
-            numGantryOffsetDirectionX:=1;
-            numGantryOffsetDirectionY:=1;
-        CASE 6:
-            numGantryOffsetDirectionX:=-1;
-            numGantryOffsetDirectionY:=1;
-        DEFAULT:
+        IF numQuadrant=-1 THEN
             RETURN ;
-        ENDTEST
-        extjointGantryOffsetCur.eax_a:=extjointGantryOffset.eax_a*numGantryOffsetDirectionX;
-        extjointGantryOffsetCur.eax_b:=extjointGantryOffset.eax_b*numGantryOffsetDirectionY;
+        ELSE
+            posGantryOffsetDirection:=GetGantryOffsetDirection(numQuadrant);
+        ENDIF
+        extjointGantryOffsetCur.eax_a:=extjointGantryOffset.eax_a*posGantryOffsetDirection.x;
+        extjointGantryOffsetCur.eax_b:=extjointGantryOffset.eax_b*posGantryOffsetDirection.y;
         IF numQuadrant=5 OR numQuadrant=6 THEN
             extjointGantryOffsetCur.eax_c:=extjointGantryOffset.eax_c-300;
         ELSE

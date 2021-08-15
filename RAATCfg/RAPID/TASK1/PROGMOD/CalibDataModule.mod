@@ -7,28 +7,28 @@ MODULE CalibDataModule
     !Author:        Michael
     !*****************************************************
 
-    TASK PERS menudata md_DefineSpotGun:=["Define TCP of Spot Gun","","DefTCPofSpotGun",1,"",255,True,1,100,False,201];
+    TASK PERS menudata md_DefineWeldGun:=["Define TCP of Weld Gun","","DefTCPofWeldGun",1,"",255,True,1,100,False,201];
     TASK PERS menudata md_DefineLaser:=["Define TCP of Laser","","DefTCPofLaser",1,"",255,True,1,100,False,202];
 
     TASK PERS bool boolSaveModule:=FALSE;
 
-    TASK PERS tooldata toolWeldGun:=[TRUE,[[-76.79,-1.749,591.944],[0.981627183,0,0.190808995,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
+    TASK PERS tooldata toolWeldGun:=[TRUE,[[-57.4353,1.20245,543.127],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
     TASK PERS tooldata toolLaser:=[TRUE,[[40.746,0.415,676.2],[1,0,0,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
-    TASK PERS tooldata toolWeldGunNew:=[TRUE,[[-56.9127,5.0035,540.198],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
+    TASK PERS tooldata toolWeldGunNew:=[TRUE,[[-59.9643,7.99775,542.45],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
     TASK PERS tooldata toolLaserNew:=[TRUE,[[40.746,0.415,676.2],[1,0,0,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
     TASK PERS tooldata toolWeldGunOld:=[TRUE,[[-60.8716,1.37706,439.061],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
     TASK PERS tooldata toolLaserOld:=[TRUE,[[40.75,0,624.2],[1,0,0,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
 
-    TASK PERS wobjdata wobjCurrent:=[FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
+    TASK PERS wobjdata wobjCurrent:=[FALSE,TRUE,"",[[-513,-36,67],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
     TASK PERS wobjdata wobjTemp:=[FALSE,TRUE,"",[[-513,-36,67],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
 
     ! postions for tool definition of weld gun
-    TASK PERS jointtarget jtSpotGun1:=[[69.2012,22.6209,3.17762,31.8059,-96.3168,186.674],[478.024,205.411,598.676,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jtSpotGun2:=[[8.51914,50.1556,-63.2424,-53.0915,-92.0077,240.619],[478.024,205.411,598.676,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jtSpotGun3:=[[27.1176,6.2305,17.4056,-25.0735,-82.7111,214.384],[478.024,205.411,598.676,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jtSpotGun4:=[[36.6637,32.3736,0.803398,-12.4694,-104.404,199.391],[478.024,205.413,598.674,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jtSpotGunZ:=[[-23.388,45.5074,-40.1349,34.9712,97.7934,-21.115],[7683.71,268.717,9E+09,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jtSpotGunX:=[[-11.2908,41.3683,-15.0054,38.5769,74.0462,-24.2474],[7683.71,268.717,9E+09,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jtWeldGun1:=[[33.9715,20.0387,-37.4714,40.7221,-76.7952,140.901],[-465.218,39.3053,-432.676,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jtWeldGun2:=[[-32.1796,19.2448,-33.9675,-38.3929,-77.4064,216.26],[-465.218,39.3053,-432.676,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jtWeldGun3:=[[-5.50828,46.06,-53.3094,-6.06991,-86.2796,186.712],[-465.218,39.3056,-432.676,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jtWeldGun4:=[[0.135295,-0.165956,-0.113865,0.054787,-67.7203,179.854],[-465.218,39.3053,-432.676,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jtWeldGunZ:=[[-23.388,45.5074,-40.1349,34.9712,97.7934,-21.115],[7683.71,268.717,9E+09,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jtWeldGunX:=[[-11.2908,41.3683,-15.0054,38.5769,74.0462,-24.2474],[7683.71,268.717,9E+09,9E+09,9E+09,9E+09]];
 
     ! postions for tool definition of laser
     TASK PERS jointtarget jtLaser1:=[[1.23463,20.2117,49.1937,-0.0177981,19.9578,1.24529],[2710.99,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -39,13 +39,13 @@ MODULE CalibDataModule
     TASK PERS jointtarget jtLaserX:=[[161.523,27.5424,31.4752,-1.46627,31.0902,-18.0317],[687.112,9E+09,9E+09,9E+09,9E+09,9E+09]];
 
     TASK PERS jointtarget jointOrigin:=[[0,0,0,0,0,0],[0,0,0,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jointHome:=[[0,-60,40,0,60,0],[0,0,-500,9E+9,9E+9,9E+9]];
+    TASK PERS jointtarget jointHome:=[[0,-60,40,0,60,0],[-513,-36,-500,9E+09,9E+09,9E+09]];
     TASK PERS jointtarget jointTransportation:=[[0,-60,45,0,60,0],[0,500,-500,9E+09,9E+09,9E+09]];
     TASK PERS jointtarget jointLoadIdentify:=[[-20,0,0,0,0,0],[0,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jointCurrent:=[[80.446,-88.1505,29.8057,27.1407,33.9534,-108.977],[-1665.21,438.067,420.998,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jointHomeOld:=[[0,-60,40,0,60,0],[-800,500,-500,9E+9,9E+9,9E+9]];
+    TASK PERS jointtarget jointCurrent:=[[-120,-80,0,0,60,270],[-800,-500,-87,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jointHomeOld:=[[0,-60,40,0,60,0],[-513,-36,-500,9E+09,9E+09,9E+09]];
 
-    TASK PERS robtarget robCurrent:=[[8.97,-420.29,848.38],[0.0282975,-0.536891,0.714207,-0.44817],[-1,0,0,1],[-1178.69,-205.94,-411.421,9E+09,9E+09,9E+09]];
+    TASK PERS robtarget robCurrent:=[[-209.736,482.664,216.543],[0.178965,-0.641361,0.732457,-0.141898],[-2,-1,1,1],[-800,500,0.00276417,9E+09,9E+09,9E+09]];
 
     PERS speeddata speedAir:=[7000,500,5000,1000];
     PERS speeddata speedAproach:=[7000,500,5000,1000];
@@ -60,7 +60,7 @@ MODULE CalibDataModule
     PERS num numAcc:=100;
     PERS num numRamp:=100;
 
-    PROC DefTCPofSpotGun()
+    PROC DefTCPofWeldGun()
         VAR num nMaxErr;
         VAR num nMeanErr;
         VAR num nUserInputFP:=0;
@@ -68,10 +68,10 @@ MODULE CalibDataModule
         VAR string sMsg{5};
         VAR btnres nAnswer;
         VAR robtarget pTCP;
-        VAR robtarget robtarSpotGun1;
-        VAR robtarget robtarSpotGun2;
-        VAR robtarget robtarSpotGun3;
-        VAR robtarget robtarSpotGun4;
+        VAR robtarget robtarWeldGun1;
+        VAR robtarget robtarWeldGun2;
+        VAR robtarget robtarWeldGun3;
+        VAR robtarget robtarWeldGun4;
 
         sHeader:="Robot System"+" ("+GetTaskName()+")";
         sMsg{1}:=" Press Yes to run definition of";
@@ -85,41 +85,41 @@ MODULE CalibDataModule
         ENDIF
 
         Stop\NoRegain;
-        !MoveAbsJ jtSpotGun4,v100,fine,toolWeldGun;
-        MoveAbsJ jtSpotGun1,v100,fine,toolWeldGun;
+        !MoveAbsJ jtWeldGun4,v100,fine,toolWeldGun;
+        MoveAbsJ jtWeldGun1,v100,fine,toolWeldGun;
         Stop;
-        !MoveAbsJ jtSpotGun4,v100,fine,toolWeldGun;
-        MoveAbsJ jtSpotGun2,v100,fine,toolWeldGun;
+        !MoveAbsJ jtWeldGun4,v100,fine,toolWeldGun;
+        MoveAbsJ jtWeldGun2,v100,fine,toolWeldGun;
         Stop;
-        !MoveAbsJ jtSpotGun4,v100,fine,toolWeldGun;
-        MoveAbsJ jtSpotGun3,v100,fine,toolWeldGun;
+        !MoveAbsJ jtWeldGun4,v100,fine,toolWeldGun;
+        MoveAbsJ jtWeldGun3,v100,fine,toolWeldGun;
         Stop;
-        MoveAbsJ jtSpotGun4,v100,fine,toolWeldGun;
+        MoveAbsJ jtWeldGun4,v100,fine,toolWeldGun;
         Stop;
-        MoveAbsJ jtSpotGunZ,v100,fine,toolWeldGun;
+        MoveAbsJ jtWeldGunZ,v100,fine,toolWeldGun;
         Stop;
-        MoveAbsJ jtSpotGunX,v100,fine,toolWeldGun;
+        MoveAbsJ jtWeldGunX,v100,fine,toolWeldGun;
         Stop;
 
         Calculate:
 
-        MToolTCPCalib jtSpotGun1,jtSpotGun2,jtSpotGun3,jtSpotGun4,toolWeldGun,nMaxErr,nMeanErr;
-        !MToolRotCalib jtSpotGun4,jtSpotGunZ\XPos:=jtSpotGunX,toolWeldGun;
+        MToolTCPCalib jtWeldGun1,jtWeldGun2,jtWeldGun3,jtWeldGun4,toolWeldGun,nMaxErr,nMeanErr;
+        !MToolRotCalib jtWeldGun4,jtWeldGunZ\XPos:=jtWeldGunX,toolWeldGun;
         TPErase;
         TPWrite " nMaxErr  ... "\Num:=nMaxErr;
         TPWrite " nMeanErr ... "\Num:=nMeanErr;
-        robtarSpotGun1:=CalcRobT(jtSpotGun1,toolWeldGun);
-        robtarSpotGun2:=CalcRobT(jtSpotGun2,toolWeldGun);
-        robtarSpotGun3:=CalcRobT(jtSpotGun3,toolWeldGun);
-        robtarSpotGun4:=CalcRobT(jtSpotGun4,toolWeldGun);
-        TPWrite " Distance between point1 and point 4 is "\Num:=Distance(robtarSpotGun1.trans,robtarSpotGun4.trans);
-        TPWrite " Distance between point2 and point 4 is "\Num:=Distance(robtarSpotGun2.trans,robtarSpotGun4.trans);
-        TPWrite " Distance between point3 and point 4 is "\Num:=Distance(robtarSpotGun3.trans,robtarSpotGun4.trans);
+        robtarWeldGun1:=CalcRobT(jtWeldGun1,toolWeldGun);
+        robtarWeldGun2:=CalcRobT(jtWeldGun2,toolWeldGun);
+        robtarWeldGun3:=CalcRobT(jtWeldGun3,toolWeldGun);
+        robtarWeldGun4:=CalcRobT(jtWeldGun4,toolWeldGun);
+        TPWrite " Distance between point1 and point 4 is "\Num:=Distance(robtarWeldGun1.trans,robtarWeldGun4.trans);
+        TPWrite " Distance between point2 and point 4 is "\Num:=Distance(robtarWeldGun2.trans,robtarWeldGun4.trans);
+        TPWrite " Distance between point3 and point 4 is "\Num:=Distance(robtarWeldGun3.trans,robtarWeldGun4.trans);
         TPReadFK nUserInputFP,"",stEmpty,stEmpty,stEmpty,stEmpty,"OK";
         Stop;
 
         Calibrate:
-        MoveAbsJ jtSpotGun4,v100,fine,toolWeldGun;
+        MoveAbsJ jtWeldGun4,v100,fine,toolWeldGun;
         pTCP:=CRobT(\Tool:=toolWeldGun);
         MoveL RelTool(pTCP,0,0,0),v100,fine,toolWeldGun;
         MoveL Reltool(pTCP,0,0,-30),v100,fine,toolWeldGun;

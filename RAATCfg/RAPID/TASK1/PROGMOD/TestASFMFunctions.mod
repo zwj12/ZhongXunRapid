@@ -52,10 +52,10 @@ MODULE TestASFMFunctions(NOSTEPIN)
     PERS tooldata TestTool:=[TRUE,[[-5.06169,1.24367,355.949],[0.378591,0.897664,-0.223253,-0.0320518]],[2,[50,50,100],[1,0,0,0],0,0,0]];
     PERS tooldata ASFM_OpticalTool:=[TRUE,[[42.217,-13.3743,372.175],[0.403921,0.890535,-0.0691935,0.197501]],[2,[50,50,100],[1,0,0,0],0,0,0]];
     
-    PERS wobjdata acaltargetV2:=[FALSE,TRUE,"",[[-16.5812,-319.353,417.854],[0.713239,0.00069864,0.000101632,-0.700921]],[[0,0,0],[1,0,0,0]]];
+    PERS wobjdata acaltargetV2:=[FALSE,TRUE,"",[[-513.694,-538.71,812.29],[0.724391,0.000235258,0.00333423,-0.689381]],[[0,0,0],[1,0,0,0]]];
     PERS tooldata Ref_Pin:=[TRUE,[[-5.06169,1.24367,355.949],[0.378591,0.897664,-0.223253,-0.0320518]],[2,[50,50,100],[1,0,0,0],0,0,0]];    
     
-    PERS corrdata Point1:=[0,3,-16.33,-292.3,741.76,0,0,0,0,1.04,0];
+    PERS corrdata Point1:=[0,3,-7.27,-13.01,236.1,0,0,0,1.57,0.3,0];
     PERS corrdata Point2:=[0,3,-0.03,-1.36,-0.94,0,0,0,0,0,0];
     PERS corrdata Point2_basic:=[0,1,0,0,0,0,0,0,0,0,0];
     PERS corrdata Point3:=[0,3,0.25,4.14,0.08,0,0,0,0,1.06,0];
@@ -66,8 +66,8 @@ MODULE TestASFMFunctions(NOSTEPIN)
     PERS SenorSchdule SenSch1:=[3,3,0,0];
     PERS JointSize js1:=[3,3,0];
     
-    PERS robtarget pFound1:=[[-16.33,-292.3,741.76],[0.116613,-0.70252,-0.691898,-0.118931],[0,0,1,1],[-465.219,39.3053,-598.661,9E+09,9E+09,9E+09]];
-    PERS robtarget pSF1:=[[17.89,-374.28,852.61],[0.116612,-0.702524,-0.691894,-0.118932],[0,0,1,1],[-465.219,39.3053,-598.661,9E+09,9E+09,9E+09]];
+    PERS robtarget pFound1:=[[-45.43,-213.19,739.7],[0.116017,-0.702417,-0.692319,-0.117668],[0,0,1,1],[-465.219,39.3073,-572.267,9E+09,9E+09,9E+09]];
+    PERS robtarget pSF1:=[[-16.82,-294.20,858.75],[0.116015,-0.702415,-0.692321,-0.117667],[0,0,1,1],[-465.219,39.3067,-572.267,9E+09,9E+09,9E+09]];
     PERS robtarget pFound2:=[[-673.22,-1054.19,-911.39],[0.115425,-0.677295,-0.714325,-0.132997],[0,2,-1,0],[-677.364,-341.094,-334.05,9E+09,9E+09,9E+09]];
     PERS robtarget pSF2:=[[-669.71,-1142.91,-766.23],[0.115425,-0.677295,-0.714325,-0.132997],[0,2,-1,0],[-677.364,-341.094,-334.05,9E+09,9E+09,9E+09]];
     VAR robtarget M0P11:=[[-95.31,-14.83,-23.27],[0.0671282,-0.0617656,-0.882732,0.460938],[-1,-1,2,1],[-1316.54,559.172,400.964,9E+09,9E+09,9E+09]];
@@ -143,7 +143,7 @@ MODULE TestASFMFunctions(NOSTEPIN)
         
     ENDPROC
 
-        ! opens communication channel
+         ! opens communication channel
     PROC Laser_Initialize()
         IF NOT ASFMu_Initialize(Laser_IP_Add,2,FALSE,FALSE,TRUE,TestTool,TestBase) THEN
             TPWrite "Can't connect to ASFM module on vision controller";
@@ -159,19 +159,29 @@ MODULE TestASFMFunctions(NOSTEPIN)
     
     ! Acknowledges vision system alarms
     PROC Laser_Ack()
-        IF NOT ACALu_Ack() THEN 
-        Stop; 
-        ENDIF 
+        IF NOT ASFMu_Acknowledge() THEN
+            Stop;
+        ENDIF
     ENDPROC 
 
     PROC LASER_ON()
+        ASFM_Connect;
+        IF NOT ASFMu_Enable(0) THEN
+            STOP;
+        ENDIF
+        IF NOT ASFMu_LaserOn(0) THEN
+            STOP;
+        ENDIF
+    ENDPROC
+    
+    PROC LASER_UmMute()
         ASFM_Connect;
         IF NOT ASFMu_LaserOn(0) THEN
             STOP;
         ENDIF
     ENDPROC
 
-    PROC LASER_OFF()
+    PROC LASER_Mute()
         ASFM_Connect;
         IF NOT ASFMu_LaserOff(0) THEN
             STOP;

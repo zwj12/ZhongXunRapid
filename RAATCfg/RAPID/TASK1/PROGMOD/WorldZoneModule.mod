@@ -45,6 +45,13 @@ MODULE WorldZoneModule
         WZDOSet\Stat,wzstationaryHome\Inside,shapeJointHome,doSysOutAtHome_1,1;
 
         jointHomeOld:=jointHome;
+
+        bSafeMutex:=FALSE;
+        IF RobOS() THEN
+            SetDO sdoVirtualController,0;
+        ELSE
+            SetDO sdoVirtualController,1;
+        ENDIF
     ENDPROC
 
 ENDMODULE
