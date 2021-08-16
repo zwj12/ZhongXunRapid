@@ -155,13 +155,13 @@ MODULE GeneralModule(NOSTEPIN)
             posGantryOffsetDirection.y:=1;
         CASE 23:
             posGantryOffsetDirection.x:=-1;
-            posGantryOffsetDirection.y:=0;
+            posGantryOffsetDirection.y:=1;
         CASE 34:
             posGantryOffsetDirection.x:=0;
             posGantryOffsetDirection.y:=-1;
         CASE 14:
             posGantryOffsetDirection.x:=1;
-            posGantryOffsetDirection.y:=0;
+            posGantryOffsetDirection.y:=1;
         ENDTEST
         RETURN posGantryOffsetDirection;
     ENDFUNC

@@ -12,14 +12,14 @@ MODULE CalibDataModule
 
     TASK PERS bool boolSaveModule:=FALSE;
 
-    TASK PERS tooldata toolWeldGun:=[TRUE,[[-57.4353,1.20245,543.127],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
+    TASK PERS tooldata toolWeldGun:=[TRUE,[[-76.79,-1.749,591.944],[0.981627183,0,0.190808995,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
     TASK PERS tooldata toolLaser:=[TRUE,[[40.746,0.415,676.2],[1,0,0,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
     TASK PERS tooldata toolWeldGunNew:=[TRUE,[[-59.9643,7.99775,542.45],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
     TASK PERS tooldata toolLaserNew:=[TRUE,[[40.746,0.415,676.2],[1,0,0,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
     TASK PERS tooldata toolWeldGunOld:=[TRUE,[[-60.8716,1.37706,439.061],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
     TASK PERS tooldata toolLaserOld:=[TRUE,[[40.75,0,624.2],[1,0,0,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
 
-    TASK PERS wobjdata wobjCurrent:=[FALSE,TRUE,"",[[-513,-36,67],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
+    TASK PERS wobjdata wobjCurrent:=[FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
     TASK PERS wobjdata wobjTemp:=[FALSE,TRUE,"",[[-513,-36,67],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
 
     ! postions for tool definition of weld gun
@@ -42,7 +42,7 @@ MODULE CalibDataModule
     TASK PERS jointtarget jointHome:=[[0,-60,40,0,60,0],[-513,-36,-500,9E+09,9E+09,9E+09]];
     TASK PERS jointtarget jointTransportation:=[[0,-60,45,0,60,0],[0,500,-500,9E+09,9E+09,9E+09]];
     TASK PERS jointtarget jointLoadIdentify:=[[-20,0,0,0,0,0],[0,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jointCurrent:=[[-120,-80,0,0,60,270],[-800,-500,-87,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jointCurrent:=[[90,-75,45,90,45,0],[800,-500,-500,9E+9,9E+9,9E+9]];
     TASK PERS jointtarget jointHomeOld:=[[0,-60,40,0,60,0],[-513,-36,-500,9E+09,9E+09,9E+09]];
 
     TASK PERS robtarget robCurrent:=[[-209.736,482.664,216.543],[0.178965,-0.641361,0.732457,-0.141898],[-2,-1,1,1],[-800,500,0.00276417,9E+09,9E+09,9E+09]];

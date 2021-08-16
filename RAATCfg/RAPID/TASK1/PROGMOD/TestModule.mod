@@ -49,7 +49,7 @@ MODULE TestModule
         ENDIF
         extjointGantryOffsetCur.eax_a:=extjointGantryOffset.eax_a*posGantryOffsetDirection.x;
         extjointGantryOffsetCur.eax_b:=extjointGantryOffset.eax_b*posGantryOffsetDirection.y;
-        IF numQuadrant=5 OR numQuadrant=6 THEN
+        IF numQuadrant=14 OR numQuadrant=23 THEN
             extjointGantryOffsetCur.eax_c:=extjointGantryOffset.eax_c-300;
         ELSE
             extjointGantryOffsetCur.eax_c:=extjointGantryOffset.eax_c;

@@ -202,25 +202,23 @@ MODULE Template_1002_Module
         WeldSeam 4;
 
         InhibWeld TRUE\Weld\Weave;
-        
+
         WeldSeam 5;
         MoveToReadyQuadrant 3;
 
-        WeldSeam 6;
-
         MoveToReadyQuadrant 2;
+        WeldSeam 6;
         WeldSeam 7;
         MoveToReadyQuadrant 2;
 
-        !        MoveToReadyQuadrant 3;
-        !        WeldSeam 8;
-        !        MoveToReadyQuadrant 3;
+        MoveToReadyQuadrant 3;
+        WeldSeam 8;
+        MoveToReadyQuadrant 3;
 
-        !        WeldSeam 9;
-
-        !        MoveToReadyQuadrant 2;
-        !        WeldSeam 10;
-        !        MoveToReadyQuadrant 2;
+        MoveToReadyQuadrant 2;
+        WeldSeam 9;
+        WeldSeam 10;
+        MoveToReadyQuadrant 2;
 
         EOffsOff;
         Incr numPartCount;

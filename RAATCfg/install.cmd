@@ -9,6 +9,9 @@ config -filename $BOOTPATH/config/EIO_Virtual_SystemInOut.cfg -domain EIO -repla
 
 config -filename $BOOTPATH/config/EIO_LocalIO.cfg -domain EIO -replace
 
+config -filename $BOOTPATH/config/EIO_Virtual.cfg -domain EIO -replace
+config -filename $BOOTPATH/config/PROC_Virtual.cfg -domain PROC -replace
+
 config -filename $BOOTPATH/config/EIO_PN_Internal_Device.cfg -domain EIO -replace
 config -filename $BOOTPATH/config/SIO_PN_Internal_Device.cfg -domain SIO -replace
 

@@ -1,1 +1,72 @@
-21:20:39 ============== Fronius Tracking Active ==============
+09:54:53 ============== Fronius Tracking Active ==============
+          
+10:57:37 =================== Active trackdata ================
+10:57:37 Tracksystem : 2
+10:57:37 SeamName    : WeldSeam
+10:57:37 TrackType   : Centerline
+10:57:37 Gain_y      : 10
+10:57:37 Gain_z      : 10
+10:57:37 Bias        : 0
+10:57:37 Z-Reference : 3940
+10:57:37 Weave time  : 0.52381 seconds
+          
+10:58:45 ============== Accumulated corrections ==============
+10:58:45 Total Corrections Y: 0
+10:58:45 Total Corrections Z: 0
+          
+10:58:45 Calculated Z-Reference value: 0
+10:58:45 Number of Left   trap events: 61
+10:58:45 Number of right  trap events: 60
+10:58:45 Number of Center trap events: 119
+          
+11:11:52 =================== Active trackdata ================
+11:11:52 Tracksystem : 2
+11:11:52 SeamName    : WeldSeam
+11:11:52 TrackType   : Centerline
+11:11:52 Gain_y      : 10
+11:11:52 Gain_z      : 10
+11:11:52 Bias        : 0
+11:11:52 Z-Reference : 3940
+11:11:52 Weave time  : 0.52381 seconds
+          
+11:12:57 ============== Accumulated corrections ==============
+11:12:57 Total Corrections Y: 0
+11:12:57 Total Corrections Z: 0
+          
+11:12:57 Calculated Z-Reference value: 0
+11:12:57 Number of Left   trap events: 61
+11:12:57 Number of right  trap events: 60
+11:12:57 Number of Center trap events: 119
+          
+11:15:10 =================== Active trackdata ================
+11:15:10 Tracksystem : 2
+11:15:10 SeamName    : WeldSeam
+11:15:10 TrackType   : Centerline
+11:15:10 Gain_y      : 0
+11:15:10 Gain_z      : 0
+11:15:10 Bias        : 0
+11:15:10 Z-Reference : 3617
+11:15:10 Weave time  : 0.882353 seconds
+          
+          
+11:16:05 =================== Active trackdata ================
+11:16:05 Tracksystem : 2
+11:16:05 SeamName    : WeldSeam
+11:16:05 TrackType   : Centerline
+11:16:05 Gain_y      : 0
+11:16:05 Gain_z      : 0
+11:16:05 Bias        : 0
+11:16:05 Z-Reference : 3617
+11:16:05 Weave time  : 0.882353 seconds
+          
+          
+11:17:31 =================== Active trackdata ================
+11:17:31 Tracksystem : 2
+11:17:31 SeamName    : WeldSeam
+11:17:31 TrackType   : Centerline
+11:17:31 Gain_y      : 10
+11:17:31 Gain_z      : 10
+11:17:31 Bias        : 0
+11:17:31 Z-Reference : 3940
+11:17:31 Weave time  : 0.52381 seconds
+          
