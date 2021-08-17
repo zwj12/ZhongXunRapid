@@ -10,6 +10,7 @@ MODULE SharedModule(NOSTEPIN)
     !2021-8-11, Michael, Add numScanJob1, ScanSeamByLaser, ScanData
     !2021-8-12, Michael, Add GetDropFeet
     !2021-8-13, Michael, Add ReloadGantryOffset
+    !2021-8-16, Michael, Add RefreshDisplacement
 
     RECORD ScanData
         num joint_no;
@@ -140,6 +141,10 @@ MODULE SharedModule(NOSTEPIN)
                 SetDO sdoTrackInhib,0;
             ENDIF
         ENDIF
+    ENDPROC
+
+    PROC RefreshDisplacement(INOUT pose poseDisp,pos posAbsoluteOffset,robtarget p0,robtarget pFound1,robtarget pFound2)
+        poseDisp.trans:=posAbsoluteOffset+GetDropFeet(p0.trans,pFound1.trans,pFound2.trans\OnlyOffset);
     ENDPROC
 
 ENDMODULE
