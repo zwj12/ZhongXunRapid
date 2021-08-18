@@ -45,13 +45,14 @@ MODULE SharedModule(NOSTEPIN)
     CONST ScanData scanJoint10:=[10];
 
     !numJobMode: 0 - Keep last, 1 - by TPU, 2 - by yml, 3 - by PLC
-    PERS num numJobMode:=1;
+    PERS num numJobMode:=2;
 
     !For numJobMode=1
-    PERS RECORDModelData rModelDataFirst:=["0001",[2188,-688,328]];
-    PERS pos posModelOffset:=[0,1009,0];
-    PERS num numModelOffsetQuantity:=2;
-
+    PERS RECORDModelData rModelDataFirst{4}:=[["1002",[-513,-36,67]],["",[-513,-36,67]],["",[-513,-36,67]],["",[-513,-36,67]]];
+    PERS pos posModelOffset:=[-1670,10,0];
+    PERS num numModelOffsetStart:=1;
+    PERS num numModelOffsetQuantity:=1;
+    
     PERS num numWaitTimeForLaser:=0;
     PERS num numAproachRelToolZ:=-50;
 
@@ -91,22 +92,41 @@ MODULE SharedModule(NOSTEPIN)
     ENDFUNC
 
     PROC LoadModelDatabyTPU()
-        Logging "Load: "+ValToStr(rModelDataFirst);
+        VAR num numIndex:=0;
         Logging "Offset: "+ValToStr(posModelOffset);
         Logging "Quantity: "+ValToStr(numModelOffsetQuantity);
-        FOR i FROM 1 TO numModelOffsetQuantity DO
-            strWeldPartList{i}:=rModelDataFirst.name;
-            posWeldPartList{i}:=rModelDataFirst.location+posModelOffset*(i-1);
+        FOR i FROM numModelOffsetStart TO numModelOffsetQuantity DO
+            FOR j FROM 1 TO Dim(rModelDataFirst,1) DO
+                IF rModelDataFirst{j}.name<>"" THEN
+                    Incr numIndex;
+                    Logging "Load: "+ValToStr(rModelDataFirst{j}.name);
+                    strWeldPartList{numIndex}:=rModelDataFirst{j}.name;
+                    posWeldPartList{numIndex}:=rModelDataFirst{j}.location+posModelOffset*(i-1);
+                ENDIF
+            ENDFOR
         ENDFOR
-        numModelQuantity:=numModelOffsetQuantity;
+        numModelStart:=1;
+        numModelQuantity:=numModelOffsetQuantity-numModelOffsetStart+1;
+    ENDPROC
+
+    PROC LoadModelDatabyYML()
+        VAR num numIndex:=0;
+        Logging "LoadModelDatabyYML";
+        LoadModelDataYamlFile strModelDataYamlFileName;
+        FOR i FROM 1 TO Dim(rModelDataArray,1) DO
+            IF rModelDataArray{i}.name<>"" THEN
+                Incr numIndex;
+                Logging "Load: "+ValToStr(rModelDataArray{i}.name);
+                strWeldPartList{numIndex}:=rModelDataArray{i}.name;
+                posWeldPartList{numIndex}:=rModelDataArray{i}.location;
+            ENDIF
+        ENDFOR
+        numModelStart:=1;
+        numModelQuantity:=numIndex;
     ENDPROC
 
     PROC LoadModelDatabyPLC()
         Logging "LoadModelDatabyPLC";
-    ENDPROC
-
-    PROC LoadModelDatabyYML()
-        Logging "LoadModelDatabyYML";
     ENDPROC
 
     PROC ReloadGantryOffset()

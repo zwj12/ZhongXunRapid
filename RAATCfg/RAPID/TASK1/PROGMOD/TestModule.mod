@@ -9,6 +9,8 @@ MODULE TestModule
 
     !2021-8-11, Michael, Add GetBaseFramePosZ, DepartGantry, modify MoveGanrtyQuadrantByWobjCur
 
+    TASK PERS menudata mdMoveGanrtyQuadrant:=["Move Ganrty Quadrant By WobjCur","","MoveGanrtyQuadrantByWobjCur",1,"",255,True,2,100,False,203];
+
     TASK PERS jointtarget jointPlaneXZ:=[[90,-45,45,0,-90,90],[-1997.56,0,-600,9E+09,9E+09,9E+09]];
     PERS robtarget pWobjX1:=[[-1843.85,70.55,208.53],[0.231263,-0.189593,-0.879297,0.370687],[0,0,0,4],[-1810.13,354.262,201.219,9E+09,9E+09,9E+09]];
     PERS robtarget pWobjX2:=[[-1518.46,70.55,208.53],[0.231263,-0.189594,-0.879297,0.370687],[0,0,0,4],[-1484.74,354.262,201.219,9E+09,9E+09,9E+09]];
@@ -64,6 +66,8 @@ MODULE TestModule
         jointCurrent.extax.eax_c:=GetBaseFramePosZ()-wobjCurrent.uframe.trans.z+extjointGantryOffsetCur.eax_c;
         Logging "Move Gantry to ["+ValToStr(jointCurrent.extax.eax_a)+","+ValToStr(jointCurrent.extax.eax_b)+","+ValToStr(jointCurrent.extax.eax_c)+"]";
         MoveAbsJ jointCurrent,speedAir,fine,toolWeldGun\WObj:=wobjCurrent;
+        
+        Stop;
 
     ENDPROC
 

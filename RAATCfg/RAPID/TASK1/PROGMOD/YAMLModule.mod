@@ -7,7 +7,10 @@ MODULE YAMLModule
     !Author:        Michael
     !*****************************************************
 
-    TASK PERS string strYamlFileName:="job.yml";
+    !The format of the model data yaml file name is job_xxx
+    TASK PERS string strModelDataYamlFileName:="job_1.yml";
+    TASK PERS string strYamlTestFileName:="jobTest.yml";
+    TASK PERS string strYamlPath:="yaml/";
     VAR iodev iodevYamlFile;
 
     TASK PERS string strTest1:="Michael";
@@ -18,18 +21,20 @@ MODULE YAMLModule
     TASK PERS bool boolTest2:=FALSE;
     TASK PERS string strArrayTest1{6}:=["0001","0001","0001","0003","0001",""];
 
+    TASK PERS RECORDModelData rModelDataArray{20}:=[["1001",[0,0,0]],["1002",[0,0,0]],["",[0,0,0]],["",[0,0,0]],["",[0,0,0]],["",[0,0,0]],["",[0,0,0]],["",[0,0,0]],["",[0,0,0]],["",[0,0,0]],["",[0,0,0]],["",[0,0,0]],["",[0,0,0]],["",[0,0,0]],["",[0,0,0]],["",[0,0,0]],["",[0,0,0]],["",[0,0,0]],["",[0,0,0]],["",[0,0,0]]];
+
     !The indentation for scope is two spaces
     !The yaml file can't have comments and blank line
     !Only support normal variable and array
     !The base type of data must be string
-    PROC LoadYamlFile()
+    PROC LoadYamlTestFile()
         VAR string strTaskName;
         VAR string strLine;
         VAR num numSplitAt;
         VAR bool boolEOS;
 
         Close iodevYamlFile;
-        Open "HOME:"\File:=strYamlFileName,iodevYamlFile\Read;
+        Open "HOME:"\File:=strYamlTestFileName,iodevYamlFile\Read;
         strLine:=ReadStr(iodevYamlFile);
         strTaskName:=GetFirstSplitString(strLine,1,":"\boolEOS:=boolEOS);
 
@@ -49,7 +54,60 @@ MODULE YAMLModule
 
         Close iodevYamlFile;
 
+        Logging "Yaml: "+strYamlTestFileName+" is loaded";
+    ENDPROC
+
+    PROC LoadModelDataYamlFile(string strYamlFileName)
+        VAR string strTaskName;
+        VAR string strLine;
+        VAR num numSplitAt;
+        VAR bool boolEOS;
+
+        Close iodevYamlFile;
+        Open "HOME:"\File:=strYamlPath+strYamlFileName,iodevYamlFile\Read;
+
+        strLine:=ReadStr(iodevYamlFile);
+        strLine:=ReadStr(iodevYamlFile);
+        UpdateArray_modelData strTaskName,strLine,rModelDataArray;
+
+        Close iodevYamlFile;
+
         Logging "Yaml: "+strYamlFileName+" is loaded";
+    ENDPROC
+
+    !Format:
+    !  Template:
+    !    - ["1001",[0,0,0]]
+    !    - ["1001",[1000,0,0]]
+    !    - ["1001",[2000,0,0]]
+    !    - ["1001",[3000,0,0]]
+    !    - ["1001",[4000,0,0]]
+    PROC UpdateArray_modelData(string strTaskName,INOUT string strLine,INOUT RECORDModelData ModelDataArray{*})
+        VAR string strDataName;
+        VAR string strData;
+        VAR num numSplitAt;
+        VAR num numDataArrayIndex:=0;
+        VAR RECORDModelData rModelData;
+        VAR bool ok;
+        strDataName:=GetFirstSplitString(strLine,3,":"\numSplitAt:=numSplitAt);
+        IF strDataName<>ArgName(ModelDataArray) THEN
+            Logging "The name of the original data object is not "+strDataName;
+            RAISE 1;
+        ENDIF
+
+        strLine:=ReadStr(iodevYamlFile);
+        WHILE strLine<>EOF AND StrPart(strLine,1,6)="    - " DO
+            Incr numDataArrayIndex;
+            strData:=StrPart(strLine,7,StrLen(strLine)-6);
+            ok:=StrToVal(strData,rModelData);
+            ModelDataArray{numDataArrayIndex}:=rModelData;
+            strLine:=ReadStr(iodevYamlFile);
+        ENDWHILE
+        IF numDataArrayIndex<Dim(ModelDataArray,1) THEN
+            FOR i FROM numDataArrayIndex+1 TO Dim(ModelDataArray,1) DO
+                ModelDataArray{i}:=["",[0,0,0]];
+            ENDFOR
+        ENDIF
     ENDPROC
 
     !Format:
@@ -69,7 +127,7 @@ MODULE YAMLModule
             Logging "The name of the original data object is not "+strDataName;
             RAISE 1;
         ENDIF
-        
+
         strLine:=ReadStr(iodevYamlFile);
         WHILE strLine<>EOF AND StrPart(strLine,1,6)="    - " DO
             Incr numDataArrayIndex;

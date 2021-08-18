@@ -8,9 +8,9 @@ MODULE MainModule
     !*****************************************************
 
     PERS bool bSafeMutex:=FALSE;
-    TASK PERS num numPartCount:=168;
+    TASK PERS num numPartCount:=169;
     TASK PERS num numTimeConsumeTotal:=0;
-    TASK PERS num numTimeServiceConsumeTotal:=42.496;
+    TASK PERS num numTimeServiceConsumeTotal:=0;
     TASK PERS num numTimeConsumeLast:=0;
     TASK PERS num numTimeConsumeCurrent:=0;
 
@@ -27,13 +27,9 @@ MODULE MainModule
     CONST ee_event ee_eventPostProc:=[EE_POST_PROC,"PostService","",0,1];
 
     PROC main()
-        !SetFileHandlerLogLevel\INFO;
-        !SetTPHandlerLogLevel\INFO;
-        !ConfJ\Off;
-        !ConfL\Off;
         InhibWeld FALSE\Weld\Weave\Track;
         SaveModule;
-        JobWeld;
+        !JobWeld;
         ExecEngine;
     ENDPROC
 
@@ -48,7 +44,13 @@ MODULE MainModule
         speedAir:=vmax;
         speedAproach:=vmax;
 
-        !ClearOldLogFiles;
+        !SetFileHandlerLogLevel\INFO;
+        !SetTPHandlerLogLevel\INFO;
+        ClearOldLogFiles;
+
+        SetDO sdoRunPart_1,0;
+        SetDO sdoRunMenu_1,0;
+        SetGO sgoPMPLC_1,101;
 
         SetGO sgoPLCCode_1,0;
         SetDO sdoErrorStrobeOut_1,0;

@@ -1,0 +1,48 @@
+2021-08-18 09:27:00:WARNING:root:Modules are saved
+2021-08-18 09:27:00:WARNING:root:The name of the original data object is not ROB1
+2021-08-18 09:27:51:WARNING:root:Modules are saved
+2021-08-18 09:27:51:WARNING:root:The name of the original data object is not strTest1
+2021-08-18 09:28:36:WARNING:root:Modules are saved
+2021-08-18 09:28:36:WARNING:root:The name of the original data object is not rModelDataArray
+2021-08-18 09:30:00:WARNING:root:Modules are saved
+2021-08-18 09:30:00:WARNING:root:Yaml: job.yml is loaded
+2021-08-18 09:30:34:WARNING:root:Modules are saved
+2021-08-18 09:30:34:WARNING:root:Yaml: job.yml is loaded
+2021-08-18 10:35:36:WARNING:root:Modules are saved
+2021-08-18 10:35:40:WARNING:root:PreService...
+2021-08-18 10:35:44:WARNING:root:Select Quadrant14
+2021-08-18 10:35:45:WARNING:root:Use Gantry Offset: [800,500,-1500]
+2021-08-18 10:35:45:WARNING:root:Move Gantry to [800,500,180]
+2021-08-18 10:35:53:WARNING:root:PostService...
+2021-08-18 10:36:00:WARNING:root:TimeServiceConsume=20.514
+2021-08-18 10:36:44:WARNING:root:Modules are saved
+2021-08-18 10:36:52:WARNING:root:PreService...
+2021-08-18 10:36:54:WARNING:root:Select Quadrant14
+2021-08-18 10:36:56:WARNING:root:Use Gantry Offset: [800,500,-1500]
+2021-08-18 10:36:56:WARNING:root:Move Gantry to [800,500,180]
+2021-08-18 10:41:56:WARNING:root:Modules are saved
+2021-08-18 10:42:09:WARNING:root:PreService...
+2021-08-18 10:42:12:WARNING:root:Select Quadrant14
+2021-08-18 10:42:14:WARNING:root:Use Gantry Offset: [800,500,-1500]
+2021-08-18 10:42:14:WARNING:root:Move Gantry to [800,500,180]
+2021-08-18 11:16:12:WARNING:root:Modules are saved
+2021-08-18 11:16:21:WARNING:root:PreService...
+2021-08-18 11:16:27:WARNING:root:Select Quadrant1
+2021-08-18 11:16:28:WARNING:root:Use Gantry Offset: [800,500,-1200]
+2021-08-18 11:16:28:WARNING:root:Move Gantry to [800,500,480]
+2021-08-18 15:41:29:WARNING:root:Modules are saved
+2021-08-18 15:41:45:INFO:root:CycleStart T_ROB1 : JobWeld
+2021-08-18 15:41:45:WARNING:root:PrePart: 101...
+2021-08-18 15:41:45:WARNING:root:LoadModelData by job mode: 2
+2021-08-18 15:41:45:WARNING:root:LoadModelDatabyYML
+2021-08-18 15:41:45:WARNING:root:Yaml: job_1.yml is loaded
+2021-08-18 15:41:45:WARNING:root:Load: "1001"
+2021-08-18 15:41:45:WARNING:root:Load: "1002"
+2021-08-18 15:41:45:WARNING:root:Job Weld: 1/2 - 1002
+2021-08-18 15:41:45:WARNING:root:Pos: [-513,-36,67]
+2021-08-18 15:41:45:WARNING:root:Gantry: [-513,-36,-67]
+2021-08-18 15:41:45:WARNING:root:Start to run Template_1002...
+2021-08-18 15:41:45:WARNING:root:Search oframe
+2021-08-18 15:41:46:WARNING:root:Scan: pQ2_Y1=[-0.03,74.99,-0.03]
+2021-08-18 15:41:52:WARNING:root:Found: pQ2_Y1_Found=[-0.03,74.99,-0.03]
+2021-08-18 15:41:52:WARNING:root:Scan: pQ2_Y2=[-0.03,200,-0.03]

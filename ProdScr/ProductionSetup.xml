@@ -56,6 +56,17 @@
       <ErrorSignal />
       <InData />
     </App>
+    <App>
+      <Name>ZhongXun</Name>
+      <SystemApp>false</SystemApp>
+      <Index>15</Index>
+      <Assembly>TpsViewZhongXun.dll</Assembly>
+      <Type>TpsViewZhongXunNameSpace.TpsViewZhongXun</Type>
+      <Image>icon_ZhongXun.png</Image>
+      <AlertSignal />
+      <ErrorSignal />
+      <InData />
+    </App>
   </Apps>
   <Widgets>
     <Widget Locked="true">

@@ -71,7 +71,7 @@ VAR num ASFM_M_Lvl:=0;!0=No message; 1=Error messages; 2=Add Correction messages
 VAR string stASFMReceived;
 VAR socketdev ComASFMSocket;
 PERS tooldata MyToolASFM:=[TRUE,[[40.746,0.415,676.2],[1,0,0,0]],[3,[0,0,1],[1,0,0,0],0,0,0]]; !Defined by ASFMu_Initialize() function
-PERS wobjdata MyWobjASFM:=[FALSE,TRUE,"",[[-2165,-61,59],[1,0,0,0]],[[-21.1576,-2.88536,-3.43904],[1,0,0,0]]];     !Defined by ASFMu_Initialize() function
+PERS wobjdata MyWobjASFM:=[FALSE,TRUE,"",[[-513,-36,67],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];     !Defined by ASFMu_Initialize() function
 PERS num AlphaCal:=-1.46; !Store angle computed during calibration for check process
 PERS num BetaCal:=-0.036; !Store angle computed during calibration for check process
 PERS num GammaCal:=0.067; !Store angle computed during calibration for check process
