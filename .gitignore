@@ -1,0 +1,6 @@
+*.*
+!/RAATCfg/
+!/OptConfig/
+!/ext_install.cmd
+!/yaml/
+!.gitignore
