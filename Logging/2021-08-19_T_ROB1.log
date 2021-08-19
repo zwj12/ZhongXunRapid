@@ -1,0 +1,30 @@
+2021-08-19 08:45:37:WARNING:root:Modules are saved
+2021-08-19 08:45:53:INFO:root:CycleStart T_ROB1 : JobWeld
+2021-08-19 08:45:53:WARNING:root:PrePart: 101...
+2021-08-19 08:45:53:WARNING:root:LoadModelData by job mode: 3
+2021-08-19 08:45:53:WARNING:root:LoadModelDatabyPLC
+2021-08-19 08:50:30:WARNING:root:Modules are saved
+2021-08-19 08:51:03:INFO:root:CycleStart T_ROB1 : JobWeld
+2021-08-19 08:51:03:WARNING:root:PrePart: 101...
+2021-08-19 08:51:03:WARNING:root:LoadModelData by job mode: 3
+2021-08-19 08:51:03:WARNING:root:LoadModelDatabyPLC
+2021-08-19 08:51:03:WARNING:root:numPLCJobID=1
+2021-08-19 08:51:03:WARNING:root:numGantryPosition=36
+2021-08-19 08:51:03:WARNING:root:LoadModelDatabyYML
+2021-08-19 08:51:46:WARNING:root:Modules are saved
+2021-08-19 08:51:52:INFO:root:CycleStart T_ROB1 : JobWeld
+2021-08-19 08:51:52:WARNING:root:PrePart: 101...
+2021-08-19 08:51:52:WARNING:root:LoadModelData by job mode: 3
+2021-08-19 08:51:52:WARNING:root:LoadModelDatabyPLC
+2021-08-19 08:51:52:WARNING:root:numPLCJobID=1
+2021-08-19 08:51:52:WARNING:root:numGantryPosition=36
+2021-08-19 08:51:52:WARNING:root:LoadModelDatabyYML
+2021-08-19 08:51:52:WARNING:root:Yaml: job_1.yml is loaded
+2021-08-19 08:51:52:WARNING:root:Load: "1001"
+2021-08-19 08:51:52:WARNING:root:Load: "1002"
+2021-08-19 08:51:52:WARNING:root:Job Weld: 1/2 - 1001
+2021-08-19 08:51:52:WARNING:root:Pos: [0,0,0]
+2021-08-19 08:51:52:WARNING:root:Gantry: [0,0,0]
+2021-08-19 08:51:52:WARNING:root:Start to run Template_1001...
+2021-08-19 08:51:53:WARNING:root:Search oframe
+2021-08-19 08:52:01:WARNING:root:Scan: pQ1_Y1=[0,75,0]

@@ -45,14 +45,18 @@ MODULE SharedModule(NOSTEPIN)
     CONST ScanData scanJoint10:=[10];
 
     !numJobMode: 0 - Keep last, 1 - by TPU, 2 - by yml, 3 - by PLC
-    PERS num numJobMode:=2;
+    PERS num numJobMode:=3;
 
     !For numJobMode=1
-    PERS RECORDModelData rModelDataFirst{4}:=[["1002",[-513,-36,67]],["",[-513,-36,67]],["",[-513,-36,67]],["",[-513,-36,67]]];
+    PERS RECORDModelData rModelDataFirst{4}:=[["1004",[-513,-36,67]],["",[-513,-36,67]],["",[-513,-36,67]],["",[-513,-36,67]]];
     PERS pos posModelOffset:=[-1670,10,0];
     PERS num numModelOffsetStart:=1;
     PERS num numModelOffsetQuantity:=1;
-    
+
+    !For numJobMode=3
+    PERS dnum numPLCJobID:=1;
+    PERS num numGantryPosition:=36;
+
     PERS num numWaitTimeForLaser:=0;
     PERS num numAproachRelToolZ:=-50;
 
@@ -127,16 +131,22 @@ MODULE SharedModule(NOSTEPIN)
 
     PROC LoadModelDatabyPLC()
         Logging "LoadModelDatabyPLC";
+        numPLCJobID:=GInputDnum(Gi112_JobID);
+        numGantryPosition:=AInput(Ai144_GantryPosition);
+        Logging "numPLCJobID="+ValToStr(numPLCJobID);
+        Logging "numGantryPosition="+ValToStr(numGantryPosition);
+        strModelDataYamlFileName:="job_"+ValToStr(numPLCJobID)+ ".yml";
+        LoadModelDatabyYML;
     ENDPROC
 
     PROC ReloadGantryOffset()
         EOffsSet extGantryOffsetCurrent;
-        IF RobOS() THEN
-            IF NOT ASFMu_Initialize(Laser_IP_Add,2,TRUE,TRUE,TRUE,toolLaser,wobjCurrent) THEN
-                TPWrite "The socket between laser and robot error Can't connect to vision controller";
-                stop;
-            ENDIF
-        ENDIF
+        !        IF RobOS() THEN
+        !            IF NOT ASFMu_Initialize(Laser_IP_Add,2,TRUE,TRUE,TRUE,toolLaser,wobjCurrent) THEN
+        !                TPWrite "The socket between laser and robot error Can't connect to vision controller";
+        !                stop;
+        !            ENDIF
+        !        ENDIF
     ENDPROC
 
     PROC InhibWeld(bool boolInhib\switch Weld\switch Weave\switch Track)
@@ -163,8 +173,18 @@ MODULE SharedModule(NOSTEPIN)
         ENDIF
     ENDPROC
 
-    PROC RefreshDisplacement(INOUT pose poseDisp,pos posAbsoluteOffset,robtarget p0,robtarget pFound1,robtarget pFound2)
-        poseDisp.trans:=posAbsoluteOffset+GetDropFeet(p0.trans,pFound1.trans,pFound2.trans\OnlyOffset);
+    PROC RefreshDisplacement(\switch X\switch Y\switch Z,INOUT pose poseDisp,pos posAbsoluteOffset,robtarget p0,robtarget pFound1,robtarget pFound2)
+        VAR pos posOffset;
+        posOffset:=posAbsoluteOffset+GetDropFeet(p0.trans,pFound1.trans,pFound2.trans\OnlyOffset);
+        IF Present(X) THEN
+            poseDisp.trans.x:=posOffset.x;
+        ENDIF
+        IF Present(Y) THEN
+            poseDisp.trans.y:=posOffset.y;
+        ENDIF
+        IF Present(Z) THEN
+            poseDisp.trans.z:=posOffset.z;
+        ENDIF
     ENDPROC
 
 ENDMODULE

@@ -8,7 +8,7 @@ MODULE YAMLModule
     !*****************************************************
 
     !The format of the model data yaml file name is job_xxx
-    TASK PERS string strModelDataYamlFileName:="job_1.yml";
+    TASK PERS string strModelDataYamlFileName:="job_1";
     TASK PERS string strYamlTestFileName:="jobTest.yml";
     TASK PERS string strYamlPath:="yaml/";
     VAR iodev iodevYamlFile;

@@ -25,7 +25,6 @@ MODULE TestModule
     PERS robtarget pSeamFindGunCheck:=[[-439.18,-587.87,802.39],[0.150973,0.706388,-0.650213,0.23547],[-1,-1,0,1],[-959.514,-320.649,-497.97,9E+09,9E+09,9E+09]];
     PERS robtarget pSeamFindGunCheck2:=[[-404.32,-589.05,799.52],[0.0282983,-0.53689,0.714207,-0.448171],[-1,0,0,1],[-1178.69,-205.94,-411.421,9E+09,9E+09,9E+09]];
 
-
     LOCAL PERS robtarget pQ2_X1:=[[-75,0,0],[0.37941,0.915976,0.0499502,0.12059],[-1,-1,0,1],[-800,500,456,9E+9,9E+9,9E+9]];
     LOCAL PERS robtarget pQ2_X2:=[[-30,0,0],[0.37941,0.915976,0.0499502,0.12059],[-1,-1,0,1],[-800,500,456,9E+9,9E+9,9E+9]];
     LOCAL PERS robtarget pQ2_Y1:=[[0,75,0],[0.183013,-0.612372,0.683013,-0.353553],[-1,0,-1,1],[-800,500,456,9E+9,9E+9,9E+9]];
@@ -66,8 +65,6 @@ MODULE TestModule
         jointCurrent.extax.eax_c:=GetBaseFramePosZ()-wobjCurrent.uframe.trans.z+extjointGantryOffsetCur.eax_c;
         Logging "Move Gantry to ["+ValToStr(jointCurrent.extax.eax_a)+","+ValToStr(jointCurrent.extax.eax_b)+","+ValToStr(jointCurrent.extax.eax_c)+"]";
         MoveAbsJ jointCurrent,speedAir,fine,toolWeldGun\WObj:=wobjCurrent;
-        
-        Stop;
 
     ENDPROC
 
