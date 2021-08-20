@@ -43,7 +43,7 @@ MODULE CalibDataModule
     TASK PERS jointtarget jointTransportation:=[[0,-60,45,0,60,0],[0,500,-500,9E+09,9E+09,9E+09]];
     TASK PERS jointtarget jointLoadIdentify:=[[-20,0,0,0,0,0],[0,9E+09,9E+09,9E+09,9E+09,9E+09]];
     TASK PERS jointtarget jointCurrent:=[[90,-75,45,90,45,0],[800,-500,-433,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jointHomeOld:=[[0,-60,40,0,60,0],[-1519.79,484.617,-500,9E+9,9E+9,9E+9]];
+    TASK PERS jointtarget jointHomeOld:=[[0,-60,40,0,60,0],[800,500,-500,9E+9,9E+9,9E+9]];
 
     TASK PERS robtarget robCurrent:=[[-209.736,482.664,216.543],[0.178965,-0.641361,0.732457,-0.141898],[-2,-1,1,1],[-800,500,0.00276417,9E+09,9E+09,9E+09]];
 

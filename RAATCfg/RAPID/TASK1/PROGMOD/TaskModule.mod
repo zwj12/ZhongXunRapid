@@ -8,7 +8,8 @@ MODULE TaskModule
     !*****************************************************
 
     !2021-8-11, Michael, Add extjointGantryReadyOffset, extjointGantryDepart
-
+    !2021-8-20, Michael, Add iodevSysDataLog
+    
     TASK PERS extjoint extGantryHome:=[0,0,-500,9E+09,9E+09,9E+09];
     TASK PERS extjoint extGantryTranslation:=[0,0,0,9E+9,9E+9,9E+9];
     TASK PERS extjoint extjointGantryOffset:=[800,500,-1200,9E+9,9E+9,9E+9];

@@ -17,13 +17,13 @@ MODULE Template_1001_Module
     LOCAL PERS robtarget pQ1_Y1:=[[0,75,0],[0.353553421,0.683012702,-0.61237243,-0.183012661],[0,-1,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pQ1_Y2:=[[0,200,0],[0.353553421,0.683012702,-0.61237243,-0.183012661],[0,-1,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pQ1_Z1:=[[0,0,50],[0.232962913,0.732962913,0.303603179,-0.562422224],[1,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pQ1_Z2:=[[0,0,250],[0.562422222,0.303603147,-0.732962926,0.232962921],[1,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pQ1_Z2:=[[0,0,250],[0.562422,0.303603,-0.732963,0.232963],[1,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pQ1_X1_Found:=[[-75,0,0],[0.37941,0.915976,0.0499502,0.12059],[-1,-1,0,1],[800,500,456,9E+9,9E+9,9E+9]];
     LOCAL PERS robtarget pQ1_X2_Found:=[[-30,0,0],[0.37941,0.915976,0.0499502,0.12059],[-1,-1,0,1],[800,500,456,9E+9,9E+9,9E+9]];
-    LOCAL PERS robtarget pQ1_Y1_Found:=[[-28.08,83.84,-10.66],[0.353553,0.683013,-0.612372,-0.183013],[0,-1,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pQ1_Y2_Found:=[[-29.66,208.66,-9.93],[0.353553,0.683013,-0.612372,-0.183013],[0,-1,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pQ1_Z1_Found:=[[0,0,50],[0.562422,0.303603,0.732963,-0.232963],[-1,-2,-1,1],[800,500,456,9E+9,9E+9,9E+9]];
-    LOCAL PERS robtarget pQ1_Z2_Found:=[[-24.77,-27.73,222.86],[0.562422,0.303603,-0.732963,0.232963],[1,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pQ1_Y1_Found:=[[-27.69,83.91,-10.71],[0.353553,0.683013,-0.612372,-0.183013],[0,-1,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pQ1_Y2_Found:=[[-30.04,208.55,-10.18],[0.353553,0.683013,-0.612372,-0.183013],[0,-1,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pQ1_Z1_Found:=[[-22.5,-29.63,56.82],[0.562422,0.303603,0.732963,-0.232963],[-1,-2,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pQ1_Z2_Found:=[[-24.81,-27.62,222.88],[0.562422,0.303603,-0.732963,0.232963],[1,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
 
     LOCAL PERS robtarget pQ2_X1:=[[-75,0,0],[0.37941,0.915976,0.0499502,0.12059],[-1,-1,0,1],[-800,500,456,9E+9,9E+9,9E+9]];
     LOCAL PERS robtarget pQ2_X2:=[[-30,0,0],[0.37941,0.915976,0.0499502,0.12059],[-1,-1,0,1],[-800,500,456,9E+9,9E+9,9E+9]];
@@ -64,8 +64,8 @@ MODULE Template_1001_Module
     LOCAL PERS robtarget pQ4_Z1_Found:=[[0,0,50],[0.562422,0.303603,0.732963,-0.232963],[-1,-2,-1,1],[-800,500,456,9E+9,9E+9,9E+9]];
     LOCAL PERS robtarget pQ4_Z2_Found:=[[0,0,250],[0.232963,0.732963,-0.303603,0.562422],[-2,-1,1,1],[-800,500,456,9E+9,9E+9,9E+9]];
 
-    LOCAL PERS wobjdata wobjLast:=[FALSE,TRUE,"",[[-513,-36,67],[1,0,0,0]],[[-26.6848,-26.3847,-11.3046],[1,0,0,0]]];
-    LOCAL PERS pose poseFrame:=[[-26.6848,-26.3847,-11.3046],[0.493329,0.500298,0.50374,0.502568]];
+    LOCAL PERS wobjdata wobjLast:=[FALSE,TRUE,"",[[-2163,-36,67],[1,0,0,0]],[[-25.6057,-26.6397,-11.1801],[1,0,0,0]]];
+    LOCAL PERS pose poseFrame:=[[-25.6057,-26.6397,-11.1801],[0.493366,0.497156,0.504476,0.504906]];
     LOCAL PERS pose poseTransform:=[[0,0,0],[0.5,-0.5,-0.5,-0.5]];
     LOCAL PERS pose poseTransform_Q1:=[[0,0,0],[0.5,-0.5,-0.5,-0.5]];
     LOCAL PERS pose poseTransform_Q2:=[[0,0,0],[0.5,-0.5,-0.5,-0.5]];
@@ -87,10 +87,10 @@ MODULE Template_1001_Module
     LOCAL PERS robtarget pSearchSeam7_1:=[[172.50,125.00,18.00],[0.298606,0.663087,-0.6864,-0.00225087],[0,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSearchSeam7_2:=[[172.5,25,18],[0.298604,0.663086,-0.686402,-0.00225078],[0,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
 
-    LOCAL PERS robtarget pSeamFound1_1:=[[114.83,0.45,-4.15],[0.120591,-0.0499502,-0.915976,0.37941],[0,0,0,1],[800,500,480,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeamFound1_2:=[[39.65,-0.82,-4.11],[0.120591,-0.0499502,-0.915976,0.37941],[0,0,0,1],[800,500,480,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeamFound2_1:=[[3.64,-2.66,65.57],[0.232963,0.732963,0.303603,-0.562422],[1,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeamFound2_2:=[[1.92,-1.31,234.28],[0.562422,0.303603,-0.732963,0.232963],[1,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeamFound1_1:=[[114.89,0.99,-4.26],[0.120591,-0.0499502,-0.915976,0.37941],[0,0,0,1],[800,500,480,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeamFound1_2:=[[39.62,-0.77,-4.33],[0.120591,-0.0499502,-0.915976,0.37941],[0,0,0,1],[800,500,480,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeamFound2_1:=[[2.49,-2.59,65.42],[0.232963,0.732963,0.303603,-0.562422],[1,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeamFound2_2:=[[0.82,-0.9,234.16],[0.562422,0.303603,-0.732963,0.232963],[1,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSeamFound3_1:=[[113.68,-13.56,-4.53],[0.120591,0.0499502,-0.915976,-0.37941],[0,-1,-1,1],[800,-500,480,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSeamFound3_2:=[[39.04,-15.51,-4.49],[0.120591,0.0499502,-0.915976,-0.37941],[0,-1,-1,1],[800,-500,480,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSeamFound4_1:=[[-3.15,-18.43,64.41],[0.232963,-0.732963,0.303603,0.562422],[0,-1,0,1],[800,-500,480,9E+09,9E+09,9E+09]];
@@ -129,14 +129,14 @@ MODULE Template_1001_Module
     LOCAL PERS robtarget pSeam10_2:=[[172.500000937,13,-6],[0.183012682,-0.612372459,-0.683012681,0.353553402],[0,0,0,1],[-800,500,456,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSeam10_3:=[[172.500000937,13,-6],[0.183012682,-0.612372459,-0.683012681,0.353553402],[0,0,0,1],[-800,500,456,9E+09,9E+09,9E+09]];
 
-    LOCAL PERS robtarget pSeam21_1:=[[150,0,0],[0.375673,0.916651,-0.133646,0.0275736],[0,0,-2,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeam21_2:=[[150,5,0],[0.375674,0.916651,-0.133644,0.0275745],[0,0,-2,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeam21_3:=[[140,5,0],[0.375672,0.916652,-0.133642,0.0275736],[0,0,-2,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeam21_4:=[[10,0,0],[0.411828,0.878648,-0.240982,0.0173946],[0,0,-2,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeam21_5:=[[10,5,10],[0.513814,0.552829,-0.608731,0.244583],[0,0,-1,1],[567.974,449.042,440.687,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeam21_6:=[[10,5,20],[0.549605,0.275701,-0.700945,0.361385],[0,0,-2,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeam21_7:=[[10,5,100],[0.597745,0.115458,-0.635132,0.47537],[1,1,-2,1],[567.974,449.041,440.688,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeam21_8:=[[10,5,363.77],[0.610985,0.11281,-0.614171,0.486585],[1,0,-1,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam21_1:=[[156,0,0],[0.375673,0.916651,-0.133646,0.0275736],[0,0,-2,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam21_2:=[[156,0,0],[0.375674,0.916651,-0.133644,0.0275745],[0,0,-2,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam21_3:=[[156,0,0],[0.375672,0.916652,-0.133642,0.0275736],[0,0,-2,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam21_4:=[[0,0,0],[0.411828,0.878648,-0.240982,0.0173946],[0,0,-2,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam21_5:=[[0.02,0.00,-0.02],[0.57781,0.500999,-0.60576,0.219522],[0,0,-2,1],[567.975,449.039,440.69,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam21_6:=[[0,0,0],[0.549605,0.275701,-0.700945,0.361385],[0,0,-2,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam21_7:=[[0,0,100],[0.597745,0.115458,-0.635132,0.47537],[1,1,-2,1],[567.974,449.041,440.688,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam21_8:=[[10,5,380],[0.610985,0.11281,-0.614171,0.486585],[1,0,-1,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSeam24_1:=[[-150,-4.77,0],[0.147388,0.013946,0.943852,-0.29534],[-1,0,0,1],[-698.527,504.221,467.895,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSeam24_2:=[[-150,1.58,0],[0.147395,0.0139495,0.94385,-0.295344],[-1,0,0,1],[-698.531,504.222,467.895,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSeam24_3:=[[-142.77,2.55,0],[0.147393,0.0139474,0.94385,-0.295343],[-1,0,0,1],[-698.53,504.221,467.894,9E+09,9E+09,9E+09]];
@@ -174,14 +174,14 @@ MODULE Template_1001_Module
     LOCAL PERS pos posAOSeam10_2:=[0,0,0];
     LOCAL PERS pos posAOSeam10_3:=[0,0,0];
 
-    LOCAL PERS pos posAOSeam21_1:=[-4,0,0];
-    LOCAL PERS pos posAOSeam21_2:=[-4,4,0];
-    LOCAL PERS pos posAOSeam21_3:=[0,4,0];
-    LOCAL PERS pos posAOSeam21_4:=[25,4,0];
-    LOCAL PERS pos posAOSeam21_5:=[20,4,0];
-    LOCAL PERS pos posAOSeam21_6:=[20,4,20];
-    LOCAL PERS pos posAOSeam21_7:=[20,0,0];
-    LOCAL PERS pos posAOSeam21_8:=[20,0,0];
+    LOCAL PERS pos posAOSeam21_1:=[0,-5,10];
+    LOCAL PERS pos posAOSeam21_2:=[0,6,10];
+    LOCAL PERS pos posAOSeam21_3:=[-2,4,10];
+    LOCAL PERS pos posAOSeam21_4:=[25,2,10];
+    LOCAL PERS pos posAOSeam21_5:=[13,-1,10];
+    LOCAL PERS pos posAOSeam21_6:=[7,0,17];
+    LOCAL PERS pos posAOSeam21_7:=[11,0,0];
+    LOCAL PERS pos posAOSeam21_8:=[11,0,0];
     LOCAL PERS pos posAOSeam24_1:=[-4,0,0];
     LOCAL PERS pos posAOSeam24_2:=[-4,4,0];
     LOCAL PERS pos posAOSeam24_3:=[0,4,0];
@@ -192,49 +192,49 @@ MODULE Template_1001_Module
     LOCAL PERS pos posAOSeam24_8:=[0,0,0];
 
     !Used for PDispSet
-    LOCAL PERS pose poseDispSeam1_1:=[[0.108917,-4.07159,-1.86837],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam1_2:=[[0.188454,-7.17133,-2.27623],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam2_1:=[[3.81084,-8.34172,0.114883],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam2_2:=[[3.16523,-7.39732,0.100342],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam2_3:=[[1.12079,-4.40669,0.0542603],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam3_1:=[[-0.187469,6.93883,-11.5402],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam3_2:=[[-0.0967331,3.46754,-11.469],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam4_1:=[[-3.76151,1.15481,0.0334816],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam4_2:=[[-2.74957,1.84187,0.016861],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam4_3:=[[0.398711,3.97939,-0.0348511],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam5_1:=[[-17.6494,-0.446373,-4.25365],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam5_2:=[[-20.2863,-0.516472,-3.90385],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam5_3:=[[-20.2863,-0.516472,-3.90385],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam6_1:=[[25.4475,0.0777283,-2.45596],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam6_2:=[[19.0255,-0.135315,-7.21259],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam7_1:=[[-32.3935,-0.759979,8.02891],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam7_2:=[[-29.3948,-0.690666,7.68695],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam7_3:=[[-29.3948,-0.690666,7.68695],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam8_1:=[[2.8342,0.0904541,-4.80138],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam8_2:=[[-0.692978,0.00148392,-4.16271],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam8_3:=[[-0.692978,0.00148392,-4.16271],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam9_1:=[[-22.565,0.286362,30.3056],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam9_2:=[[-28.5206,0.127365,27.0722],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam10_1:=[[1.15506,0.0231094,-0.816231],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam10_2:=[[-0.668945,-0.010788,-0.566907],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam10_3:=[[-0.668945,-0.010788,-0.566907],[1,0,0,0]];
+    LOCAL PERS pose peSeam1_1:=[[0.108917,-4.07159,-1.86837],[1,0,0,0]];
+    LOCAL PERS pose peSeam1_2:=[[0.188454,-7.17133,-2.27623],[1,0,0,0]];
+    LOCAL PERS pose peSeam2_1:=[[3.81084,-8.34172,0.114883],[1,0,0,0]];
+    LOCAL PERS pose peSeam2_2:=[[3.16523,-7.39732,0.100342],[1,0,0,0]];
+    LOCAL PERS pose peSeam2_3:=[[1.12079,-4.40669,0.0542603],[1,0,0,0]];
+    LOCAL PERS pose peSeam3_1:=[[-0.187469,6.93883,-11.5402],[1,0,0,0]];
+    LOCAL PERS pose peSeam3_2:=[[-0.0967331,3.46754,-11.469],[1,0,0,0]];
+    LOCAL PERS pose peSeam4_1:=[[-3.76151,1.15481,0.0334816],[1,0,0,0]];
+    LOCAL PERS pose peSeam4_2:=[[-2.74957,1.84187,0.016861],[1,0,0,0]];
+    LOCAL PERS pose peSeam4_3:=[[0.398711,3.97939,-0.0348511],[1,0,0,0]];
+    LOCAL PERS pose peSeam5_1:=[[-17.6494,-0.446373,-4.25365],[1,0,0,0]];
+    LOCAL PERS pose peSeam5_2:=[[-20.2863,-0.516472,-3.90385],[1,0,0,0]];
+    LOCAL PERS pose peSeam5_3:=[[-20.2863,-0.516472,-3.90385],[1,0,0,0]];
+    LOCAL PERS pose peSeam6_1:=[[25.4475,0.0777283,-2.45596],[1,0,0,0]];
+    LOCAL PERS pose peSeam6_2:=[[19.0255,-0.135315,-7.21259],[1,0,0,0]];
+    LOCAL PERS pose peSeam7_1:=[[-32.3935,-0.759979,8.02891],[1,0,0,0]];
+    LOCAL PERS pose peSeam7_2:=[[-29.3948,-0.690666,7.68695],[1,0,0,0]];
+    LOCAL PERS pose peSeam7_3:=[[-29.3948,-0.690666,7.68695],[1,0,0,0]];
+    LOCAL PERS pose peSeam8_1:=[[2.8342,0.0904541,-4.80138],[1,0,0,0]];
+    LOCAL PERS pose peSeam8_2:=[[-0.692978,0.00148392,-4.16271],[1,0,0,0]];
+    LOCAL PERS pose peSeam8_3:=[[-0.692978,0.00148392,-4.16271],[1,0,0,0]];
+    LOCAL PERS pose peSeam9_1:=[[-22.565,0.286362,30.3056],[1,0,0,0]];
+    LOCAL PERS pose peSeam9_2:=[[-28.5206,0.127365,27.0722],[1,0,0,0]];
+    LOCAL PERS pose peSeam10_1:=[[1.15506,0.0231094,-0.816231],[1,0,0,0]];
+    LOCAL PERS pose peSeam10_2:=[[-0.668945,-0.010788,-0.566907],[1,0,0,0]];
+    LOCAL PERS pose peSeam10_3:=[[-0.668945,-0.010788,-0.566907],[1,0,0,0]];
 
-    LOCAL PERS pose poseDispSeam21_1:=[[-4.01985,1.04378,-4.1687],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam21_2:=[[-3.93541,0.0452106,-4.16875],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam21_3:=[[0.0674438,-0.123669,-4.16343],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam21_4:=[[19.3088,2.67947,-4.09424],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam21_5:=[[14.2065,-2.31919,-14.0943],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam21_6:=[[14.1045,-2.31928,-4.09427],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam21_7:=[[13.2891,-7.38457,-0.00932312],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam21_8:=[[10.6004,-5.27426,-0.0536194],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam24_1:=[[-3.9471,-1.73105,0.166434],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam24_2:=[[-3.74954,-4.0749,0.167627],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam24_3:=[[0.273361,-4.81904,0.211436],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam24_4:=[[13.4774,-2.89261,0.938115],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam24_5:=[[11.4385,-3.93672,-9.02001],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam24_6:=[[9.999,-1.94246,1.01767],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam24_7:=[[12.0028,-3.1555,0.225418],[1,0,0,0]];
-    LOCAL PERS pose poseDispSeam24_8:=[[6.55326,-4.60554,0.107544],[1,0,0,0]];
+    LOCAL PERS pose peSeam21_1:=[[-0.041687,-3.04972,5.77819],[1,0,0,0]];
+    LOCAL PERS pose peSeam21_2:=[[-0.041687,7.95028,5.77819],[1,0,0,0]];
+    LOCAL PERS pose peSeam21_3:=[[-2.04169,5.95028,5.77819],[1,0,0,0]];
+    LOCAL PERS pose peSeam21_4:=[[28.1368,0.304608,5.63319],[1,0,0,0]];
+    LOCAL PERS pose peSeam21_5:=[[16.117,-2.69493,5.65321],[1,0,0,0]];
+    LOCAL PERS pose peSeam21_6:=[[10.1368,-1.69539,12.6332],[1,0,0,0]];
+    LOCAL PERS pose peSeam21_7:=[[13.1473,-2.24323,0.0437164],[1,0,0,0]];
+    LOCAL PERS pose peSeam21_8:=[[0.377239,-4.43996,-0.0606689],[1,0,0,0]];
+    LOCAL PERS pose peSeam24_1:=[[-3.9471,-1.73105,0.166434],[1,0,0,0]];
+    LOCAL PERS pose peSeam24_2:=[[-3.74954,-4.0749,0.167627],[1,0,0,0]];
+    LOCAL PERS pose peSeam24_3:=[[0.273361,-4.81904,0.211436],[1,0,0,0]];
+    LOCAL PERS pose peSeam24_4:=[[13.4774,-2.89261,0.938115],[1,0,0,0]];
+    LOCAL PERS pose peSeam24_5:=[[11.4385,-3.93672,-9.02001],[1,0,0,0]];
+    LOCAL PERS pose peSeam24_6:=[[9.999,-1.94246,1.01767],[1,0,0,0]];
+    LOCAL PERS pose peSeam24_7:=[[12.0028,-3.1555,0.225418],[1,0,0,0]];
+    LOCAL PERS pose peSeam24_8:=[[6.55326,-4.60554,0.107544],[1,0,0,0]];
 
     !Only for local welding parameters
     LOCAL PERS welddata weld_1:=[6,0,[38,0,-1,0,0,350,0,0,0],[0,0,0,0,0,0,0,0,0]];
@@ -398,15 +398,15 @@ MODULE Template_1001_Module
         ScanSeamByLaser pSeamFound1_2,pSearchSeam1_2,scanJoint1,speedAproach,toolLaser\WObj:=wobjCurrent;
         MoveAbsJ [[89.8036,-45,30,0,-45,4.69007],[800,500,0,9E+9,9E+9,9E+9]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
 
-        RefreshDisplacement\X\Y\Z,poseDispSeam1_1,posAOSeam1_1,pSeam1_1,pSeamFound1_1,pSeamFound1_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam1_2,posAOSeam1_2,pSeam1_2,pSeamFound1_1,pSeamFound1_2;
+        RefreshDisp\X\Y\Z,peSeam1_1,posAOSeam1_1,pSeam1_1,pSeamFound1_1,pSeamFound1_2;
+        RefreshDisp\X\Y\Z,peSeam1_2,posAOSeam1_2,pSeam1_2,pSeamFound1_1,pSeamFound1_2;
 
         MoveAbsJ [[54.848,-45,10.0862,0,-45,-164.158],[800,500,0,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
 
-        PDispSet poseDispSeam1_1;
+        PDispSet peSeam1_1;
         MoveJ GetAproachTarget(pSeam1_1),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart pSeam1_1,speedAproach,seamShared,weldShared_1\Weave:=weaveShared_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_1\SeamName:="WeldSeam";
-        PDispSet poseDispSeam1_2;
+        PDispSet peSeam1_2;
         ArcLEnd pSeam1_2,speedWeld,seamShared,weldShared_1\Weave:=weaveShared_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_1;
         MoveL GetAproachTarget(pSeam1_2),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         PDispOff;
@@ -423,20 +423,20 @@ MODULE Template_1001_Module
         ScanSeamByLaser pSeamFound2_2,pSearchSeam2_2,scanJoint2,speedAproach,toolLaser\WObj:=wobjCurrent;
         MoveAbsJ [[89.8276,-60,20,90,-10,-60],[800,500,0,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
 
-        RefreshDisplacement\X\Y\Z,poseDispSeam2_1,posAOSeam2_1,pSeam2_1,pSeamFound2_1,pSeamFound2_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam2_2,posAOSeam2_2,pSeam2_2,pSeamFound2_1,pSeamFound2_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam2_3,posAOSeam2_3,pSeam2_3,pSeamFound2_1,pSeamFound2_2;
+        RefreshDisp\X\Y\Z,peSeam2_1,posAOSeam2_1,pSeam2_1,pSeamFound2_1,pSeamFound2_2;
+        RefreshDisp\X\Y\Z,peSeam2_2,posAOSeam2_2,pSeam2_2,pSeamFound2_1,pSeamFound2_2;
+        RefreshDisp\X\Y\Z,peSeam2_3,posAOSeam2_3,pSeam2_3,pSeamFound2_1,pSeamFound2_2;
 
-        !poseDispSeam2_1.trans.z:=pSeamFound1_1.trans.z-pSeam1_1.trans.z+posAOSeam2_1.z;
+        !peSeam2_1.trans.z:=pSeamFound1_1.trans.z-pSeam1_1.trans.z+posAOSeam2_1.z;
 
         MoveAbsJ [[86.4727,-47.3789,17.2334,76.93,-18.8419,-55.6531],[800,500,0,9E+9,9E+9,9E+9]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
 
-        PDispSet poseDispSeam2_1;
+        PDispSet peSeam2_1;
         MoveJ GetAproachTarget(pSeam2_1),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart pSeam2_1,speedAproach,seamShared,weldShared_2\Weave:=weaveShared_2,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_2\SeamName:="WeldSeam";
-        PDispSet poseDispSeam2_2;
+        PDispSet peSeam2_2;
         ArcL pSeam2_2,speedWeld,seamShared,weldShared_2\Weave:=weaveShared_2,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_2;
-        PDispSet poseDispSeam2_3;
+        PDispSet peSeam2_3;
         ArcLEnd pSeam2_3,speedWeld,seamShared,weldShared_2\Weave:=weaveShared_2,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_2;
         MoveL GetAproachTarget(pSeam2_3),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         PDispOff;
@@ -453,15 +453,15 @@ MODULE Template_1001_Module
         ScanSeamByLaser pSeamFound3_2,pSearchSeam3_2,scanJoint3,speedAproach,toolLaser\WObj:=wobjCurrent;
         MoveAbsJ [[87.6697,-60,30,0,-20,0.596836],[800,-500,0,9E+9,9E+9,9E+9]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
 
-        RefreshDisplacement\X\Y\Z,poseDispSeam3_1,posAOSeam3_1,pSeam3_1,pSeamFound3_1,pSeamFound3_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam3_2,posAOSeam3_2,pSeam3_2,pSeamFound3_1,pSeamFound3_2;
+        RefreshDisp\X\Y\Z,peSeam3_1,posAOSeam3_1,pSeam3_1,pSeamFound3_1,pSeamFound3_2;
+        RefreshDisp\X\Y\Z,peSeam3_2,posAOSeam3_2,pSeam3_2,pSeamFound3_1,pSeamFound3_2;
 
         MoveAbsJ [[120.05,-45,9.19948,0,-30,188.432],[800,-500,0,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
 
-        PDispSet poseDispSeam3_1;
+        PDispSet peSeam3_1;
         MoveJ GetAproachTarget(pSeam3_1),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart pSeam3_1,speedAproach,seamShared,weldShared_1\Weave:=weaveShared_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_1\SeamName:="WeldSeam";
-        PDispSet poseDispSeam3_2;
+        PDispSet peSeam3_2;
         ArcLEnd pSeam3_2,speedWeld,seamShared,weldShared_1\Weave:=weaveShared_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_1;
         MoveL GetAproachTarget(pSeam3_2),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         PDispOff;
@@ -478,18 +478,18 @@ MODULE Template_1001_Module
         ScanSeamByLaser pSeamFound4_2,pSearchSeam4_2,scanJoint4,speedAproach,toolLaser\WObj:=wobjCurrent;
         MoveAbsJ [[83.2358,-60,30,-45,-49.5969,100.638],[800,-500,0,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
 
-        RefreshDisplacement\X\Y\Z,poseDispSeam4_1,posAOSeam4_1,pSeam4_1,pSeamFound4_1,pSeamFound4_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam4_2,posAOSeam4_2,pSeam4_2,pSeamFound4_1,pSeamFound4_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam4_3,posAOSeam4_3,pSeam4_3,pSeamFound4_1,pSeamFound4_2;
+        RefreshDisp\X\Y\Z,peSeam4_1,posAOSeam4_1,pSeam4_1,pSeamFound4_1,pSeamFound4_2;
+        RefreshDisp\X\Y\Z,peSeam4_2,posAOSeam4_2,pSeam4_2,pSeamFound4_1,pSeamFound4_2;
+        RefreshDisp\X\Y\Z,peSeam4_3,posAOSeam4_3,pSeam4_3,pSeamFound4_1,pSeamFound4_2;
 
         MoveAbsJ [[94.2338,-34.6748,21.4062,-37.1393,-50.5632,71.7215],[800,-500,0,9E+9,9E+9,9E+9]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
 
-        PDispSet poseDispSeam4_1;
+        PDispSet peSeam4_1;
         MoveJ GetAproachTarget(pSeam4_1),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart pSeam4_1,speedAproach,seamShared,weldShared_2\Weave:=weaveShared_2,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_2\SeamName:="WeldSeam";
-        PDispSet poseDispSeam4_2;
+        PDispSet peSeam4_2;
         ArcL pSeam4_2,speedWeld,seamShared,weldShared_2\Weave:=weaveShared_2,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_2;
-        PDispSet poseDispSeam4_3;
+        PDispSet peSeam4_3;
         ArcLEnd pSeam4_3,speedWeld,seamShared,weldShared_2\Weave:=weaveShared_2,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_2;
         MoveL GetAproachTarget(pSeam4_3),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         PDispOff;
@@ -506,18 +506,18 @@ MODULE Template_1001_Module
         ScanSeamByLaser pSeamFound5_2,pSearchSeam5_2,scanJoint7,speedAproach,toolLaser\WObj:=wobjCurrent;
         MoveAbsJ [[147.387,-45,25.1431,35.3544,-48.8681,23.5475],[800,-500,0,9E+9,9E+9,9E+9]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
 
-        RefreshDisplacement\X\Y\Z,poseDispSeam5_1,posAOSeam5_1,pSeam5_1,pSeamFound5_1,pSeamFound5_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam5_2,posAOSeam5_2,pSeam5_2,pSeamFound5_1,pSeamFound5_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam5_3,posAOSeam5_3,pSeam5_3,pSeamFound5_1,pSeamFound5_2;
+        RefreshDisp\X\Y\Z,peSeam5_1,posAOSeam5_1,pSeam5_1,pSeamFound5_1,pSeamFound5_2;
+        RefreshDisp\X\Y\Z,peSeam5_2,posAOSeam5_2,pSeam5_2,pSeamFound5_1,pSeamFound5_2;
+        RefreshDisp\X\Y\Z,peSeam5_3,posAOSeam5_3,pSeam5_3,pSeamFound5_1,pSeamFound5_2;
 
         MoveAbsJ [[83.0432,-45,6.34264,-62.7013,-10,-31.3365],[800,-500,0,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
 
-        PDispSet poseDispSeam5_1;
+        PDispSet peSeam5_1;
         MoveJ GetAproachTarget(pSeam5_1),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart pSeam5_1,speedAproach,seamShared,weldShared_3\Weave:=weaveShared_3,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_3\SeamName:="WeldSeam";
-        PDispSet poseDispSeam5_2;
+        PDispSet peSeam5_2;
         ArcLEnd pSeam5_2,speedWeld,seamShared,weldShared_3\Weave:=weaveShared_3,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_3;
-        PDispSet poseDispSeam5_3;
+        PDispSet peSeam5_3;
         ArcLEnd pSeam5_3,speedWeld,seamShared,weldShared_3\Weave:=weaveShared_3,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_3;
         MoveL GetAproachTarget(pSeam5_2),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         PDispOff;
@@ -534,15 +534,15 @@ MODULE Template_1001_Module
         ScanSeamByLaser pSeamFound6_2,pSearchSeam6_2,scanJoint6,speedAproach,toolLaser\WObj:=wobjCurrent;
         MoveAbsJ [[24.5361,-38.8889,24.2518,-40.3056,-45,-27.7349],[800,500,0,9E+9,9E+9,9E+9]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
 
-        RefreshDisplacement\X\Y\Z,poseDispSeam6_1,posAOSeam6_1,pSeam6_1,pSeamFound6_1,pSeamFound6_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam6_2,posAOSeam6_2,pSeam6_2,pSeamFound6_1,pSeamFound6_2;
+        RefreshDisp\X\Y\Z,peSeam6_1,posAOSeam6_1,pSeam6_1,pSeamFound6_1,pSeamFound6_2;
+        RefreshDisp\X\Y\Z,peSeam6_2,posAOSeam6_2,pSeam6_2,pSeamFound6_1,pSeamFound6_2;
 
         MoveAbsJ [[32.8503,-60,30,-42.9867,-10,187.199],[800,500,0,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
 
-        PDispSet poseDispSeam6_1;
+        PDispSet peSeam6_1;
         MoveJ GetAproachTarget(pSeam6_1),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart pSeam6_1,speedAproach,seamShared,weldShared_3\Weave:=weaveShared_3,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_3\SeamName:="WeldSeam";
-        PDispSet poseDispSeam6_2;
+        PDispSet peSeam6_2;
         ArcLEnd pSeam6_2,speedWeld,seamShared,weldShared_3\Weave:=weaveShared_3,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_3;
         MoveL GetAproachTarget(pSeam6_2),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         PDispOff;
@@ -559,18 +559,18 @@ MODULE Template_1001_Module
         ScanSeamByLaser pSeamFound7_2,pSearchSeam7_2,scanJoint5,speedAproach,toolLaser\WObj:=wobjCurrent;
         MoveAbsJ [[45.9334,-60,33.8211,-29.2108,-36.3224,-34.8371],[800,500,0,9E+9,9E+9,9E+9]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
 
-        RefreshDisplacement\X\Y\Z,poseDispSeam7_1,posAOSeam7_1,pSeam7_1,pSeamFound7_1,pSeamFound7_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam7_2,posAOSeam7_2,pSeam7_2,pSeamFound7_1,pSeamFound7_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam7_3,posAOSeam7_3,pSeam7_3,pSeamFound7_1,pSeamFound7_2;
+        RefreshDisp\X\Y\Z,peSeam7_1,posAOSeam7_1,pSeam7_1,pSeamFound7_1,pSeamFound7_2;
+        RefreshDisp\X\Y\Z,peSeam7_2,posAOSeam7_2,pSeam7_2,pSeamFound7_1,pSeamFound7_2;
+        RefreshDisp\X\Y\Z,peSeam7_3,posAOSeam7_3,pSeam7_3,pSeamFound7_1,pSeamFound7_2;
 
         MoveAbsJ [[122.431,-24.6315,6.90802,58.7987,-60,21.8787],[800,500,0,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
 
-        PDispSet poseDispSeam7_1;
+        PDispSet peSeam7_1;
         MoveJ GetAproachTarget(pSeam7_1),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart pSeam7_1,speedAproach,seamShared,weldShared_3\Weave:=weaveShared_3,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_3\SeamName:="WeldSeam";
-        PDispSet poseDispSeam7_2;
+        PDispSet peSeam7_2;
         ArcLEnd pSeam7_2,speedWeld,seamShared,weldShared_3\Weave:=weaveShared_3,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_3;
-        PDispSet poseDispSeam7_3;
+        PDispSet peSeam7_3;
         ArcLEnd pSeam7_3,speedWeld,seamShared,weldShared_3\Weave:=weaveShared_3,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_3;
         MoveL GetAproachTarget(pSeam7_2),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         PDispOff;
@@ -585,16 +585,16 @@ MODULE Template_1001_Module
     LOCAL PROC Seam_8()
         MoveAbsJ [[-90,-45.3776,29.7092,-26.0507,-60,-40.1141],[-800,-500,0,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
 
-        RefreshDisplacement\X\Y\Z,poseDispSeam8_1,posAOSeam8_1,pSeam8_1,pSeamFound5_1,pSeamFound5_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam8_2,posAOSeam8_2,pSeam8_2,pSeamFound5_1,pSeamFound5_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam8_3,posAOSeam8_3,pSeam8_3,pSeamFound5_1,pSeamFound5_2;
+        RefreshDisp\X\Y\Z,peSeam8_1,posAOSeam8_1,pSeam8_1,pSeamFound5_1,pSeamFound5_2;
+        RefreshDisp\X\Y\Z,peSeam8_2,posAOSeam8_2,pSeam8_2,pSeamFound5_1,pSeamFound5_2;
+        RefreshDisp\X\Y\Z,peSeam8_3,posAOSeam8_3,pSeam8_3,pSeamFound5_1,pSeamFound5_2;
 
-        PDispSet poseDispSeam8_1;
+        PDispSet peSeam8_1;
         MoveJ GetAproachTarget(pSeam8_1),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart pSeam8_1,speedAproach,seamShared,weldShared_4\Weave:=weaveShared_4,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_4\SeamName:="WeldSeam";
-        PDispSet poseDispSeam8_2;
+        PDispSet peSeam8_2;
         ArcL pSeam8_2,speedWeld,seamShared,weldShared_4\Weave:=weaveShared_4,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_4;
-        PDispSet poseDispSeam8_3;
+        PDispSet peSeam8_3;
         ArcLEnd pSeam8_3,speedWeld,seamShared,weldShared_4\Weave:=weaveShared_4,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_4;
         MoveL GetAproachTarget(pSeam8_2),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         PDispOff;
@@ -608,13 +608,13 @@ MODULE Template_1001_Module
     LOCAL PROC Seam_9()
         MoveAbsJ [[-27.0778,-20,20,40.6952,-70,141.057],[-800,500,0,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
 
-        RefreshDisplacement\X\Y\Z,poseDispSeam9_1,posAOSeam9_1,pSeam9_1,pSeamFound6_1,pSeamFound6_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam9_2,posAOSeam9_2,pSeam9_2,pSeamFound6_1,pSeamFound6_2;
+        RefreshDisp\X\Y\Z,peSeam9_1,posAOSeam9_1,pSeam9_1,pSeamFound6_1,pSeamFound6_2;
+        RefreshDisp\X\Y\Z,peSeam9_2,posAOSeam9_2,pSeam9_2,pSeamFound6_1,pSeamFound6_2;
 
-        PDispSet poseDispSeam9_1;
+        PDispSet peSeam9_1;
         MoveJ GetAproachTarget(pSeam9_1),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart pSeam9_1,speedAproach,seamShared,weldShared_4\Weave:=weaveShared_4,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_4\SeamName:="WeldSeam";
-        PDispSet poseDispSeam9_2;
+        PDispSet peSeam9_2;
         ArcLEnd pSeam9_2,speedWeld,seamShared,weldShared_4\Weave:=weaveShared_4,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_4;
         MoveL GetAproachTarget(pSeam9_2),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         PDispOff;
@@ -628,16 +628,16 @@ MODULE Template_1001_Module
     LOCAL PROC Seam_10()
         MoveAbsJ [[-57.8525,-46.5622,23.0288,10.0453,-41.145,3.82011],[-800,500,0,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
 
-        RefreshDisplacement\X\Y\Z,poseDispSeam10_1,posAOSeam10_1,pSeam10_1,pSeamFound7_1,pSeamFound7_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam10_2,posAOSeam10_2,pSeam10_2,pSeamFound7_1,pSeamFound7_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam10_3,posAOSeam10_3,pSeam10_3,pSeamFound7_1,pSeamFound7_2;
+        RefreshDisp\X\Y\Z,peSeam10_1,posAOSeam10_1,pSeam10_1,pSeamFound7_1,pSeamFound7_2;
+        RefreshDisp\X\Y\Z,peSeam10_2,posAOSeam10_2,pSeam10_2,pSeamFound7_1,pSeamFound7_2;
+        RefreshDisp\X\Y\Z,peSeam10_3,posAOSeam10_3,pSeam10_3,pSeamFound7_1,pSeamFound7_2;
 
-        PDispSet poseDispSeam10_1;
+        PDispSet peSeam10_1;
         MoveJ GetAproachTarget(pSeam10_1),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart pSeam10_1,speedAproach,seamShared,weldShared_4\Weave:=weaveShared_4,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_4\SeamName:="WeldSeam";
-        PDispSet poseDispSeam10_2;
+        PDispSet peSeam10_2;
         ArcL pSeam10_2,speedWeld,seamShared,weldShared_4\Weave:=weaveShared_4,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_4;
-        PDispSet poseDispSeam10_3;
+        PDispSet peSeam10_3;
         ArcLEnd pSeam10_3,speedWeld,seamShared,weldShared_4\Weave:=weaveShared_4,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_4;
         MoveL GetAproachTarget(pSeam10_2),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         PDispOff;
@@ -659,38 +659,27 @@ MODULE Template_1001_Module
         ScanSeamByLaser pSeamFound2_2,pSearchSeam2_2,scanJoint2,speedAproach,toolLaser\WObj:=wobjCurrent;
         MoveAbsJ [[87.5788,-17.9884,-3.36047,91.5666,-40.8279,-105.447],[800,500,456,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
 
-        RefreshDisplacement\X\Y\Z,poseDispSeam21_1,posAOSeam21_1,pSeam21_1,pSeamFound1_1,pSeamFound1_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam21_2,posAOSeam21_2,pSeam21_2,pSeamFound1_1,pSeamFound1_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam21_3,posAOSeam21_3,pSeam21_3,pSeamFound1_1,pSeamFound1_2;
+        MoveAbsJ [[85.9621,-35.2551,10.8295,97.6802,-38.2092,-182.774],[800.001,500,456,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
 
-        RefreshDisplacement\Y\Z,poseDispSeam21_4,posAOSeam21_4,pSeam21_4,pSeamFound1_1,pSeamFound1_2;
-        RefreshDisplacement\X,poseDispSeam21_4,posAOSeam21_4,pSeam21_4,pSeamFound2_1,pSeamFound2_2;
-        RefreshDisplacement\Y\Z,poseDispSeam21_5,posAOSeam21_5,pSeam21_5,pSeamFound1_1,pSeamFound1_2;
-        RefreshDisplacement\X,poseDispSeam21_5,posAOSeam21_5,pSeam21_5,pSeamFound2_1,pSeamFound2_2;
-        RefreshDisplacement\Y\Z,poseDispSeam21_6,posAOSeam21_6,pSeam21_6,pSeamFound1_1,pSeamFound1_2;
-        RefreshDisplacement\X,poseDispSeam21_6,posAOSeam21_6,pSeam21_6,pSeamFound2_1,pSeamFound2_2;
-
-        RefreshDisplacement\X\Y\Z,poseDispSeam21_7,posAOSeam21_7,pSeam21_7,pSeamFound2_1,pSeamFound2_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam21_8,posAOSeam21_8,pSeam21_8,pSeamFound2_1,pSeamFound2_2;
-
-        MoveAbsJ [[87.5788,-17.9884,-3.36047,91.5666,-40.828,-105.447],[800.001,500,456,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
-
-        PDispSet poseDispSeam21_1;
+        RefreshDisp\X\Y\Z,peSeam21_1,posAOSeam21_1,pSeam21_1,pSeamFound1_1,pSeamFound1_2;
         MoveJ GetAproachTarget(pSeam21_1),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart pSeam21_1,speedAproach,seamShared,weldShared_1\Weave:=weaveShared_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_1\SeamName:="WeldSeam";
-        PDispSet poseDispSeam21_2;
+        RefreshDisp\X\Y\Z,peSeam21_2,posAOSeam21_2,pSeam21_2,pSeamFound1_1,pSeamFound1_2;
         ArcL pSeam21_2,speedWeld,seamShared,weldShared_1\Weave:=weaveShared_1,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_1;
-        PDispSet poseDispSeam21_3;
+        RefreshDisp\X\Y\Z,peSeam21_3,posAOSeam21_3,pSeam21_3,pSeamFound1_1,pSeamFound1_2;
         ArcL pSeam21_3,speedWeld,seamShared,weldShared_1\Weave:=weaveShared_1,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_1;
-        PDispSet poseDispSeam21_4;
+        RefreshDisp\Y\Z,peSeam21_4,posAOSeam21_4,pSeam21_4,pSeamFound1_1,pSeamFound1_2;
+        RefreshDisp\X,peSeam21_4,posAOSeam21_4,pSeam21_4,pSeamFound2_1,pSeamFound2_2;
         ArcL pSeam21_4,speedWeld,seamShared,weldShared_1\Weave:=weaveShared_1,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_1;
-        PDispSet poseDispSeam21_5;
-        ArcL pSeam21_5,speedAproach,seamShared,weldShared_2\Weave:=weaveShared_2,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_2;
-        PDispSet poseDispSeam21_6;
-        ArcL pSeam21_6,speedWeld,seamShared,weldShared_2\Weave:=weaveShared_2,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_2;
-        PDispSet poseDispSeam21_7;
+        RefreshDisp\Y\Z,peSeam21_5,posAOSeam21_5,pSeam21_5,pSeamFound1_1,pSeamFound1_2;
+        RefreshDisp\X,peSeam21_5,posAOSeam21_5,pSeam21_5,pSeamFound2_1,pSeamFound2_2;
+        ArcL pSeam21_5,speedAproach,seamShared,weldShared_6\Weave:=weaveShared_6,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_6;
+        RefreshDisp\Y\Z,peSeam21_6,posAOSeam21_6,pSeam21_6,pSeamFound1_1,pSeamFound1_2;
+        RefreshDisp\X,peSeam21_6,posAOSeam21_6,pSeam21_6,pSeamFound2_1,pSeamFound2_2;
+        ArcL pSeam21_6,speedWeld,seamShared,weldShared_6\Weave:=weaveShared_6,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_6;
+        RefreshDisp\X\Y\Z,peSeam21_7,posAOSeam21_7,pSeam21_7,pSeamFound2_1,pSeamFound2_2;
         ArcL pSeam21_7,speedWeld,seamShared,weldShared_2\Weave:=weaveShared_2,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_2;
-        PDispSet poseDispSeam21_8;
+        RefreshDisp\X\Y\Z,peSeam21_8,posAOSeam21_8,pSeam21_8,pSeamFound2_1,pSeamFound2_2;
         ArcLEnd pSeam21_8,speedWeld,seamShared,weldShared_2\Weave:=weaveShared_2,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_2;
         MoveL GetAproachTarget(pSeam21_8),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         PDispOff;
@@ -711,38 +700,27 @@ MODULE Template_1001_Module
         ScanSeamByLaser pSeamFound4_2,pSearchSeam4_2,scanJoint4,speedAproach,toolLaser\WObj:=wobjCurrent;
         MoveAbsJ [[-91.6084,-32.3753,-0.280293,-50.9631,-57.0723,194.327],[-800,500,207.46,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
 
-        RefreshDisplacement\X\Y\Z,poseDispSeam24_1,posAOSeam24_1,pSeam24_1,pSeamFound3_1,pSeamFound3_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam24_2,posAOSeam24_2,pSeam24_2,pSeamFound3_1,pSeamFound3_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam24_3,posAOSeam24_3,pSeam24_3,pSeamFound3_1,pSeamFound3_2;
-
-        RefreshDisplacement\Y\Z,poseDispSeam24_4,posAOSeam24_4,pSeam24_4,pSeamFound3_1,pSeamFound3_2;
-        RefreshDisplacement\X,poseDispSeam24_4,posAOSeam24_4,pSeam24_4,pSeamFound4_1,pSeamFound4_2;
-        RefreshDisplacement\Y\Z,poseDispSeam24_5,posAOSeam24_5,pSeam24_5,pSeamFound3_1,pSeamFound3_2;
-        RefreshDisplacement\X,poseDispSeam24_5,posAOSeam24_5,pSeam24_5,pSeamFound4_1,pSeamFound4_2;
-        RefreshDisplacement\Y\Z,poseDispSeam24_6,posAOSeam24_6,pSeam24_6,pSeamFound3_1,pSeamFound3_2;
-        RefreshDisplacement\X,poseDispSeam24_6,posAOSeam24_6,pSeam24_6,pSeamFound4_1,pSeamFound4_2;
-
-        RefreshDisplacement\X\Y\Z,poseDispSeam24_7,posAOSeam24_7,pSeam24_7,pSeamFound4_1,pSeamFound4_2;
-        RefreshDisplacement\X\Y\Z,poseDispSeam24_8,posAOSeam24_8,pSeam24_8,pSeamFound4_1,pSeamFound4_2;
-
         MoveAbsJ [[-52.7557,-43.8883,36.8223,15.4091,-52.0967,115.276],[-737.076,502.617,361.603,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
 
-        PDispSet poseDispSeam24_1;
+        RefreshDisp\X\Y\Z,peSeam24_1,posAOSeam24_1,pSeam24_1,pSeamFound3_1,pSeamFound3_2;
         MoveJ GetAproachTarget(pSeam24_1),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         ArcLStart pSeam24_1,speedAproach,seamShared,weldShared_1\Weave:=weaveShared_1,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_1\SeamName:="WeldSeam";
-        PDispSet poseDispSeam24_2;
+        RefreshDisp\X\Y\Z,peSeam24_2,posAOSeam24_2,pSeam24_2,pSeamFound3_1,pSeamFound3_2;
         ArcL pSeam24_2,speedWeld,seamShared,weldShared_1\Weave:=weaveShared_1,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_1;
-        PDispSet poseDispSeam24_3;
+        RefreshDisp\X\Y\Z,peSeam24_3,posAOSeam24_3,pSeam24_3,pSeamFound3_1,pSeamFound3_2;
         ArcL pSeam24_3,speedWeld,seamShared,weldShared_1\Weave:=weaveShared_1,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_1;
-        PDispSet poseDispSeam24_4;
+        RefreshDisp\Y\Z,peSeam24_4,posAOSeam24_4,pSeam24_4,pSeamFound3_1,pSeamFound3_2;
+        RefreshDisp\X,peSeam24_4,posAOSeam24_4,pSeam24_4,pSeamFound4_1,pSeamFound4_2;
         ArcL pSeam24_4,speedWeld,seamShared,weldShared_1\Weave:=weaveShared_1,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_1;
-        PDispSet poseDispSeam24_5;
-        ArcL pSeam24_5,speedAproach,seamShared,weldShared_2\Weave:=weaveShared_2,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_2;
-        PDispSet poseDispSeam24_6;
-        ArcL pSeam24_6,speedWeld,seamShared,weldShared_2\Weave:=weaveShared_2,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_2;
-        PDispSet poseDispSeam24_7;
+        RefreshDisp\Y\Z,peSeam24_5,posAOSeam24_5,pSeam24_5,pSeamFound3_1,pSeamFound3_2;
+        RefreshDisp\X,peSeam24_5,posAOSeam24_5,pSeam24_5,pSeamFound4_1,pSeamFound4_2;
+        ArcL pSeam24_5,speedAproach,seamShared,weldShared_6\Weave:=weaveShared_6,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_6;
+        RefreshDisp\Y\Z,peSeam24_6,posAOSeam24_6,pSeam24_6,pSeamFound3_1,pSeamFound3_2;
+        RefreshDisp\X,peSeam24_6,posAOSeam24_6,pSeam24_6,pSeamFound4_1,pSeamFound4_2;
+        ArcL pSeam24_6,speedWeld,seamShared,weldShared_6\Weave:=weaveShared_6,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_6;
+        RefreshDisp\X\Y\Z,peSeam24_7,posAOSeam24_7,pSeam24_7,pSeamFound4_1,pSeamFound4_2;
         ArcL pSeam24_7,speedWeld,seamShared,weldShared_2\Weave:=weaveShared_2,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_2;
-        PDispSet poseDispSeam24_8;
+        RefreshDisp\X\Y\Z,peSeam24_8,posAOSeam24_8,pSeam24_8,pSeamFound4_1,pSeamFound4_2;
         ArcLEnd pSeam24_8,speedWeld,seamShared,weldShared_2\Weave:=weaveShared_2,fine,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_2;
         MoveL GetAproachTarget(pSeam24_8),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         PDispOff;

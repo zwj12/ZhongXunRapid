@@ -33,4 +33,10 @@ MODULE ProcessDataModule
     TASK PERS welddata weldShared_5:=[6,0,[38,0,-1,0,0,350,0,0,0],[0,0,0,0,0,0,0,0,0]];
     TASK PERS weavedata weaveShared_5:=[1,0,4,6,0,0,0,0,0,0,0,0,0,0,0];
     TASK PERS trackdata trackShared_5:=[2,TRUE,50,[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0]];
+
+    !Fillet weld: 2F - 3F
+    TASK PERS welddata weldShared_6:=[2.1,0,[21,0,-1,0,0,350,0,0,0],[0,0,0,0,0,0,0,0,0]];
+    TASK PERS weavedata weaveShared_6:=[1,0,2.2,2.7,0,0.7,0,0.5,0,0,0,0,0,0,0];
+    TASK PERS trackdata trackShared_6:=[2,TRUE,50,[0,10,10,3940,0,0,0,0,0],[0,0,0,0,0,0,0]];
+
 ENDMODULE
