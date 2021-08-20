@@ -39,7 +39,7 @@ MODULE CalibDataModule
     TASK PERS jointtarget jtLaserX:=[[161.523,27.5424,31.4752,-1.46627,31.0902,-18.0317],[687.112,9E+09,9E+09,9E+09,9E+09,9E+09]];
 
     TASK PERS jointtarget jointOrigin:=[[0,0,0,0,0,0],[0,0,0,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jointHome:=[[0,-60,40,0,60,0],[-1519.79,484.617,-500,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jointHome:=[[0,-60,40,0,60,0],[800,500,-500,9E+9,9E+9,9E+9]];
     TASK PERS jointtarget jointTransportation:=[[0,-60,45,0,60,0],[0,500,-500,9E+09,9E+09,9E+09]];
     TASK PERS jointtarget jointLoadIdentify:=[[-20,0,0,0,0,0],[0,9E+09,9E+09,9E+09,9E+09,9E+09]];
     TASK PERS jointtarget jointCurrent:=[[90,-75,45,90,45,0],[800,-500,-433,9E+09,9E+09,9E+09]];

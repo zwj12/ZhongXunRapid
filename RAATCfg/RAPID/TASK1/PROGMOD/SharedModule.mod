@@ -24,6 +24,9 @@ MODULE SharedModule(NOSTEPIN)
 
     PERS bool boolEnableOffset:=FALSE;
 
+    PERS string strTab:=",";
+    PERS string strUtilityKey:="";
+
     !Seam 1
     CONST ScanData scanJoint1:=[1];
     !Seam 2
@@ -60,8 +63,6 @@ MODULE SharedModule(NOSTEPIN)
 
     PERS num numWaitTimeForLaser:=0;
     PERS num numAproachRelToolZ:=-50;
-
-    PERS string strTab:=",";
 
     PROC Scan_1D_Laser(INOUT robtarget ScanFound,robtarget ScanPoint,num JointNo)
         Logging "Scan:"+ValToStr(ScanPoint.trans);

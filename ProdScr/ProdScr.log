@@ -4,121 +4,7 @@
     <ErrorItem>
       <Time>2021-08-18T14:24:48.016</Time>
       <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/.</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/OptConfig</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/ProdScr</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/RAATCfg</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/RS</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/Logging</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/LogTestASFM.txt</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/calpend.log</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/ApplSys</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/ApplConf</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/.git</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/140-107895.cfg</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
       <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/ApplData</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/Arc</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/DynPart</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/LogASFMErrors.txt</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/Fr1TrackLog.txt</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/ext_install.cmd</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/GAP_USER.sys</Message>
-      <Exception />
-    </ErrorItem>
-    <ErrorItem>
-      <Time>2021-08-18T14:24:48.016</Time>
-      <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/jobTest.yml</Message>
       <Exception />
     </ErrorItem>
     <ErrorItem>
@@ -130,13 +16,109 @@
     <ErrorItem>
       <Time>2021-08-18T14:24:48.016</Time>
       <Module>MichaelLog</Module>
-      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/LogMode0.txt</Message>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/jobTest.yml</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-18T14:24:48.016</Time>
+      <Module>MichaelLog</Module>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/GAP_USER.sys</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-18T14:24:48.016</Time>
+      <Module>MichaelLog</Module>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/ext_install.cmd</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-18T14:24:48.016</Time>
+      <Module>MichaelLog</Module>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/Fr1TrackLog.txt</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-18T14:24:48.016</Time>
+      <Module>MichaelLog</Module>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/LogASFMErrors.txt</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-18T14:24:48.016</Time>
+      <Module>MichaelLog</Module>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/Arc</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-18T14:24:48.016</Time>
+      <Module>MichaelLog</Module>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/140-107895.cfg</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-18T14:24:48.016</Time>
+      <Module>MichaelLog</Module>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/DynPart</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-18T14:24:48.016</Time>
+      <Module>MichaelLog</Module>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/ApplConf</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-18T14:24:48.016</Time>
+      <Module>MichaelLog</Module>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/calpend.log</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-18T14:24:48.016</Time>
+      <Module>MichaelLog</Module>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/LogTestASFM.txt</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-18T14:24:48.016</Time>
+      <Module>MichaelLog</Module>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/Logging</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-18T14:24:48.016</Time>
+      <Module>MichaelLog</Module>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/RS</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-18T14:24:48.016</Time>
+      <Module>MichaelLog</Module>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/RAATCfg</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-18T14:24:48.016</Time>
+      <Module>MichaelLog</Module>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/ProdScr</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-18T14:24:48.016</Time>
+      <Module>MichaelLog</Module>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/OptConfig</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-18T14:24:48.016</Time>
+      <Module>MichaelLog</Module>
+      <Message>C:/Users/CNMIZHU7/Documents/RobotStudio/Virtual Controllers/140-107895-20210809/HOME/ApplSys</Message>
       <Exception />
     </ErrorItem>
     <ErrorItem>
       <Time>2021-08-18T14:52:27</Time>
       <Module>MichaelLog</Module>
-      <Message>job_1.yml</Message>
+      <Message>.</Message>
       <Exception />
     </ErrorItem>
     <ErrorItem>
@@ -148,7 +130,31 @@
     <ErrorItem>
       <Time>2021-08-18T14:52:27</Time>
       <Module>MichaelLog</Module>
-      <Message>.</Message>
+      <Message>job_1.yml</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-20T09:10:45</Time>
+      <Module>TpsViewZhongXun</Module>
+      <Message>System.NullReferenceException: Object reference not set to an instance of an object.
+   at TpsViewZhongXunNameSpace.TpsViewZhongXun.CheckLicense()
+   at TpsViewZhongXunNameSpace.TpsViewZhongXun.ABB.Robotics.Tps.Taf.ITpsViewSetup.Install(Object sender, Object data)</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-20T09:13:02</Time>
+      <Module>TpsViewZhongXun</Module>
+      <Message>System.NullReferenceException: Object reference not set to an instance of an object.
+   at TpsViewZhongXunNameSpace.TpsViewZhongXun.CheckLicense()
+   at TpsViewZhongXunNameSpace.TpsViewZhongXun.ABB.Robotics.Tps.Taf.ITpsViewSetup.Install(Object sender, Object data)</Message>
+      <Exception />
+    </ErrorItem>
+    <ErrorItem>
+      <Time>2021-08-20T09:14:30</Time>
+      <Module>TpsViewZhongXun</Module>
+      <Message>System.NullReferenceException: Object reference not set to an instance of an object.
+   at TpsViewZhongXunNameSpace.TpsViewZhongXun.CheckLicense()
+   at TpsViewZhongXunNameSpace.TpsViewZhongXun.ABB.Robotics.Tps.Taf.ITpsViewSetup.Install(Object sender, Object data)</Message>
       <Exception />
     </ErrorItem>
   </ErrorItems>
