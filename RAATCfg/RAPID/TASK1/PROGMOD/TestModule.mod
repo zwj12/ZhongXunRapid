@@ -147,7 +147,7 @@ MODULE TestModule
     ENDPROC
 
     PROC TestWobj0()
-        EOffsSet extGantryOffsetCurrent;
+        LoadGantryOffset;
         MoveAbsJ [[-51.1047,-50.0305,43.4255,14.5498,-52.3183,77.5438],[-800,500,313.838,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
 
         IF RobOS() THEN

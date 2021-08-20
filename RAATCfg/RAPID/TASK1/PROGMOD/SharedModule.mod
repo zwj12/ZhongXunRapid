@@ -11,6 +11,7 @@ MODULE SharedModule(NOSTEPIN)
     !2021-8-12, Michael, Add GetDropFeet
     !2021-8-13, Michael, Add ReloadGantryOffset
     !2021-8-16, Michael, Add RefreshDisplacement
+    !2021-8-20, Michael, Add WriteSysDataLog
 
     RECORD ScanData
         num joint_no;
@@ -45,10 +46,10 @@ MODULE SharedModule(NOSTEPIN)
     CONST ScanData scanJoint10:=[10];
 
     !numJobMode: 0 - Keep last, 1 - by TPU, 2 - by yml, 3 - by PLC
-    PERS num numJobMode:=3;
+    PERS num numJobMode:=1;
 
     !For numJobMode=1
-    PERS RECORDModelData rModelDataFirst{4}:=[["1004",[-513,-36,67]],["",[-513,-36,67]],["",[-513,-36,67]],["",[-513,-36,67]]];
+    PERS RECORDModelData rModelDataFirst{4}:=[["1001",[-2163,-36,67]],["",[-2163,-36,67]],["",[-2163,-36,67]],["",[-2163,-36,67]]];
     PERS pos posModelOffset:=[-1670,10,0];
     PERS num numModelOffsetStart:=1;
     PERS num numModelOffsetQuantity:=1;
@@ -59,6 +60,8 @@ MODULE SharedModule(NOSTEPIN)
 
     PERS num numWaitTimeForLaser:=0;
     PERS num numAproachRelToolZ:=-50;
+
+    PERS string strTab:=",";
 
     PROC Scan_1D_Laser(INOUT robtarget ScanFound,robtarget ScanPoint,num JointNo)
         Logging "Scan:"+ValToStr(ScanPoint.trans);
@@ -86,14 +89,6 @@ MODULE SharedModule(NOSTEPIN)
         ENDIF
         Logging "Found: "+ArgName(ScanFound)+"="+ValToStr(ScanFound.trans);
     ENDPROC
-
-    FUNC extjoint GetExtOffset(pos posOrigin)
-        VAR extjoint extTemp:=[9E+9,9E+9,9E+9,9E+9,9E+9,9E+9];
-        extTemp.eax_a:=posOrigin.x+extGantryTranslation.eax_a;
-        extTemp.eax_b:=posOrigin.y+extGantryTranslation.eax_b;
-        extTemp.eax_c:=-posOrigin.z+extGantryTranslation.eax_c;
-        RETURN extTemp;
-    ENDFUNC
 
     PROC LoadModelDatabyTPU()
         VAR num numIndex:=0;
@@ -135,18 +130,8 @@ MODULE SharedModule(NOSTEPIN)
         numGantryPosition:=AInput(Ai144_GantryPosition);
         Logging "numPLCJobID="+ValToStr(numPLCJobID);
         Logging "numGantryPosition="+ValToStr(numGantryPosition);
-        strModelDataYamlFileName:="job_"+ValToStr(numPLCJobID)+ ".yml";
+        strModelDataYamlFileName:="job_"+ValToStr(numPLCJobID)+".yml";
         LoadModelDatabyYML;
-    ENDPROC
-
-    PROC ReloadGantryOffset()
-        EOffsSet extGantryOffsetCurrent;
-        !        IF RobOS() THEN
-        !            IF NOT ASFMu_Initialize(Laser_IP_Add,2,TRUE,TRUE,TRUE,toolLaser,wobjCurrent) THEN
-        !                TPWrite "The socket between laser and robot error Can't connect to vision controller";
-        !                stop;
-        !            ENDIF
-        !        ENDIF
     ENDPROC
 
     PROC InhibWeld(bool boolInhib\switch Weld\switch Weave\switch Track)
@@ -173,18 +158,30 @@ MODULE SharedModule(NOSTEPIN)
         ENDIF
     ENDPROC
 
-    PROC RefreshDisplacement(\switch X\switch Y\switch Z,INOUT pose poseDisp,pos posAbsoluteOffset,robtarget p0,robtarget pFound1,robtarget pFound2)
-        VAR pos posOffset;
-        posOffset:=posAbsoluteOffset+GetDropFeet(p0.trans,pFound1.trans,pFound2.trans\OnlyOffset);
-        IF Present(X) THEN
-            poseDisp.trans.x:=posOffset.x;
+    PROC WriteSysDataLog(string strTemplateID)
+        Close iodevSysDataLog;
+        IF boolInitSysDataLogFile THEN
+            Open "HOME:"\File:=strSysDataLogFileName,iodevSysDataLog;
+            Write iodevSysDataLog,"Time"+strTab+"TemplateID"\NoNewLine;
+            Write iodevSysDataLog,strTab+"WeldGun.X"+strTab+"WeldGun.Y"+strTab+"WeldGun.Z"\NoNewLine;
+            Write iodevSysDataLog,strTab+"WeldGun.Orient"\NoNewLine;
+            Write iodevSysDataLog,strTab+"uframe.X"+strTab+"uframe.Y"+strTab+"uframe.Z"\NoNewLine;
+            Write iodevSysDataLog,strTab+"uframe.Orient"\NoNewLine;
+            Write iodevSysDataLog,strTab+"oframe.X"+strTab+"oframe.Y"+strTab+"oframe.Z"\NoNewLine;
+            Write iodevSysDataLog,strTab+"oframe.Orient";
+            boolInitSysDataLogFile:=FALSE;
+        ELSE
+            Open "HOME:"\File:=strSysDataLogFileName,iodevSysDataLog\Append;
         ENDIF
-        IF Present(Y) THEN
-            poseDisp.trans.y:=posOffset.y;
-        ENDIF
-        IF Present(Z) THEN
-            poseDisp.trans.z:=posOffset.z;
-        ENDIF
+        Write iodevSysDataLog,CDate()+" "+CTime()+strTab+strTemplateID\NoNewLine;
+        Write iodevSysDataLog,strTab+ValToStr(toolWeldGun.tframe.trans.x)+strTab+ValToStr(toolWeldGun.tframe.trans.y)+strTab+ValToStr(toolWeldGun.tframe.trans.z)\NoNewLine;
+        Write iodevSysDataLog,strTab+EncapsulateString(GetEulerAngleString(toolWeldGun.tframe.rot))\NoNewLine;
+        Write iodevSysDataLog,strTab+ValToStr(wobjCurrent.uframe.trans.x)+strTab+ValToStr(wobjCurrent.uframe.trans.y)+strTab+ValToStr(wobjCurrent.uframe.trans.z)\NoNewLine;
+        Write iodevSysDataLog,strTab+EncapsulateString(GetEulerAngleString(wobjCurrent.uframe.rot))\NoNewLine;
+        Write iodevSysDataLog,strTab+ValToStr(wobjCurrent.oframe.trans.x)+strTab+ValToStr(wobjCurrent.oframe.trans.y)+strTab+ValToStr(wobjCurrent.oframe.trans.z)\NoNewLine;
+        Write iodevSysDataLog,strTab+EncapsulateString(GetEulerAngleString(wobjCurrent.oframe.rot));
+        Close iodevSysDataLog;
+        Logging "WriteSysDataLog is done";
     ENDPROC
 
 ENDMODULE

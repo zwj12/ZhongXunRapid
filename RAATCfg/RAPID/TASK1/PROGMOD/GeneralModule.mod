@@ -107,6 +107,10 @@ MODULE GeneralModule(NOSTEPIN)
         RETURN posRoundPos;
     ENDFUNC
 
+    FUNC string EncapsulateString(string str)
+        RETURN """"+str+"""";
+    ENDFUNC
+
     FUNC num GetBaseFramePosZ()
         VAR num numBaseFramePosZ;
         ReadCfgData "/MOC/ROBOT/GantryXYZ","base_frame_pos_z",numBaseFramePosZ;
@@ -263,5 +267,34 @@ MODULE GeneralModule(NOSTEPIN)
         robOut.trans:=robtIn.trans+posK;
         RETURN robOut;
     ENDFUNC
+
+    PROC RefreshDisplacement(\switch X\switch Y\switch Z,INOUT pose poseDisp,pos posAbsoluteOffset,robtarget p0,robtarget pFound1,robtarget pFound2)
+        VAR pos posOffset;
+        posOffset:=posAbsoluteOffset+GetDropFeet(p0.trans,pFound1.trans,pFound2.trans\OnlyOffset);
+        IF Present(X) THEN
+            poseDisp.trans.x:=posOffset.x;
+        ENDIF
+        IF Present(Y) THEN
+            poseDisp.trans.y:=posOffset.y;
+        ENDIF
+        IF Present(Z) THEN
+            poseDisp.trans.z:=posOffset.z;
+        ENDIF
+    ENDPROC
+
+    FUNC extjoint GetExtOffset(pos posOrigin)
+        VAR extjoint extTemp:=[9E+9,9E+9,9E+9,9E+9,9E+9,9E+9];
+        extTemp.eax_a:=posOrigin.x+extGantryTranslation.eax_a;
+        extTemp.eax_b:=posOrigin.y+extGantryTranslation.eax_b;
+        extTemp.eax_c:=-posOrigin.z+extGantryTranslation.eax_c;
+        RETURN extTemp;
+    ENDFUNC
+
+    PROC LoadGantryOffset()
+        extGantryOffsetCurrent:=GetExtOffset(wobjCurrent.uframe.trans);
+        EOffsSet extGantryOffsetCurrent;
+        SetSysData wobjCurrent;
+        Logging "Gantry Offset: ["+ValToStr(extGantryOffsetCurrent.eax_a)+","+ValToStr(extGantryOffsetCurrent.eax_b)+","+ValToStr(extGantryOffsetCurrent.eax_c)+"]";
+    ENDPROC
 
 ENDMODULE
