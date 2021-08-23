@@ -76,7 +76,7 @@ MODULE TestASFMFunctions(NOSTEPIN)
     PERS wobjdata acaltargetV2:=[FALSE,TRUE,"",[[-513.694,-538.71,812.29],[0.724391,0.000235258,0.00333423,-0.689381]],[[0,0,0],[1,0,0,0]]];
     PERS tooldata Ref_Pin:=[TRUE,[[-5.06169,1.24367,355.949],[0.378591,0.897664,-0.223253,-0.0320518]],[2,[50,50,100],[1,0,0,0],0,0,0]];
 
-    PERS corrdata Point1:=[0,3,1.92,-1.31,234.28,0,0,0,0,2.26,0];
+    PERS corrdata Point1:=[0,3,2.98,2.64,485,0,0,0,4.74,21.86,0];
     PERS corrdata Point2:=[0,3,-0.03,-1.36,-0.94,0,0,0,0,0,0];
     PERS corrdata Point2_basic:=[0,1,0,0,0,0,0,0,0,0,0];
     PERS corrdata Point3:=[0,3,0.25,4.14,0.08,0,0,0,0,1.06,0];
@@ -144,6 +144,8 @@ MODULE TestASFMFunctions(NOSTEPIN)
 
         Laser_Clear;
 
+    UNDO
+        Laser_Clear;
     ENDPROC
 
     PROC TestSF()
@@ -174,7 +176,7 @@ MODULE TestASFMFunctions(NOSTEPIN)
     ! Close communication channel
     PROC Laser_Clear()
         IF NOT ASFMu_Clear() THEN
-            Stop;
+            !Stop;
         ENDIF
     ENDPROC
 

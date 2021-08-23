@@ -71,7 +71,7 @@ VAR num ASFM_M_Lvl:=0;!0=No message; 1=Error messages; 2=Add Correction messages
 VAR string stASFMReceived;
 VAR socketdev ComASFMSocket;
 PERS tooldata MyToolASFM:=[TRUE,[[40.746,0.415,676.2],[1,0,0,0]],[3,[0,0,1],[1,0,0,0],0,0,0]]; !Defined by ASFMu_Initialize() function
-PERS wobjdata MyWobjASFM:=[FALSE,TRUE,"",[[-2163,-36,67],[1,0,0,0]],[[-26.6848,-26.3847,-11.3046],[1,0,0,0]]];     !Defined by ASFMu_Initialize() function
+PERS wobjdata MyWobjASFM:=[FALSE,TRUE,"",[[-2160,-50,60],[1,0,0,0]],[[-29.3478,-19.7269,7.97082],[1,0,0,0]]];     !Defined by ASFMu_Initialize() function
 PERS num AlphaCal:=-1.46; !Store angle computed during calibration for check process
 PERS num BetaCal:=-0.036; !Store angle computed during calibration for check process
 PERS num GammaCal:=0.067; !Store angle computed during calibration for check process
@@ -3147,6 +3147,7 @@ FUNC bool ASFMu_Initialize(string SFI_Addr,num SFI_MLevel, bool EnableLogError, 
     
     IF EnableLogError THEN
         ASFM_LogErrors:=TRUE;
+        Close LogASFMErrors;
         Open "HOME:", \File:="LogASFMErrors.txt", LogASFMErrors, \Append;
     ELSE
         ASFM_LogErrors:=FALSE;

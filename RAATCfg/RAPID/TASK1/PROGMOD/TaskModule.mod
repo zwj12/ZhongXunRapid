@@ -18,19 +18,19 @@ MODULE TaskModule
 
     TASK PERS pose posePathDisplacementCurrentList{32}:=[[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
     TASK PERS pos posTargetCurrentList{32}:=[[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
-    TASK PERS extjoint extGantryOffsetCurrent:=[-2163,-36,-67,9E+09,9E+09,9E+09];
+    TASK PERS extjoint extGantryOffsetCurrent:=[-2160,-50,-60,9E+09,9E+09,9E+09];
 
     TASK PERS seamdata seamCurrent:=[0.5,0.5,[0,0,0,0,0,0,0,0,0],0,0,0,0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0];
     TASK PERS welddata weldCurrent:=[6,0,[38,0,-1,0,0,350,0,0,0],[0,0,0,0,0,0,0,0,0]];
     TASK PERS weavedata weaveCurrent:=[1,0,4,6,0,0,0,0,0,0,0,0,0,0,0];
     TASK PERS trackdata trackCurrent:=[0,TRUE,50,[0,30,30,0,0,0,0,0,0],[0,0,0,0,0,0,0]];
 
-    PERS jointtarget jointReadyQuadrant1:=[[90,-75,45,90,-45,-180],[800,500,-433,9E+09,9E+09,9E+09]];
-    PERS jointtarget jointReadyQuadrant2:=[[-60,-80,0,0,60,90],[-800,500,-433,9E+09,9E+09,9E+09]];
-    PERS jointtarget jointReadyQuadrant3:=[[-120,-80,0,0,60,270],[-800,-500,-433,9E+09,9E+09,9E+09]];
-    PERS jointtarget jointReadyQuadrant4:=[[90,-75,45,90,45,0],[800,-500,-433,9E+09,9E+09,9E+09]];
+    PERS jointtarget jointReadyQuadrant1:=[[60,-75,-15,0,90,-90],[800,500,-440,9E+09,9E+09,9E+09]];
+    PERS jointtarget jointReadyQuadrant2:=[[-60,-75,-15,0,90,90],[-800,500,-433,9E+09,9E+09,9E+09]];
+    PERS jointtarget jointReadyQuadrant3:=[[-120,-75,-15,0,90,-90],[-800,-500,-440,9E+09,9E+09,9E+09]];
+    PERS jointtarget jointReadyQuadrant4:=[[120,-75,-15,0,90,90],[800,-500,-440,9E+09,9E+09,9E+09]];
 
-    PERS string strTemplateList{20}:=["1001","1002","","","","","","","","","","","","","","","","","",""];
+    PERS string strTemplateList{20}:=["10014","10023","20014","20023","","","","","","","","","","","","","","","",""];
 
     VAR iodev iodevSysDataLog;
     CONST string strSysDataLogFileName:="SysData.csv";
@@ -75,7 +75,7 @@ MODULE TaskModule
         ENDTEST
         MoveAbsJ jointCurrent,speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         !Stop;
-        !MoveAbsJ jointReadyQuadrant1, speedAir, fine, toolWeldGun\WObj:=wobjCurrent;
+        !MoveAbsJ jointReadyQuadrant2, speedAir, fine, toolWeldGun\WObj:=wobjCurrent;
     ENDPROC
 
 

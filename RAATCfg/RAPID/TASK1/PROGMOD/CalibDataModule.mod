@@ -12,21 +12,21 @@ MODULE CalibDataModule
 
     TASK PERS bool boolSaveModule:=FALSE;
 
-    TASK PERS tooldata toolWeldGun:=[TRUE,[[-57.3545,7.08042,540.927],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
+    TASK PERS tooldata toolWeldGun:=[TRUE,[[-48.7261,7.99775,570.266],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
     TASK PERS tooldata toolLaser:=[TRUE,[[40.746,0.415,676.2],[1,0,0,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
     TASK PERS tooldata toolWeldGunNew:=[TRUE,[[-59.9643,7.99775,542.45],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
     TASK PERS tooldata toolLaserNew:=[TRUE,[[40.746,0.415,676.2],[1,0,0,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
     TASK PERS tooldata toolWeldGunOld:=[TRUE,[[-60.8716,1.37706,439.061],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
     TASK PERS tooldata toolLaserOld:=[TRUE,[[40.75,0,624.2],[1,0,0,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
 
-    TASK PERS wobjdata wobjCurrent:=[FALSE,TRUE,"",[[-513,-36,67],[1,0,0,0]],[[-26.6848,-26.3847,-11.3046],[1,0,0,0]]];
+    TASK PERS wobjdata wobjCurrent:=[FALSE,TRUE,"",[[-2160,-50,60],[1,0,0,0]],[[-29.3478,-19.7269,7.97082],[1,0,0,0]]];
     TASK PERS wobjdata wobjTemp:=[FALSE,TRUE,"",[[-513,-36,67],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
 
     ! postions for tool definition of weld gun
-    TASK PERS jointtarget jtWeldGun1:=[[33.8192,20.1239,-38.1443,40.8341,-76.2554,140.619],[-465.218,39.3047,-432.676,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jtWeldGun2:=[[-32.1969,18.9982,-33.3448,-38.4389,-77.7223,216.06],[-465.218,39.3053,-432.676,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jtWeldGun3:=[[-5.42794,45.8553,-52.9642,-6.07405,-86.411,186.618],[-465.218,39.3056,-432.676,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jtWeldGun4:=[[0.135295,-0.165956,-0.113865,0.054787,-67.7203,179.854],[-465.218,39.3053,-432.676,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jtWeldGun1:=[[33.8612,20.6381,-38.9345,40.8728,-76.0728,140.402],[-465.218,39.3053,-432.676,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jtWeldGun2:=[[-31.9768,19.8786,-34.3561,-38.2707,-77.7856,216.137],[-465.218,39.3047,-432.676,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jtWeldGun3:=[[-5.1558,46.4882,-54.1201,-5.86639,-85.8558,186.513],[-465.218,39.3056,-432.676,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jtWeldGun4:=[[0.317057,0.123022,-0.554093,0.128449,-67.5696,179.657],[-465.218,39.3053,-432.676,9E+09,9E+09,9E+09]];
     TASK PERS jointtarget jtWeldGunZ:=[[-23.388,45.5074,-40.1349,34.9712,97.7934,-21.115],[7683.71,268.717,9E+09,9E+09,9E+09,9E+09]];
     TASK PERS jointtarget jtWeldGunX:=[[-11.2908,41.3683,-15.0054,38.5769,74.0462,-24.2474],[7683.71,268.717,9E+09,9E+09,9E+09,9E+09]];
 
@@ -39,11 +39,11 @@ MODULE CalibDataModule
     TASK PERS jointtarget jtLaserX:=[[161.523,27.5424,31.4752,-1.46627,31.0902,-18.0317],[687.112,9E+09,9E+09,9E+09,9E+09,9E+09]];
 
     TASK PERS jointtarget jointOrigin:=[[0,0,0,0,0,0],[0,0,0,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jointHome:=[[0,-60,40,0,60,0],[800,500,-500,9E+9,9E+9,9E+9]];
+    TASK PERS jointtarget jointHome:=[[0,-60,40,0,60,0],[-1298.81,-520.302,-500,9E+09,9E+09,9E+09]];
     TASK PERS jointtarget jointTransportation:=[[0,-60,45,0,60,0],[0,500,-500,9E+09,9E+09,9E+09]];
     TASK PERS jointtarget jointLoadIdentify:=[[-20,0,0,0,0,0],[0,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jointCurrent:=[[90,-75,45,90,45,0],[800,-500,-433,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jointHomeOld:=[[0,-60,40,0,60,0],[800,500,-500,9E+9,9E+9,9E+9]];
+    TASK PERS jointtarget jointCurrent:=[[60,-75,-15,0,90,-90],[800,500,-440,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jointHomeOld:=[[0,-60,40,0,60,0],[-1291.65,-501.409,-500,9E+09,9E+09,9E+09]];
 
     TASK PERS robtarget robCurrent:=[[-209.736,482.664,216.543],[0.178965,-0.641361,0.732457,-0.141898],[-2,-1,1,1],[-800,500,0.00276417,9E+09,9E+09,9E+09]];
 
@@ -54,7 +54,7 @@ MODULE CalibDataModule
     PERS speeddata speedLaserSickScan:=[500,500,5000,1000];
     PERS zonedata zoneAir:=[FALSE,200,300,300,30,300,30];
     PERS zonedata zoneAproach:=[FALSE,200,300,300,30,300,30];
-    PERS zonedata zoneWeld:=[FALSE,200,300,300,30,300,30];
+    PERS zonedata zoneWeld:=[FALSE,0.3,0.3,0.3,0.03,0.3,0.03];
     PERS zonedata zoneScan:=[FALSE,200,300,300,30,300,30];
 
     PERS num numAcc:=100;
@@ -249,8 +249,10 @@ MODULE CalibDataModule
         Save\TaskName:="T_ROB1","SmarTacTestModule"\FilePath:="HOME:/RAATCfg/RAPID/TASK1/PROGMOD/SmarTacTestModule.mod";
         Save\TaskName:="T_ROB1","TestModule"\FilePath:="HOME:/RAATCfg/RAPID/TASK1/PROGMOD/TestModule.mod";
 
-        Save\TaskName:="T_ROB1","Template_1001_Module"\FilePath:="HOME:/RAATCfg/RAPID/TASK1/PROGMOD/Template_1001_Module.mod";
-        Save\TaskName:="T_ROB1","Template_1002_Module"\FilePath:="HOME:/RAATCfg/RAPID/TASK1/PROGMOD/Template_1002_Module.mod";
+        Save\TaskName:="T_ROB1","Template_10014_Module"\FilePath:="HOME:/RAATCfg/RAPID/TASK1/PROGMOD/Template_10014_Module.mod";
+        Save\TaskName:="T_ROB1","Template_10023_Module"\FilePath:="HOME:/RAATCfg/RAPID/TASK1/PROGMOD/Template_10023_Module.mod";
+        Save\TaskName:="T_ROB1","Template_20014_Module"\FilePath:="HOME:/RAATCfg/RAPID/TASK1/PROGMOD/Template_20014_Module.mod";
+        Save\TaskName:="T_ROB1","Template_20023_Module"\FilePath:="HOME:/RAATCfg/RAPID/TASK1/PROGMOD/Template_20023_Module.mod";
         
         Save\TaskName:="T_Background","MainModule"\FilePath:="HOME:/RAATCfg/RAPID/TASK3/PROGMOD/MainModule.mod";
         

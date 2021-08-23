@@ -25,7 +25,7 @@ MODULE SharedModule(NOSTEPIN)
     PERS bool boolEnableOffset:=FALSE;
 
     PERS string strTab:=",";
-    PERS string strUtilityKey:="";
+    PERS string strUtilityKey:="ZhongXun2021";
 
     !Seam 1
     CONST ScanData scanJoint1:=[1];
@@ -52,7 +52,7 @@ MODULE SharedModule(NOSTEPIN)
     PERS num numJobMode:=1;
 
     !For numJobMode=1
-    PERS RECORDModelData rModelDataFirst{4}:=[["1001",[-2163,-36,67]],["",[-2163,-36,67]],["",[-2163,-36,67]],["",[-2163,-36,67]]];
+    PERS RECORDModelData rModelDataFirst{4}:=[["20014",[-2160,-50,60]],["",[-2160,-50,60]],["",[-2160,-50,60]],["",[-2160,-50,60]]];
     PERS pos posModelOffset:=[-1670,10,0];
     PERS num numModelOffsetStart:=1;
     PERS num numModelOffsetQuantity:=1;

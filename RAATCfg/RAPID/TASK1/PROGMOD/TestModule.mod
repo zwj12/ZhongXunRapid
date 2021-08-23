@@ -10,8 +10,12 @@ MODULE TestModule
     !2021-8-11, Michael, Add GetBaseFramePosZ, DepartGantry, modify MoveGanrtyQuadrantByWobjCur
 
     TASK PERS menudata mdMoveGanrtyQuadrant:=["Move Ganrty Quadrant By WobjCur","","MoveGanrtyQuadrantByWobjCur",1,"",255,True,2,100,False,203];
+    TASK PERS menudata mdMoveWeldGunToGanrtyBaseXZ:=["Move WeldGun To Ganrty Base Plane XZ","","MoveWeldGunToGanrtyBaseXZ",1,"",255,True,2,100,False,204];
+    TASK PERS menudata mdMoveLaserToGanrtyBaseXZ:=["Move Laser To Ganrty Base Plane XZ","","MoveLaserToGanrtyBaseXZ",1,"",255,True,2,100,False,205];
 
-    TASK PERS jointtarget jointPlaneXZ:=[[90,-45,45,0,-90,90],[-1997.56,0,-600,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jointWeldGunPlaneXZ:=[[90,-45,45,0,-68,180],[-1275.6,0,-600,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jointLaserPlaneXZ:=[[66.8628,-41.2321,43.0137,-5.46308E-05,-91.7816,113.137],[-1194.31,0,-600,9E+09,9E+09,9E+09]];
+
     PERS robtarget pWobjX1:=[[-1843.85,70.55,208.53],[0.231263,-0.189593,-0.879297,0.370687],[0,0,0,4],[-1810.13,354.262,201.219,9E+09,9E+09,9E+09]];
     PERS robtarget pWobjX2:=[[-1518.46,70.55,208.53],[0.231263,-0.189594,-0.879297,0.370687],[0,0,0,4],[-1484.74,354.262,201.219,9E+09,9E+09,9E+09]];
     PERS robtarget pWobjY1:=[[-2027.90,437.15,211.77],[0.401347,0.686043,-0.584941,-0.161585],[0,0,-2,4],[-1744.2,354.262,201.219,9E+09,9E+09,9E+09]];
@@ -65,7 +69,7 @@ MODULE TestModule
         jointCurrent.extax.eax_c:=GetBaseFramePosZ()-wobjCurrent.uframe.trans.z+extjointGantryOffsetCur.eax_c;
         Logging "Move Gantry to ["+ValToStr(jointCurrent.extax.eax_a)+","+ValToStr(jointCurrent.extax.eax_b)+","+ValToStr(jointCurrent.extax.eax_c)+"]";
         MoveAbsJ jointCurrent,speedAir,fine,toolWeldGun\WObj:=wobjCurrent;
-
+        Stop;
     ENDPROC
 
     PROC DepartGantry(\switch Quadrant1|switch Quadrant2|switch Quadrant3|switch Quadrant4)
@@ -93,10 +97,18 @@ MODULE TestModule
         MoveAbsJ jointCurrent,speedAir,fine,toolWeldGun\WObj:=wobjCurrent;
     ENDPROC
 
-    PROC MoveGanrtyToPlaneXZ()
+    PROC MoveLaserToGanrtyBaseXZ()
         jointCurrent:=CJointT();
-        jointPlaneXZ.extax.eax_a:=jointCurrent.extax.eax_a;
-        MoveAbsJ jointPlaneXZ,speedAir,fine,toolWeldGun\WObj:=wobjCurrent;
+        jointLaserPlaneXZ.extax.eax_a:=jointCurrent.extax.eax_a;
+        MoveAbsJ jointLaserPlaneXZ,speedAir,fine,toolWeldGun\WObj:=wobjCurrent;
+        Stop;
+    ENDPROC
+
+    PROC MoveWeldGunToGanrtyBaseXZ()
+        jointCurrent:=CJointT();
+        jointWeldGunPlaneXZ.extax.eax_a:=jointCurrent.extax.eax_a;
+        MoveAbsJ jointWeldGunPlaneXZ,speedAir,fine,toolWeldGun\WObj:=wobjCurrent;
+        Stop;
     ENDPROC
 
     PROC SearchWobjOrigin_Quadrant1()

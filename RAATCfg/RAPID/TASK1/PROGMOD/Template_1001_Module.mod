@@ -20,10 +20,10 @@ MODULE Template_1001_Module
     LOCAL PERS robtarget pQ1_Z2:=[[0,0,250],[0.562422,0.303603,-0.732963,0.232963],[1,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pQ1_X1_Found:=[[-75,0,0],[0.37941,0.915976,0.0499502,0.12059],[-1,-1,0,1],[800,500,456,9E+9,9E+9,9E+9]];
     LOCAL PERS robtarget pQ1_X2_Found:=[[-30,0,0],[0.37941,0.915976,0.0499502,0.12059],[-1,-1,0,1],[800,500,456,9E+9,9E+9,9E+9]];
-    LOCAL PERS robtarget pQ1_Y1_Found:=[[-27.69,83.91,-10.71],[0.353553,0.683013,-0.612372,-0.183013],[0,-1,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pQ1_Y2_Found:=[[-30.04,208.55,-10.18],[0.353553,0.683013,-0.612372,-0.183013],[0,-1,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pQ1_Y1_Found:=[[-27.57,83.92,-10.77],[0.353553,0.683013,-0.612372,-0.183013],[0,-1,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pQ1_Y2_Found:=[[-30.12,208.52,-10.29],[0.353553,0.683013,-0.612372,-0.183013],[0,-1,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pQ1_Z1_Found:=[[-22.5,-29.63,56.82],[0.562422,0.303603,0.732963,-0.232963],[-1,-2,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pQ1_Z2_Found:=[[-24.81,-27.62,222.88],[0.562422,0.303603,-0.732963,0.232963],[1,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pQ1_Z2_Found:=[[-24.71,-27.71,222.88],[0.562422,0.303603,-0.732963,0.232963],[1,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
 
     LOCAL PERS robtarget pQ2_X1:=[[-75,0,0],[0.37941,0.915976,0.0499502,0.12059],[-1,-1,0,1],[-800,500,456,9E+9,9E+9,9E+9]];
     LOCAL PERS robtarget pQ2_X2:=[[-30,0,0],[0.37941,0.915976,0.0499502,0.12059],[-1,-1,0,1],[-800,500,456,9E+9,9E+9,9E+9]];
@@ -64,8 +64,8 @@ MODULE Template_1001_Module
     LOCAL PERS robtarget pQ4_Z1_Found:=[[0,0,50],[0.562422,0.303603,0.732963,-0.232963],[-1,-2,-1,1],[-800,500,456,9E+9,9E+9,9E+9]];
     LOCAL PERS robtarget pQ4_Z2_Found:=[[0,0,250],[0.232963,0.732963,-0.303603,0.562422],[-2,-1,1,1],[-800,500,456,9E+9,9E+9,9E+9]];
 
-    LOCAL PERS wobjdata wobjLast:=[FALSE,TRUE,"",[[-2163,-36,67],[1,0,0,0]],[[-25.6057,-26.6397,-11.1801],[1,0,0,0]]];
-    LOCAL PERS pose poseFrame:=[[-25.6057,-26.6397,-11.1801],[0.493366,0.497156,0.504476,0.504906]];
+    LOCAL PERS wobjdata wobjLast:=[FALSE,TRUE,"",[[-2163,-36,67],[1,0,0,0]],[[-25.3036,-26.8204,-11.1966],[1,0,0,0]]];
+    LOCAL PERS pose poseFrame:=[[-25.3036,-26.8204,-11.1966],[0.493275,0.496437,0.504757,0.505422]];
     LOCAL PERS pose poseTransform:=[[0,0,0],[0.5,-0.5,-0.5,-0.5]];
     LOCAL PERS pose poseTransform_Q1:=[[0,0,0],[0.5,-0.5,-0.5,-0.5]];
     LOCAL PERS pose poseTransform_Q2:=[[0,0,0],[0.5,-0.5,-0.5,-0.5]];
@@ -76,10 +76,10 @@ MODULE Template_1001_Module
     LOCAL PERS robtarget pSearchSeam1_2:=[[25,0,0],[0.120591,-0.0499502,-0.915976,0.37941],[0,0,0,1],[800,500,480,9E+9,9E+9,9E+9]];
     LOCAL PERS robtarget pSearchSeam2_1:=[[0,0,50],[0.232963,0.732963,0.303603,-0.562422],[1,0,-1,1],[800,500,456,9E+9,9E+9,9E+9]];
     LOCAL PERS robtarget pSearchSeam2_2:=[[0,0,250],[0.562422,0.303603,-0.732963,0.232963],[1,0,-1,1],[800,500,456,9E+9,9E+9,9E+9]];
-    LOCAL PERS robtarget pSearchSeam3_1:=[[100,-20,0],[0.120591,0.0499502,-0.915976,-0.37941],[0,-1,-1,1],[800,-500,480,9E+9,9E+9,9E+9]];
-    LOCAL PERS robtarget pSearchSeam3_2:=[[25,-20,0],[0.120591,0.0499502,-0.915976,-0.37941],[0,-1,-1,1],[800,-500,480,9E+9,9E+9,9E+9]];
-    LOCAL PERS robtarget pSearchSeam4_1:=[[0,20,50],[0.232963,-0.732963,0.303603,0.562422],[0,-1,4,1],[800,-500,480,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSearchSeam4_2:=[[0,-20,250],[0.562422,-0.303603,-0.732963,-0.232963],[0,-1,0,1],[800,-500,480,9E+9,9E+9,9E+9]];
+    LOCAL PERS robtarget pSearchSeam3_1:=[[100,-20,0],[0.238672,-0.00634124,-0.915341,-0.324261],[0,1,-2,0],[871.349,-465.412,580.706,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSearchSeam3_2:=[[25,-20,0],[0.238673,-0.00634157,-0.915341,-0.324261],[0,1,-2,0],[871.349,-465.412,580.706,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSearchSeam4_1:=[[0,-20,25],[0.178533,-0.757587,0.343021,0.525856],[0,1,0,0],[871.349,-465.412,580.706,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSearchSeam4_2:=[[0,-20,250],[0.518278,-0.312386,-0.770725,-0.199464],[0,1,-2,0],[871.349,-465.412,580.706,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSearchSeam5_1:=[[161.50,-125.01,-0.01],[0.258695,-0.685431,-0.679861,0.0324105],[1,-1,0,1],[799.999,-500,480.001,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSearchSeam5_2:=[[161.5,-50,-0.01],[0.258696,-0.685431,-0.67986,0.0324082],[1,-1,0,1],[799.999,-500,480.001,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSearchSeam6_1:=[[0,-125,440],[0.270598,0.653282,-0.653282,-0.270598],[0,-1,-1,1],[800,500,180,9E+9,9E+9,9E+9]];
@@ -87,14 +87,14 @@ MODULE Template_1001_Module
     LOCAL PERS robtarget pSearchSeam7_1:=[[172.50,125.00,18.00],[0.298606,0.663087,-0.6864,-0.00225087],[0,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSearchSeam7_2:=[[172.5,25,18],[0.298604,0.663086,-0.686402,-0.00225078],[0,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
 
-    LOCAL PERS robtarget pSeamFound1_1:=[[114.89,0.99,-4.26],[0.120591,-0.0499502,-0.915976,0.37941],[0,0,0,1],[800,500,480,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeamFound1_2:=[[39.62,-0.77,-4.33],[0.120591,-0.0499502,-0.915976,0.37941],[0,0,0,1],[800,500,480,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeamFound2_1:=[[2.49,-2.59,65.42],[0.232963,0.732963,0.303603,-0.562422],[1,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeamFound2_2:=[[0.82,-0.9,234.16],[0.562422,0.303603,-0.732963,0.232963],[1,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeamFound3_1:=[[113.68,-13.56,-4.53],[0.120591,0.0499502,-0.915976,-0.37941],[0,-1,-1,1],[800,-500,480,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeamFound3_2:=[[39.04,-15.51,-4.49],[0.120591,0.0499502,-0.915976,-0.37941],[0,-1,-1,1],[800,-500,480,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeamFound4_1:=[[-3.15,-18.43,64.41],[0.232963,-0.732963,0.303603,0.562422],[0,-1,0,1],[800,-500,480,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeamFound4_2:=[[-1.25,-17.14,233.36],[0.562422,-0.303603,-0.732963,-0.232963],[0,-1,0,1],[800,-500,480,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeamFound1_1:=[[114.91,1.01,-4.14],[0.120591,-0.0499502,-0.915976,0.37941],[0,0,0,1],[800,500,480,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeamFound1_2:=[[39.66,-0.51,-4.32],[0.120591,-0.0499502,-0.915976,0.37941],[0,0,0,1],[800,500,480,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeamFound2_1:=[[2.06,-2.54,65.36],[0.232963,0.732963,0.303603,-0.562422],[1,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeamFound2_2:=[[0.58,-0.8,234.13],[0.562422,0.303603,-0.732963,0.232963],[1,0,-1,1],[800,500,456,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeamFound3_1:=[[109.19,-11.22,-13.78],[0.120591,0.0499502,-0.915976,-0.37941],[0,-1,-1,1],[800,-500,480,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeamFound3_2:=[[34.32,-12.25,-13.86],[0.120591,0.0499502,-0.915976,-0.37941],[0,-1,-1,1],[800,-500,480,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeamFound4_1:=[[-8.8,-15.04,37.69],[0.232963,-0.732963,0.303603,0.562422],[0,-1,0,1],[800,-500,480,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeamFound4_2:=[[-7.5,-11.63,228.32],[0.562422,-0.303603,-0.732963,-0.232963],[0,-1,0,1],[800,-500,480,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSeamFound5_1:=[[144.2,-138.82,-4.3],[0.353553,-0.683013,-0.612372,0.183013],[1,0,0,1],[800,-500,480,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSeamFound5_2:=[[142.24,-63.8,-4.04],[0.353553,-0.683013,-0.612372,0.183013],[1,0,0,1],[800,-500,480,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSeamFound6_1:=[[4.47,-109.79,436.82],[0.270598,0.653282,-0.653282,-0.270598],[0,-1,-1,1],[800,500,180,9E+09,9E+09,9E+09]];
@@ -133,18 +133,18 @@ MODULE Template_1001_Module
     LOCAL PERS robtarget pSeam21_2:=[[156,0,0],[0.375674,0.916651,-0.133644,0.0275745],[0,0,-2,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSeam21_3:=[[156,0,0],[0.375672,0.916652,-0.133642,0.0275736],[0,0,-2,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSeam21_4:=[[0,0,0],[0.411828,0.878648,-0.240982,0.0173946],[0,0,-2,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeam21_5:=[[0.02,0.00,-0.02],[0.57781,0.500999,-0.60576,0.219522],[0,0,-2,1],[567.975,449.039,440.69,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam21_5:=[[0.02,0.00,-0.02],[0.559579,0.507293,-0.622641,0.204558],[0,0,-1,1],[567.975,449.039,440.69,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSeam21_6:=[[0,0,0],[0.549605,0.275701,-0.700945,0.361385],[0,0,-2,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSeam21_7:=[[0,0,100],[0.597745,0.115458,-0.635132,0.47537],[1,1,-2,1],[567.974,449.041,440.688,9E+09,9E+09,9E+09]];
     LOCAL PERS robtarget pSeam21_8:=[[10,5,380],[0.610985,0.11281,-0.614171,0.486585],[1,0,-1,1],[567.974,449.71,440.405,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeam24_1:=[[-150,-4.77,0],[0.147388,0.013946,0.943852,-0.29534],[-1,0,0,1],[-698.527,504.221,467.895,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeam24_2:=[[-150,1.58,0],[0.147395,0.0139495,0.94385,-0.295344],[-1,0,0,1],[-698.531,504.222,467.895,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeam24_3:=[[-142.77,2.55,0],[0.147393,0.0139474,0.94385,-0.295343],[-1,0,0,1],[-698.53,504.221,467.894,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeam24_4:=[[-22.40,4.37,0],[0.261771,-0.0223631,0.919965,-0.29093],[-1,1,0,1],[-698.53,504.221,467.894,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeam24_5:=[[-15.56,5.63,10],[0.110216,-0.383059,0.740522,-0.54106],[-1,1,-1,1],[-698.53,504.222,467.896,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeam24_6:=[[-9.32,3.83,20],[0.337928,0.738102,-0.198901,0.549043],[-1,-1,0,1],[-698.53,504.222,467.894,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeam24_7:=[[-12.94,3.92,100],[0.360942,0.648816,-0.14361,0.65432],[-1,-2,1,1],[-698.53,504.222,467.894,9E+09,9E+09,9E+09]];
-    LOCAL PERS robtarget pSeam24_8:=[[-12.94,3.92,370],[0.360945,0.648815,-0.143606,0.654321],[-1,-1,0,1],[-698.53,504.222,467.894,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam24_1:=[[134,0,0],[0.412765,-0.909289,0.0387012,0.0363478],[1,1,0,0],[871.35,-465.412,580.705,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam24_2:=[[134,0,0],[0.412765,-0.909289,0.0386965,0.0363475],[1,1,0,0],[871.35,-465.411,580.705,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam24_3:=[[128,-10.97,-12.83],[0.412764,-0.909289,0.0387005,0.0363503],[1,1,0,0],[871.349,-465.412,580.705,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam24_4:=[[3.59,-12.48,-13.38],[0.428722,-0.882929,-0.17301,0.0818541],[1,1,-1,0],[871.35,-465.412,580.705,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam24_5:=[[-1.39,-11.99,-7.80],[0.547347,-0.689456,-0.466884,-0.0841506],[1,1,-1,0],[871.35,-465.411,580.705,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam24_6:=[[-7.11,-11.24,2.57],[0.585739,-0.316714,-0.7033,-0.24894],[1,1,-2,0],[871.35,-465.411,580.705,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam24_7:=[[-7.11,-11.24,100],[0.617685,-0.181827,-0.658014,-0.390412],[0,1,-1,0],[871.35,-465.41,580.705,9E+09,9E+09,9E+09]];
+    LOCAL PERS robtarget pSeam24_8:=[[-1.33,-14.89,371],[0.663782,-0.15302,-0.611481,-0.402578],[0,1,-2,0],[871.349,-465.411,580.705,9E+09,9E+09,9E+09]];
 
     !Only used to compensate Absolute Accuracy Offset
     LOCAL PERS pos posAOSeam1_1:=[0,0,0];
@@ -176,20 +176,20 @@ MODULE Template_1001_Module
 
     LOCAL PERS pos posAOSeam21_1:=[0,-5,10];
     LOCAL PERS pos posAOSeam21_2:=[0,6,10];
-    LOCAL PERS pos posAOSeam21_3:=[-2,4,10];
-    LOCAL PERS pos posAOSeam21_4:=[25,2,10];
+    LOCAL PERS pos posAOSeam21_3:=[-5,-3,10];
+    LOCAL PERS pos posAOSeam21_4:=[25,0,10];
     LOCAL PERS pos posAOSeam21_5:=[13,-1,10];
-    LOCAL PERS pos posAOSeam21_6:=[7,0,17];
-    LOCAL PERS pos posAOSeam21_7:=[11,0,0];
-    LOCAL PERS pos posAOSeam21_8:=[11,0,0];
-    LOCAL PERS pos posAOSeam24_1:=[-4,0,0];
-    LOCAL PERS pos posAOSeam24_2:=[-4,4,0];
-    LOCAL PERS pos posAOSeam24_3:=[0,4,0];
-    LOCAL PERS pos posAOSeam24_4:=[-10,4,0];
-    LOCAL PERS pos posAOSeam24_5:=[-5,4,0];
-    LOCAL PERS pos posAOSeam24_6:=[0,4,20];
-    LOCAL PERS pos posAOSeam24_7:=[0,0,0];
-    LOCAL PERS pos posAOSeam24_8:=[0,0,0];
+    LOCAL PERS pos posAOSeam21_6:=[10,3,17];
+    LOCAL PERS pos posAOSeam21_7:=[11,3,0];
+    LOCAL PERS pos posAOSeam21_8:=[14,3,0];
+    LOCAL PERS pos posAOSeam24_1:=[-3,-5,10];
+    LOCAL PERS pos posAOSeam24_2:=[-3,-6,6];
+    LOCAL PERS pos posAOSeam24_3:=[0,-4,10];
+    LOCAL PERS pos posAOSeam24_4:=[13,-3,5];
+    LOCAL PERS pos posAOSeam24_5:=[9,-3,9];
+    LOCAL PERS pos posAOSeam24_6:=[3,-2,20];
+    LOCAL PERS pos posAOSeam24_7:=[5,0,0];
+    LOCAL PERS pos posAOSeam24_8:=[5,-6,0];
 
     !Used for PDispSet
     LOCAL PERS pose peSeam1_1:=[[0.108917,-4.07159,-1.86837],[1,0,0,0]];
@@ -219,22 +219,22 @@ MODULE Template_1001_Module
     LOCAL PERS pose peSeam10_2:=[[-0.668945,-0.010788,-0.566907],[1,0,0,0]];
     LOCAL PERS pose peSeam10_3:=[[-0.668945,-0.010788,-0.566907],[1,0,0,0]];
 
-    LOCAL PERS pose peSeam21_1:=[[-0.041687,-3.04972,5.77819],[1,0,0,0]];
-    LOCAL PERS pose peSeam21_2:=[[-0.041687,7.95028,5.77819],[1,0,0,0]];
-    LOCAL PERS pose peSeam21_3:=[[-2.04169,5.95028,5.77819],[1,0,0,0]];
-    LOCAL PERS pose peSeam21_4:=[[28.1368,0.304608,5.63319],[1,0,0,0]];
-    LOCAL PERS pose peSeam21_5:=[[16.117,-2.69493,5.65321],[1,0,0,0]];
-    LOCAL PERS pose peSeam21_6:=[[10.1368,-1.69539,12.6332],[1,0,0,0]];
-    LOCAL PERS pose peSeam21_7:=[[13.1473,-2.24323,0.0437164],[1,0,0,0]];
-    LOCAL PERS pose peSeam21_8:=[[0.377239,-4.43996,-0.0606689],[1,0,0,0]];
-    LOCAL PERS pose peSeam24_1:=[[-3.9471,-1.73105,0.166434],[1,0,0,0]];
-    LOCAL PERS pose peSeam24_2:=[[-3.74954,-4.0749,0.167627],[1,0,0,0]];
-    LOCAL PERS pose peSeam24_3:=[[0.273361,-4.81904,0.211436],[1,0,0,0]];
-    LOCAL PERS pose peSeam24_4:=[[13.4774,-2.89261,0.938115],[1,0,0,0]];
-    LOCAL PERS pose peSeam24_5:=[[11.4385,-3.93672,-9.02001],[1,0,0,0]];
-    LOCAL PERS pose peSeam24_6:=[[9.999,-1.94246,1.01767],[1,0,0,0]];
-    LOCAL PERS pose peSeam24_7:=[[12.0028,-3.1555,0.225418],[1,0,0,0]];
-    LOCAL PERS pose peSeam24_8:=[[6.55326,-4.60554,0.107544],[1,0,0,0]];
+    LOCAL PERS pose peSeam21_1:=[[-0.0274963,-3.16056,5.95822],[1,0,0,0]];
+    LOCAL PERS pose peSeam21_2:=[[-0.0274963,7.83944,5.95822],[1,0,0,0]];
+    LOCAL PERS pose peSeam21_3:=[[-5.0275,-1.16056,5.95822],[1,0,0,0]];
+    LOCAL PERS pose peSeam21_4:=[[27.6327,-1.31036,5.58522],[1,0,0,0]];
+    LOCAL PERS pose peSeam21_5:=[[15.6128,-2.30995,5.60527],[1,0,0,0]];
+    LOCAL PERS pose peSeam21_6:=[[12.6327,1.68964,12.5852],[1,0,0,0]];
+    LOCAL PERS pose peSeam21_7:=[[12.7559,0.817525,0.0378952],[1,0,0,0]];
+    LOCAL PERS pose peSeam21_8:=[[3.30125,-1.29661,-0.0494995],[1,0,0,0]];
+    LOCAL PERS pose peSeam24_1:=[[-2.83568,-15.8764,-3.75331],[1,0,0,0]];
+    LOCAL PERS pose peSeam24_2:=[[-2.83568,-16.8764,-7.75331],[1,0,0,0]];
+    LOCAL PERS pose peSeam24_3:=[[0.000869751,-3.99122,9.0701],[1,0,0,0]];
+    LOCAL PERS pose peSeam24_4:=[[0.262744,-3.19271,4.48717],[1,0,0,0]];
+    LOCAL PERS pose peSeam24_5:=[[1.28061,-3.75104,2.90186],[1,0,0,0]];
+    LOCAL PERS pose peSeam24_6:=[[1.07113,-3.57942,3.52577],[1,0,0,0]];
+    LOCAL PERS pose peSeam24_7:=[[3.73531,-2.68438,0.0566559],[1,0,0,0]];
+    LOCAL PERS pose peSeam24_8:=[[-0.197462,-0.188957,-0.0684814],[1,0,0,0]];
 
     !Only for local welding parameters
     LOCAL PERS welddata weld_1:=[6,0,[38,0,-1,0,0,350,0,0,0],[0,0,0,0,0,0,0,0,0]];
@@ -268,6 +268,7 @@ MODULE Template_1001_Module
         !WeldSeam 3;
         !WeldSeam 4;
         WeldSeam 24;
+        Stop;
 
         InhibWeld TRUE\Weld\Weave;
 
@@ -649,8 +650,6 @@ MODULE Template_1001_Module
     ENDPROC
 
     LOCAL PROC Seam_21()
-        Stop;
-        LoadGantryOffset;
         MoveAbsJ [[105.094,-39.4504,18.876,66.3755,-48.4178,-99.4821],[800,500,2.4149,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
         ScanSeamByLaser pSeamFound1_1,pSearchSeam1_1,scanJoint1,speedAproach,toolLaser\WObj:=wobjCurrent;
         ScanSeamByLaser pSeamFound1_2,pSearchSeam1_2,scanJoint1,speedAproach,toolLaser\WObj:=wobjCurrent;
@@ -691,16 +690,15 @@ MODULE Template_1001_Module
     ENDPROC
 
     LOCAL PROC Seam_24()
-        Stop;
-        MoveAbsJ [[-89.7306,-43.1368,0,-20,-65.7254,270],[-800,500,0,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
+        MoveAbsJ [[68.8667,-31.6133,44.9288,157.731,50.0277,-137.367],[871.349,-465.412,580.706,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
         ScanSeamByLaser pSeamFound3_1,pSearchSeam3_1,scanJoint3,speedAproach,toolLaser\WObj:=wobjCurrent;
         ScanSeamByLaser pSeamFound3_2,pSearchSeam3_2,scanJoint3,speedAproach,toolLaser\WObj:=wobjCurrent;
-        MoveAbsJ [[-151.286,-18.7531,-14.2564,-45.3536,-84.2743,301.248],[-800,500,230.338,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
+        MoveAbsJ [[73.5926,2.4661,28.782,135.453,98.0292,-12.13],[871.349,-465.412,580.706,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
         ScanSeamByLaser pSeamFound4_1,pSearchSeam4_1,scanJoint4,speedAproach,toolLaser\WObj:=wobjCurrent;
         ScanSeamByLaser pSeamFound4_2,pSearchSeam4_2,scanJoint4,speedAproach,toolLaser\WObj:=wobjCurrent;
-        MoveAbsJ [[-91.6084,-32.3753,-0.280293,-50.9631,-57.0723,194.327],[-800,500,207.46,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
+        MoveAbsJ [[79.1434,-6.2032,23.337,125.165,66.0271,-121.231],[871.349,-465.412,580.706,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolLaser\WObj:=wobjCurrent;
 
-        MoveAbsJ [[-52.7557,-43.8883,36.8223,15.4091,-52.0967,115.276],[-737.076,502.617,361.603,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
+        MoveAbsJ [[80.0917,-5.8906,19.0881,125.469,66.822,-93.7918],[871.348,-465.412,580.706,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
 
         RefreshDisp\X\Y\Z,peSeam24_1,posAOSeam24_1,pSeam24_1,pSeamFound3_1,pSeamFound3_2;
         MoveJ GetAproachTarget(pSeam24_1),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
@@ -714,10 +712,10 @@ MODULE Template_1001_Module
         ArcL pSeam24_4,speedWeld,seamShared,weldShared_1\Weave:=weaveShared_1,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_1;
         RefreshDisp\Y\Z,peSeam24_5,posAOSeam24_5,pSeam24_5,pSeamFound3_1,pSeamFound3_2;
         RefreshDisp\X,peSeam24_5,posAOSeam24_5,pSeam24_5,pSeamFound4_1,pSeamFound4_2;
-        ArcL pSeam24_5,speedAproach,seamShared,weldShared_6\Weave:=weaveShared_6,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_6;
+        ArcL pSeam24_5,speedAproach,seamShared,weldShared_7\Weave:=weaveShared_7,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_7;
         RefreshDisp\Y\Z,peSeam24_6,posAOSeam24_6,pSeam24_6,pSeamFound3_1,pSeamFound3_2;
         RefreshDisp\X,peSeam24_6,posAOSeam24_6,pSeam24_6,pSeamFound4_1,pSeamFound4_2;
-        ArcL pSeam24_6,speedWeld,seamShared,weldShared_6\Weave:=weaveShared_6,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_6;
+        ArcL pSeam24_6,speedWeld,seamShared,weldShared_7\Weave:=weaveShared_7,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_7;
         RefreshDisp\X\Y\Z,peSeam24_7,posAOSeam24_7,pSeam24_7,pSeamFound4_1,pSeamFound4_2;
         ArcL pSeam24_7,speedWeld,seamShared,weldShared_2\Weave:=weaveShared_2,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_2;
         RefreshDisp\X\Y\Z,peSeam24_8,posAOSeam24_8,pSeam24_8,pSeamFound4_1,pSeamFound4_2;
@@ -725,7 +723,7 @@ MODULE Template_1001_Module
         MoveL GetAproachTarget(pSeam24_8),speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
         PDispOff;
 
-        MoveAbsJ [[-94.6272,-62.3288,31.5236,-67.9884,-28.6289,132.373],[-732.484,502.809,311.327,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
+        MoveAbsJ [[51.0238,0.120287,15.5792,109.912,100.09,-121.139],[871.35,-465.41,580.707,9E+09,9E+09,9E+09]],speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
 
     UNDO
         PDispOff;

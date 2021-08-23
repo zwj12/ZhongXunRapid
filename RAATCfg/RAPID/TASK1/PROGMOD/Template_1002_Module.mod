@@ -715,10 +715,10 @@ MODULE Template_1002_Module
         ArcL pSeam23_4,speedWeld,seamShared,weldShared_1\Weave:=weaveShared_1,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_1;
         RefreshDisp\Y\Z,peSeam23_5,posAOSeam23_5,pSeam23_5,pSeamFound3_1,pSeamFound3_2;
         RefreshDisp\X,peSeam23_5,posAOSeam23_5,pSeam23_5,pSeamFound4_1,pSeamFound4_2;
-        ArcL pSeam23_5,speedAproach,seamShared,weldShared_6\Weave:=weaveShared_6,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_6;
+        ArcL pSeam23_5,speedAproach,seamShared,weldShared_7\Weave:=weaveShared_7,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_7;
         RefreshDisp\Y\Z,peSeam23_6,posAOSeam23_6,pSeam23_6,pSeamFound3_1,pSeamFound3_2;
         RefreshDisp\X,peSeam23_6,posAOSeam23_6,pSeam23_6,pSeamFound4_1,pSeamFound4_2;
-        ArcL pSeam23_6,speedWeld,seamShared,weldShared_6\Weave:=weaveShared_6,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_6;
+        ArcL pSeam23_6,speedWeld,seamShared,weldShared_7\Weave:=weaveShared_7,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_7;
         RefreshDisp\X\Y\Z,peSeam23_7,posAOSeam23_7,pSeam23_7,pSeamFound4_1,pSeamFound4_2;
         ArcL pSeam23_7,speedWeld,seamShared,weldShared_2\Weave:=weaveShared_2,zoneWeld,toolWeldGun\WObj:=wobjCurrent\Track:=trackShared_2;
         RefreshDisp\X\Y\Z,peSeam23_8,posAOSeam23_8,pSeam23_8,pSeamFound4_1,pSeamFound4_2;
