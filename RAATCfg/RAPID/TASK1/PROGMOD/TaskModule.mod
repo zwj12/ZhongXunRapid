@@ -26,7 +26,7 @@ MODULE TaskModule
     TASK PERS trackdata trackCurrent:=[0,TRUE,50,[0,30,30,0,0,0,0,0,0],[0,0,0,0,0,0,0]];
 
     PERS jointtarget jointReadyQuadrant1:=[[60,-75,-15,0,90,-90],[800,500,-440,9E+09,9E+09,9E+09]];
-    PERS jointtarget jointReadyQuadrant2:=[[-60,-75,-15,0,90,90],[-800,500,-433,9E+09,9E+09,9E+09]];
+    PERS jointtarget jointReadyQuadrant2:=[[-60,-75,-15,0,90,90],[-800,500,-440,9E+09,9E+09,9E+09]];
     PERS jointtarget jointReadyQuadrant3:=[[-120,-75,-15,0,90,-90],[-800,-500,-440,9E+09,9E+09,9E+09]];
     PERS jointtarget jointReadyQuadrant4:=[[120,-75,-15,0,90,90],[800,-500,-440,9E+09,9E+09,9E+09]];
 

@@ -49,10 +49,10 @@ MODULE SharedModule(NOSTEPIN)
     CONST ScanData scanJoint10:=[10];
 
     !numJobMode: 0 - Keep last, 1 - by TPU, 2 - by yml, 3 - by PLC
-    PERS num numJobMode:=1;
+    PERS num numJobMode:=2;
 
     !For numJobMode=1
-    PERS RECORDModelData rModelDataFirst{4}:=[["20014",[-2160,-50,60]],["",[-2160,-50,60]],["",[-2160,-50,60]],["",[-2160,-50,60]]];
+    PERS RECORDModelData rModelDataFirst{4}:=[["20023",[-500,-50,60]],["",[-500,-50,60]],["",[-500,-50,60]],["",[-500,-50,60]]];
     PERS pos posModelOffset:=[-1670,10,0];
     PERS num numModelOffsetStart:=1;
     PERS num numModelOffsetQuantity:=1;

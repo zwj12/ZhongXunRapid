@@ -8,8 +8,8 @@ MODULE MainModule
     !*****************************************************
 
     PERS bool bSafeMutex:=FALSE;
-    TASK PERS num numPartCount:=169;
-    TASK PERS num numTimeConsumeTotal:=0;
+    TASK PERS num numPartCount:=172;
+    TASK PERS num numTimeConsumeTotal:=377.429;
     TASK PERS num numTimeServiceConsumeTotal:=0;
     TASK PERS num numTimeConsumeLast:=0;
     TASK PERS num numTimeConsumeCurrent:=0;
@@ -27,7 +27,7 @@ MODULE MainModule
     CONST ee_event ee_eventPostProc:=[EE_POST_PROC,"PostService","",0,1];
 
     PROC main()
-        InhibWeld FALSE\Weld\Weave\Track;
+        !InhibWeld FALSE\Weld\Weave\Track;
         SaveModule;
         !JobWeld;
         ExecEngine;
@@ -90,6 +90,7 @@ MODULE MainModule
 
     PROC MovetoHome()
         VAR jointtarget jointCur;
+        EOffsOff;
         WHILE jointHome.robax<>jointHomeOld.robax DO
             UIMsgBox\Header:="Home Position Changed",""\MsgLine2:="Robot Home Position has been changed."\MsgLine3:="Please check it."\MsgLine4:="Restart the robot controller to update it."\Buttons:=btnOK\Icon:=iconWarning;
         ENDWHILE

@@ -205,7 +205,7 @@ MODULE TestModule
     ENDPROC
 
     PROC RelToolTCP()
-        toolWeldGun.tframe.trans:=PoseVect(toolWeldGunNew.tframe,[0,0,30]);
+        toolWeldGun.tframe.trans:=PoseVect(toolWeldGunNew.tframe,[0,0,0]);
         Logging "tframe1="+ValToStr(toolWeldGun.tframe);
         toolWeldGun.tframe:=PoseMult(toolWeldGunNew.tframe,[[0,0,30],[1,0,0,0]]);
         Logging "tframe2="+ValToStr(toolWeldGun.tframe);
