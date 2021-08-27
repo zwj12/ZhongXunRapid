@@ -14,7 +14,7 @@ MODULE JobWeldModule
     PERS string strWeldPartListOld{20}:=["10023","10014","20014","20023","0003","0002","0001","0001","","","","","","","","","","","",""];
     PERS pos posWeldPartListOld{20}:=[[-513,-36,67],[-2165,-61,59],[-2160,-50,60],[-560,-50,60],[-1450,-1100,40],[-250,-1100,40],[2188,-688,328],[2188,321,328],[2500,0,850],[13500,0,0],[18000,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
     PERS num numModelStart:=1;
-    PERS num numModelQuantity:=2;
+    PERS num numModelQuantity:=1;
 
     PROC JobWeld()
         FOR index FROM numModelStart TO numModelQuantity DO

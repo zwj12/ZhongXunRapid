@@ -11,7 +11,7 @@ MODULE WorldZoneModule
     VAR wzstationary wzstationaryHome;
     VAR wzstationary wzstationaryService;
 
-    TASK PERS jointtarget jointHomeDelta:=[[10,10,10,10,10,10],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jointHomeDelta:=[[10,10,10,10,10,10],[9E+09,9E+09,10,9E+09,9E+09,9E+09]];
     TASK PERS pos posServiceDelta:=[10,10,10];
 
     PROC WorldZoneTemporary()
@@ -37,7 +37,7 @@ MODULE WorldZoneModule
         jointHomeTemp:=jointHome;
         jointHomeTemp.extax.eax_a:=9E+09;
         jointHomeTemp.extax.eax_b:=9E+09;
-        jointHomeTemp.extax.eax_c:=9E+09;
+        !jointHomeTemp.extax.eax_c:=9E+09;
         jointHomeTemp.extax.eax_d:=9E+09;
         jointHomeTemp.extax.eax_e:=9E+09;
         jointHomeTemp.extax.eax_f:=9E+09;

@@ -61,3 +61,5 @@
 2021-08-21; 15:46:18; Error: Cannot mute laser. Err= 989
 2021-08-24; 20:23:29; Error: Cannot acquire measure in ASFM. Err= 989
 2021-08-24; 20:23:29; Error: ASFMu_GetPoint. Status= -6
+2021-08-27; 20:54:04; Error: Cannot acquire measure in ASFM. Err= 989
+2021-08-27; 20:54:04; Error: ASFMu_GetPoint. Status= -6

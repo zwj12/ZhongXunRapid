@@ -52,7 +52,7 @@ MODULE SharedModule(NOSTEPIN)
     PERS num numJobMode:=2;
 
     !For numJobMode=1
-    PERS RECORDModelData rModelDataFirst{4}:=[["20023",[-500,-50,60]],["",[-500,-50,60]],["",[-500,-50,60]],["",[-500,-50,60]]];
+    PERS RECORDModelData rModelDataFirst{4}:=[["20014",[-2160,-50,60]],["",[-2160,-50,60]],["",[-2160,-50,60]],["",[-2160,-50,60]]];
     PERS pos posModelOffset:=[-1670,10,0];
     PERS num numModelOffsetStart:=1;
     PERS num numModelOffsetQuantity:=1;

@@ -8,8 +8,8 @@ MODULE MainModule
     !*****************************************************
 
     PERS bool bSafeMutex:=FALSE;
-    TASK PERS num numPartCount:=172;
-    TASK PERS num numTimeConsumeTotal:=377.429;
+    TASK PERS num numPartCount:=182;
+    TASK PERS num numTimeConsumeTotal:=875.529;
     TASK PERS num numTimeServiceConsumeTotal:=0;
     TASK PERS num numTimeConsumeLast:=0;
     TASK PERS num numTimeConsumeCurrent:=0;
@@ -95,8 +95,9 @@ MODULE MainModule
             UIMsgBox\Header:="Home Position Changed",""\MsgLine2:="Robot Home Position has been changed."\MsgLine3:="Please check it."\MsgLine4:="Restart the robot controller to update it."\Buttons:=btnOK\Icon:=iconWarning;
         ENDWHILE
         jointCur:=CJointT();
-        jointHome.extax:=jointCur.extax;
-        jointHome.extax.eax_c:=extGantryHome.eax_c;
+        jointHome.extax.eax_a:=jointCur.extax.eax_a;
+        jointHome.extax.eax_b:=jointCur.extax.eax_b;
+        !jointHome.extax.eax_c:=extGantryHome.eax_c;
         MoveAbsJ jointHome,speedAir,fine,toolWeldGun\WObj:=wobj0;
     ENDPROC
 
