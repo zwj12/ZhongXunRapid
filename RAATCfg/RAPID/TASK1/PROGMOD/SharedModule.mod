@@ -22,7 +22,7 @@ MODULE SharedModule(NOSTEPIN)
     PERS bool boolEnableSearch:=TRUE;
     PERS bool boolDebugSearch:=TRUE;
 
-    PERS bool boolEnableDisp:=FALSE;
+    PERS bool boolEnableDisp:=TRUE;
 
     PERS string strTab:=",";
     PERS string strUtilityKey:="ZhongXun2021";

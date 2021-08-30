@@ -8,8 +8,8 @@ MODULE MainModule
     !*****************************************************
 
     PERS bool bSafeMutex:=FALSE;
-    TASK PERS num numPartCount:=187;
-    TASK PERS num numTimeConsumeTotal:=447.715;
+    TASK PERS num numPartCount:=199;
+    TASK PERS num numTimeConsumeTotal:=0;
     TASK PERS num numTimeServiceConsumeTotal:=154.16;
     TASK PERS num numTimeConsumeLast:=0;
     TASK PERS num numTimeConsumeCurrent:=0;
