@@ -13,8 +13,8 @@ MODULE TestModule
     TASK PERS menudata mdMoveWeldGunToGanrtyBaseXZ:=["Move WeldGun To Ganrty Base Plane XZ","","MoveWeldGunToGanrtyBaseXZ",1,"",255,True,2,100,False,204];
     TASK PERS menudata mdMoveLaserToGanrtyBaseXZ:=["Move Laser To Ganrty Base Plane XZ","","MoveLaserToGanrtyBaseXZ",1,"",255,True,2,100,False,205];
 
-    TASK PERS jointtarget jointWeldGunPlaneXZ:=[[90,-45,45,0,-68,180],[-1275.6,0,-600,9E+09,9E+09,9E+09]];
-    TASK PERS jointtarget jointLaserPlaneXZ:=[[66.8628,-41.2321,43.0137,-5.46308E-05,-91.7816,113.137],[-2000.07,0,-600,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jointWeldGunPlaneXZ:=[[90,-45,45,0,-68,180],[-875,0,-600,9E+09,9E+09,9E+09]];
+    TASK PERS jointtarget jointLaserPlaneXZ:=[[66.8628,-41.2321,43.0137,-5.46308E-05,-91.7816,113.137],[572.301,0,-600,9E+09,9E+09,9E+09]];
 
     PERS robtarget pWobjX1:=[[-1843.85,70.55,208.53],[0.231263,-0.189593,-0.879297,0.370687],[0,0,0,4],[-1810.13,354.262,201.219,9E+09,9E+09,9E+09]];
     PERS robtarget pWobjX2:=[[-1518.46,70.55,208.53],[0.231263,-0.189594,-0.879297,0.370687],[0,0,0,4],[-1484.74,354.262,201.219,9E+09,9E+09,9E+09]];
@@ -100,14 +100,14 @@ MODULE TestModule
     PROC MoveLaserToGanrtyBaseXZ()
         jointCurrent:=CJointT();
         jointLaserPlaneXZ.extax.eax_a:=jointCurrent.extax.eax_a;
-        MoveAbsJ jointLaserPlaneXZ,speedAir,fine,toolWeldGun\WObj:=wobjCurrent;
+        MoveAbsJ jointLaserPlaneXZ, speedAir, fine, toolWeldGun\WObj:=wobj0;
         Stop;
     ENDPROC
 
     PROC MoveWeldGunToGanrtyBaseXZ()
         jointCurrent:=CJointT();
         jointWeldGunPlaneXZ.extax.eax_a:=jointCurrent.extax.eax_a;
-        MoveAbsJ jointWeldGunPlaneXZ,speedAir,fine,toolWeldGun\WObj:=wobjCurrent;
+        MoveAbsJ jointWeldGunPlaneXZ, speedAir, fine, toolWeldGun\WObj:=wobj0;
         Stop;
     ENDPROC
 

@@ -22,7 +22,7 @@ MODULE SharedModule(NOSTEPIN)
     PERS bool boolEnableSearch:=TRUE;
     PERS bool boolDebugSearch:=TRUE;
 
-    PERS bool boolEnableOffset:=FALSE;
+    PERS bool boolEnableDisp:=FALSE;
 
     PERS string strTab:=",";
     PERS string strUtilityKey:="ZhongXun2021";
@@ -52,7 +52,7 @@ MODULE SharedModule(NOSTEPIN)
     PERS num numJobMode:=2;
 
     !For numJobMode=1
-    PERS RECORDModelData rModelDataFirst{4}:=[["20014",[-2160,-50,60]],["",[-2160,-50,60]],["",[-2160,-50,60]],["",[-2160,-50,60]]];
+    PERS RECORDModelData rModelDataFirst{4}:=[["30014",[-2155,0,60]],["",[-2155,0,60]],["",[-2155,0,60]],["",[-2155,0,60]]];
     PERS pos posModelOffset:=[-1670,10,0];
     PERS num numModelOffsetStart:=1;
     PERS num numModelOffsetQuantity:=1;
