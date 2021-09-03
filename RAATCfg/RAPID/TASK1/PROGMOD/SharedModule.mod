@@ -64,6 +64,59 @@ MODULE SharedModule(NOSTEPIN)
     PERS num numWaitTimeForLaser:=0;
     PERS num numAproachRelToolZ:=-50;
 
+    PROC MovetoHome()
+        VAR jointtarget jointCur;
+        EOffsOff;
+        WHILE jointHome.robax<>jointHomeOld.robax DO
+            UIMsgBox\Header:="Home Position Changed",""\MsgLine2:="Robot Home Position has been changed."\MsgLine3:="Please check it."\MsgLine4:="Restart the robot controller to update it."\Buttons:=btnOK\Icon:=iconWarning;
+        ENDWHILE
+        jointCur:=CJointT();
+        jointHome.extax.eax_a:=jointCur.extax.eax_a;
+        jointHome.extax.eax_b:=jointCur.extax.eax_b;
+        !jointHome.extax.eax_c:=extGantryHome.eax_c;
+        MoveAbsJ jointHome,speedAir,fine,toolWeldGun\WObj:=wobj0;
+    ENDPROC
+
+    PROC MoveToReadyQuadrant(num numQuadrant)
+        VAR pos posGantryOffsetDirection:=[0,0,0];
+        posGantryOffsetDirection:=GetGantryOffsetDirection(numQuadrant);
+        TEST numQuadrant
+        CASE 1:
+            jointReadyQuadrant1.extax.eax_a:=extjointGantryOffset.eax_a*posGantryOffsetDirection.x;
+            jointReadyQuadrant1.extax.eax_b:=extjointGantryOffset.eax_b*posGantryOffsetDirection.y;
+            jointReadyQuadrant1.extax.eax_c:=jointHome.extax.eax_c-C_PROGDISP.eoffs.eax_c;
+            jointCurrent:=jointReadyQuadrant1;
+        CASE 2:
+            jointReadyQuadrant2.extax.eax_a:=extjointGantryOffset.eax_a*posGantryOffsetDirection.x;
+            jointReadyQuadrant2.extax.eax_b:=extjointGantryOffset.eax_b*posGantryOffsetDirection.y;
+            jointReadyQuadrant2.extax.eax_c:=jointHome.extax.eax_c-C_PROGDISP.eoffs.eax_c;
+            jointCurrent:=jointReadyQuadrant2;
+        CASE 3:
+            jointReadyQuadrant3.extax.eax_a:=extjointGantryOffset.eax_a*posGantryOffsetDirection.x;
+            jointReadyQuadrant3.extax.eax_b:=extjointGantryOffset.eax_b*posGantryOffsetDirection.y;
+            jointReadyQuadrant3.extax.eax_c:=jointHome.extax.eax_c-C_PROGDISP.eoffs.eax_c;
+            jointCurrent:=jointReadyQuadrant3;
+        CASE 4:
+            jointReadyQuadrant4.extax.eax_a:=extjointGantryOffset.eax_a*posGantryOffsetDirection.x;
+            jointReadyQuadrant4.extax.eax_b:=extjointGantryOffset.eax_b*posGantryOffsetDirection.y;
+            jointReadyQuadrant4.extax.eax_c:=jointHome.extax.eax_c-C_PROGDISP.eoffs.eax_c;
+            jointCurrent:=jointReadyQuadrant4;
+        CASE 14:
+            jointReadyQuadrant1.extax.eax_a:=extjointGantryOffset.eax_a*posGantryOffsetDirection.x;
+            jointReadyQuadrant1.extax.eax_b:=extjointGantryOffset.eax_b*posGantryOffsetDirection.y;
+            jointReadyQuadrant1.extax.eax_c:=jointHome.extax.eax_c-C_PROGDISP.eoffs.eax_c;
+            jointCurrent:=jointReadyQuadrant1;
+        CASE 23:
+            jointReadyQuadrant2.extax.eax_a:=extjointGantryOffset.eax_a*posGantryOffsetDirection.x;
+            jointReadyQuadrant2.extax.eax_b:=extjointGantryOffset.eax_b*posGantryOffsetDirection.y;
+            jointReadyQuadrant2.extax.eax_c:=jointHome.extax.eax_c-C_PROGDISP.eoffs.eax_c;
+            jointCurrent:=jointReadyQuadrant2;
+        DEFAULT:
+            RETURN ;
+        ENDTEST
+        MoveAbsJ jointCurrent,speedAir,zoneAir,toolWeldGun\WObj:=wobjCurrent;
+    ENDPROC
+
     PROC Scan_1D_Laser(INOUT robtarget ScanFound,robtarget ScanPoint,num JointNo)
         Logging "Scan:"+ValToStr(ScanPoint.trans);
         MoveL ScanPoint,speedAproach,fine,toolLaser\WObj:=wobjCurrent;

@@ -11,12 +11,12 @@ MODULE TestAutoCal
     !!****************************************************************************
     
     !!Tool below is a copy of the tool Ref_Pin defined in MainModule
-    PERS tooldata ACAL_My_Tool:=[TRUE,[[-56.5158,3.15439,544.716],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
-    PERS wobjdata ACAL_My_Cal_Target:=[FALSE,TRUE,"",[[-572.755,-577.416,822.81],[0.716735,-0.00547389,-0.000546191,-0.697324]],[[0,0,0],[1,0,0,0]]];
+    PERS tooldata ACAL_My_Tool:=[TRUE,[[-55.6294,1.28422,543.39],[0.981627,0,0.190809,0]],[3,[0,0,1],[1,0,0,0],0,0,0]];
+    PERS wobjdata ACAL_My_Cal_Target:=[FALSE,TRUE,"",[[-507.048,-651.455,830.334],[0.71811,-0.0036559,0.00017957,-0.69592]],[[0,0,0],[1,0,0,0]]];
     !!Tool below is used to test calibration result (TCP at OPTICAL origin of laser-camera)
     PERS tooldata ACAL_OpticalTool:=[TRUE,[[22.8319,-5.87382,755.566],[0.0166039,0.0120922,0.999788,-0.0017187]],[2,[50,50,100],[1,0,0,0],0,0,0]];
     
-    PERS caldata ACAL_TestCalOut:=[[0.239,0.354,0.038],18.631,-4.197,855.842,-179.685,1.71899,178.5,3];    !Output of the calibration function                            
+    PERS caldata ACAL_TestCalOut:=[[-2.783,0.243,0.182],52.452,-6.511,862.636,-179.842,-0.985001,177.798,3];    !Output of the calibration function                            
     !!Next variable stores the WObj used to test the base optimization function
     PERS wobjdata ACAL_OptimizedBase:=[FALSE,TRUE,"",[[968.915,-342.455,475.393],[0.99982,0.00148294,-0.000331306,-0.0188947]],[[0,0,0],[1,0,0,0]]];
     
@@ -80,7 +80,7 @@ MODULE TestAutoCal
         
         Stop;
         !!CLEAR position above calibration target - TEACH TO HAVE PROPER TOOL CLEARANCE TO GO TO THE CALIBRATION START POSITION (Next MoveL below)
-        MoveL [[83.00,41.76,28.17],[0.21497,-0.0084918,-0.976438,-0.0168482],[0,0,1,1],[-465.248,-144.286,-485.84,9E+09,9E+09,9E+09]], v100, fine, ACAL_My_Tool\WObj:=ACAL_My_Cal_Target;
+        MoveL [[100.41,40.07,33.66],[0.193213,-0.0148258,-0.981029,-0.00563268],[0,-1,-3,1],[-406.407,-122.693,-569.637,9E+09,9E+09,9E+09]], v100, fine, ACAL_My_Tool\WObj:=ACAL_My_Cal_Target;
         
         !!Open communication socket (IMPORTANT: take care to input the proper tool and wObj!)
         IF NOT ACALu_Initialize("192.168.1.3",ACAL_My_Tool,ACAL_My_Cal_Target) THEN
@@ -89,7 +89,7 @@ MODULE TestAutoCal
         ENDIF
         
         !!Calibration START position - TEACH THIS POINT ACCORDING TO THE AUTO-CAL 2.0 USER MANUAL
-        MoveL [[83.00,41.75,28.17],[0.21497,-0.00849115,-0.976438,-0.0168465],[0,0,1,1],[-465.248,-144.286,-485.84,9E+09,9E+09,9E+09]], v100, fine, ACAL_My_Tool\WObj:=ACAL_My_Cal_Target;
+        MoveL [[100.41,40.07,33.66],[0.193213,-0.0148258,-0.981029,-0.00563268],[0,-1,-3,1],[-406.407,-122.692,-569.637,9E+09,9E+09,9E+09]], v100, fine, ACAL_My_Tool\WObj:=ACAL_My_Cal_Target;
         
         WaitTime 1;
         
