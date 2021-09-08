@@ -5,7 +5,7 @@ MODULE SharedModule(NOSTEPIN)
     !Description:   
     !Date:          2021-1-6
     !Author:        Michael
-    !*****************************************************w
+    !*****************************************************
 
     !2021-8-11, Michael, Add numScanJob1, ScanSeamByLaser, ScanData
     !2021-8-12, Michael, Add GetDropFeet
@@ -17,36 +17,8 @@ MODULE SharedModule(NOSTEPIN)
         num joint_no;
     ENDRECORD
 
-    PERS bool boolDebugMode:=FALSE;
-    PERS bool boolEnableGantryOffset:=TRUE;
-    PERS bool boolEnableSearch:=TRUE;
-    PERS bool boolDebugSearch:=TRUE;
-
-    PERS bool boolEnableDisp:=TRUE;
-
     PERS string strTab:=",";
     PERS string strUtilityKey:="ZhongXun2021";
-
-    !Seam 1
-    CONST ScanData scanJoint1:=[1];
-    !Seam 2
-    CONST ScanData scanJoint2:=[2];
-    !Seam 3
-    CONST ScanData scanJoint3:=[3];
-    !Seam 4
-    CONST ScanData scanJoint4:=[4];
-    !Seam 5
-    CONST ScanData scanJoint5:=[5];
-    !Seam 6
-    CONST ScanData scanJoint6:=[6];
-    !Seam 7
-    CONST ScanData scanJoint7:=[7];
-    !Seam 8
-    CONST ScanData scanJoint8:=[8];
-    !Seam 9
-    CONST ScanData scanJoint9:=[9];
-    !Seam 10
-    CONST ScanData scanJoint10:=[10];
 
     !numJobMode: 0 - Keep last, 1 - by TPU, 2 - by yml, 3 - by PLC
     PERS num numJobMode:=2;
@@ -60,9 +32,6 @@ MODULE SharedModule(NOSTEPIN)
     !For numJobMode=3
     PERS dnum numPLCJobID:=1;
     PERS num numGantryPosition:=36;
-
-    PERS num numWaitTimeForLaser:=0;
-    PERS num numAproachRelToolZ:=-50;
 
     PROC MovetoHome()
         VAR jointtarget jointCur;
@@ -142,6 +111,22 @@ MODULE SharedModule(NOSTEPIN)
             ScanFound:=ScanPoint;
         ENDIF
         Logging "Found: "+ArgName(ScanFound)+"="+ValToStr(ScanFound.trans);
+    ENDPROC
+
+    PROC UpdateWeldSeamStatus(\switch Start,num numSeamIndex)
+        VAR dnum dnumWeldSeamStatus;
+        dnumWeldSeamStatus:=GOutputDnum(Go112_WeldCompleted);
+        IF Present(Start) THEN
+            BitClear dnumWeldSeamStatus,numSeamIndex;
+            SetGO Go112_WeldCompleted,dnumWeldSeamStatus;
+
+            SetGO Go80_WeldingStatus,PowDnum(2,numSeamIndex-1);
+        ELSE
+            SetGO Go80_WeldingStatus,0;
+
+            BitSet dnumWeldSeamStatus,numSeamIndex;
+            SetGO Go112_WeldCompleted,dnumWeldSeamStatus;
+        ENDIF
     ENDPROC
 
     PROC LoadModelDatabyTPU()

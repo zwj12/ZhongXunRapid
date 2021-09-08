@@ -7,6 +7,30 @@ MODULE ProcessDataModule
     !Author:        Michael
     !*****************************************************
 
+    !Scan Data
+    !Seam 1
+    CONST ScanData scanJoint1:=[1];
+    !Seam 2
+    CONST ScanData scanJoint2:=[2];
+    !Seam 3
+    CONST ScanData scanJoint3:=[3];
+    !Seam 4
+    CONST ScanData scanJoint4:=[4];
+    !Seam 5
+    CONST ScanData scanJoint5:=[5];
+    !Seam 6
+    CONST ScanData scanJoint6:=[6];
+    !Seam 7
+    CONST ScanData scanJoint7:=[7];
+    !Seam 8
+    CONST ScanData scanJoint8:=[8];
+    !Seam 9
+    CONST ScanData scanJoint9:=[9];
+    !Seam 10
+    CONST ScanData scanJoint10:=[10];
+
+    
+    !Welding Parameters
     TASK PERS seamdata seamShared:=[0,0.5,[0,0,0,0,0,0,0,0,0],0,0,0,0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0.5];
 
     !Fillet weld: 2F
@@ -43,4 +67,5 @@ MODULE ProcessDataModule
     TASK PERS welddata weldShared_7:=[1.2,0,[21,0,-1,0,0,350,0,0,0],[0,0,0,0,0,0,0,0,0]];
     TASK PERS weavedata weaveShared_7:=[1,0,3,7,0,1,0,0.5,0,0,0,0,0,0,0];
     TASK PERS trackdata trackShared_7:=[2,TRUE,50,[0,0,0,3940,0,0,0,0,0],[0,0,0,0,0,0,0]];
+    
 ENDMODULE
